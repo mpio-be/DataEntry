@@ -1,0 +1,1043 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bre",
+				"breeding_ranges_v1"
+			],
+			[
+				"loc",
+				"locationDate"
+			],
+			[
+				"loca",
+				"locationClass"
+			],
+			[
+				"satt",
+				"satellite"
+			],
+			[
+				"ac",
+				"activity"
+			],
+			[
+				"tra",
+				"transmission_counter"
+			],
+			[
+				"trans",
+				"transmission_counter"
+			],
+			[
+				"tem",
+				"temperature"
+			],
+			[
+				"tepm",
+				"temperature"
+			],
+			[
+				"messa",
+				"messageDate"
+			],
+			[
+				"ex",
+				"exists\t{base}"
+			],
+			[
+				"war",
+				"wart_colour"
+			],
+			[
+				"time",
+				"time_catch"
+			],
+			[
+				"cap",
+				"capture.output\t{utils}"
+			],
+			[
+				"rele",
+				"release_datetime"
+			],
+			[
+				"m",
+				"m-foreach\tforeach parralel loop"
+			],
+			[
+				"tabl",
+				"table_size_GB"
+			],
+			[
+				"lab",
+				"lab_ID"
+			],
+			[
+				"prot",
+				"prot_function"
+			],
+			[
+				"str_s",
+				"str_sub\t{stringr}"
+			],
+			[
+				"tot",
+				"totcarConc"
+			],
+			[
+				"last_",
+				"last_egg"
+			],
+			[
+				"E",
+				"E_no"
+			],
+			[
+				"A_",
+				"A_protInfo"
+			],
+			[
+				"grid",
+				"gridSize.save"
+			],
+			[
+				"expect",
+				"expect_that"
+			],
+			[
+				"canvas",
+				"canvas.fetch"
+			],
+			[
+				"sci",
+				"sci_name"
+			],
+			[
+				"as.chcra",
+				"as.character.factor\t{base}"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "inst/UI/DB/BTatWESTERHOLZ/ADULTS/global.R",
+			"settings":
+			{
+				"buffer_size": 2098,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inst/UI/DB/SNBatWESTERHOLZ/file_status/server.R",
+			"settings":
+			{
+				"buffer_size": 1810,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inst/UI/DB/SNBatWESTERHOLZ/file_status/ui.R",
+			"settings":
+			{
+				"buffer_size": 761,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "ren",
+		"selected_items":
+		[
+			[
+				"ren",
+				"File: Rename"
+			],
+			[
+				"del",
+				"File: Delete"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"u",
+				"Convert Case: Upper Case"
+			],
+			[
+				"al",
+				"Preferences: Alignment Key Bindings – Default"
+			],
+			[
+				"ali",
+				"Preferences: Alignment File Settings – Default"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"co",
+				"Color Picker"
+			]
+		],
+		"width": 728.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/mihai/ownCloud/PACKAGES/DataEntry",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/ADULTS",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/SNBatWESTERHOLZ",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/SNBatWESTERHOLZ/file_status"
+	],
+	"file_history":
+	[
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/SNBatWESTERHOLZ/file_status/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/ADULTS/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/notes.md",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/ADULTS/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/SNBatWESTERHOLZ/file_status/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/validators.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/preset_queries.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/SNBatWESTERHOLZ/file_status/ui.R",
+		"/home/mihai/ownCloud/NOTES/current_notes.todo",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/ADULTS/ui.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/DESCRIPTION",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/RStudio.Rproj",
+		"/home/mihai/ownCloud/PACKAGES/bib2/bib2.Rproj",
+		"/home/mihai/ownCloud/PACKAGES/bib2/\"/home/mihai/ownCloud/PACKAGES/bib2/bib2.Rproj\"",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/_project_template/intranet_versioned_Rpackage.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/_project_template/simple_nonversioned_project.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/linux.local/settings_db.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.mpio.orn.mpg.de/SYSTEM/update_log.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/gitlab.gwdg.de/settings.md",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.mpio.orn.mpg.de/DB/postgres_user_management.SQL",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scicomp.mpio.orn.mpg.de/update_log.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.mpio.orn.mpg.de/SYSTEM/settings.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/linux.local/install.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/linux.bt.laptop/log.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.mpio.orn.mpg.de/SYSTEM/install_log.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/_project_template/simple_private_nonversioned_project.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/rangemapper.orn.mpg.de/index.html",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/rangemapper.orn.mpg.de/gwdg.md",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.mpio.orn.mpg.de/CRONTAB/DATA_by_EMAIL.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scicomp.mpio.orn.mpg.de/settings.sh",
+		"/home/mihai/.config/sublime-text-3/Packages/Colorsublime/Colorsublime.sublime-settings",
+		"/home/mihai/Desktop/temp.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.mpio.orn.mpg.de/DB/user_management.SQL",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/EXTRA_EGGSatWESTERHOLZ/protein_functions.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/_project_template/simple_private_versioned_project.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/output_datasets.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/rangemapper.orn.mpg.de/www_gwdg/.freeze/R-forge/www/scripts/galleria/galleria-1.2.8.js",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/LOGGERSatBARROW/rfid.sql",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/LOGGERSatBARROW",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.mpio.orn.mpg.de/CRONTAB/crontab.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/behavioural-ecology.orn.mpg.de/LOG.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/linux.local/settings_system.sh",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/DBLOG/ARGOS_dataPackageID.SQL",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/RUFFatFRIESLAND/ARGOS.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/EXTRA_PESAatBARROW/2016_ARGOS.SQL",
+		"/etc/apt/sources.list",
+		"/home/mihai/ownCloud/PROJECTS/COMPARATIVE/shorebirds_incubation/R/temperature_map_worldClim.R",
+		"/home/mihai/ownCloud/PROJECTS/COMPARATIVE/wall_maps/make_print.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/settings.SQL",
+		"/home/mihai/ownCloud/PROJECTS/COMPARATIVE/wall_maps/make_rangeMapper.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/linux.bt.laptop/install.sh",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/RUFFatFRIESLAND/male_type.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/RUFFatFRIESLAND/ARGOS_dataPackageID.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/RUFFatFRIESLAND/CAPTURES.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/EXTRA_EGGSatWESTERHOLZ/carotens_tables.R",
+		"/ds/raw_data_kemp/FIELD/Friesland/Argos_Data/Sep_2014-14_Dec_2015/15520_01.csv",
+		"/ds/raw_data_kemp/FIELD/Friesland/Argos_Data/Sep_2014-14_Dec_2015/15520_11.csv",
+		"/ds/raw_data_kemp/FIELD/Friesland/Argos_Data/Sep_2014-14_Dec_2015/15520_12.csv",
+		"/home/mihai/ownCloud/PROJECTS/Z/actograms_bootstrap/make_actograms.R",
+		"/home/mihai/ownCloud/PROJECTS/Z/actograms_bootstrap/actogram_bootstrap.Rhtml",
+		"/ds/raw_data_kemp/FIELD/Friesland/Argos_Data/Sep_2014-14_Dec_2015/15520_20.csv",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scicomp.mpio.orn.mpg.de/install_log.sh",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/EXTRA_EGGSatWESTERHOLZ/protein_ptm_tables.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/EXTRA_EGGSatWESTERHOLZ/protein_groups.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.mpio.orn.mpg.de/CRONTAB/DATA_FROM_REMOTE_DB.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/BUTEOatEUROPE/buteo_morph.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/BUTEOatEUROPE/MTI_gps_tags.R",
+		"/var/www/html/flare.json",
+		"/var/www/html/index.html",
+		"/home/mihai/Desktop/d3jsbubbles/flare.json",
+		"/home/mihai/Desktop/d3jsbubbles/index.html",
+		"/media/mihai/M/PROJECTS/_published/2014_longevity/R/SPECIES_LEVEL_longevity_Predictors.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/CRONTAB/DATA_FROM_REMOTE_DB.R",
+		"/ds/raw_data_kemp/FIELD/Buteo_Morph/dbdump04-02-2016-14-00.backup",
+		"/home/mihai/ownCloud/PROJECTS/BUZZARD/Buteo_Morph/R/buteo_morph_2.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/CRONTAB/DATA_by_EMAIL.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/BUTEOatEUROPE/MTI_gps.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/BUTEOatEUROPE",
+		"/home/mihai/ownCloud/PACKAGES/buteo/R/DATA.R",
+		"/ds/raw_data_kemp/FIELD/Buteo_Morph/dbdump04-02-2016-12-07.backup",
+		"/ds/raw_data_kemp/FIELD/Buteo_Morph/dbdump04-02-2016-12-26.backup",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/CRONTAB/crontab.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scicomp.orn.mpg.de/settings.sh",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/FIELD_BTatWESTERHOLZ/make_FIELD_BTatWESTERHOLZ.R",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/MySQL/FIELD_BTatWESTERHOLZ/ADULTS.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_suse/SYSTEM/log.md",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/SYSTEM/install_log.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/SYSTEM/settings.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/CRONTAB/RUFFatFRIESLAND.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/CRONTAB/Buteo_Morph.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/CRONTAB/BUTEOatHOLLAND.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/db_migration.sh",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/settings.sh",
+		"/home/mihai/Desktop/temp.sql",
+		"/ds/scidbbackup/migration_backup/LOGGERSatBARROW.sql",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_suse/MySQL/system.SQL",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_suse/docs/scidb.orn.mpg.de/predict_DB_growth.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/db_users.SQL",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.moio.orn.mpg.de/PostgreSQL/AVES/mysql_migration.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu/install_log.sh",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.moio.orn.mpg.de/PostgreSQL/AVES/_db_wide.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scicomp.orn.mpg.de/install_log.sh",
+		"/home/mihai/ownCloud/DATABASE_MANAGEMENT/scidb.moio.orn.mpg.de/PostgreSQL/AVES/postgis.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_suse/postgreSQL/users.sql",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de_ubuntu",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de/postgreSQL/settings & functions.sql",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de/SYSTEM/log.md",
+		"/home/mihai/ownCloud/PROJECTS/BLUE_TIT/EDA/heterozygosity_epp.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de/MySQL/BTatWESTERHOLZ/MICROSATS.R",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de/MySQL/output_datasets.R",
+		"/home/mihai/ownCloud/PROJECTS/BLUE_TIT/EDA/heterosigosity_epp.R",
+		"/home/mihai/ownCloud/PROJECTS/BLUE_TIT/EDA/GENHETv3.1.R",
+		"/home/mihai/ownCloud/PROJECTS/BLUE_TIT/EDA/year_randomEffetcts.R",
+		"/home/mihai/.config/sublime-text-3/Packages/User/bash.sublime-build",
+		"/home/mihai/ownCloud/PROJECTS/PECTORAL_SANDPIPER/Exploded_lek/R/sm_MAP_ByID/miniMaps.Rhtml",
+		"/home/mihai/ownCloud/PROJECTS/PECTORAL_SANDPIPER/Exploded_lek/R/sm_MAP_ByID/miniMaps.html",
+		"/home/mihai/.config/sublime-text-3/Packages/Alignment/Default (Linux).sublime-keymap",
+		"/home/mihai/.config/sublime-text-3/Packages/Terminal/Base File.sublime-settings",
+		"/home/mihai/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/mihai/ownCloud/SYSTEMS_MANAGEMENT/scidb.orn.mpg.de/MySQL/system.SQL",
+		"/home/mihai/ownCloud/PROJECTS/BLUE_TIT/Egg_Proteomics/R/1_eggMeasurements/eggMeasures.R",
+		"/home/mihai/ownCloud/PROJECTS/BLUE_TIT/Egg_Proteomics/R/2_proteins/by_prot_models.R",
+		"/home/mihai/Desktop/the-lord-of-the-rings-3.txt",
+		"/home/mihai/ownCloud/PROJECTS/BLUE_TIT/Egg_Proteomics/R/2_proteins/data.R",
+		"/home/mihai/ownCloud/SOFTWARE/rangeMapper/R/MapPlot-methods.R",
+		"/media/mihai/M/GIT/grpkempenaers/Egg_Proteomics/R/2_proteins/data.R",
+		"/media/mihai/M/GIT/grpkempenaers/Egg_Proteomics/R/2_proteins/by_prot_models.R",
+		"/media/mihai/M/GIT/grpkempenaers/Egg_Proteomics/R/2_proteins/global_models.R"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 157.0,
+		"where_history":
+		[
+			"<project>",
+			"/media/mihai/M/GIT/grpkempenaers/Egg_Proteomics/R",
+			"<open folders>",
+			"/home/mihai/github/rangeMapper/R",
+			"/media/mihai/M/GIT/github/rangeMapper",
+			"/media/mihai/M/GIT/github/rangeMapper/R"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"'",
+			"pwd",
+			"default to localhost",
+			"shiny",
+			"\">\n        <script type=\"text/javascript\">",
+			"argos",
+			"lcarballo",
+			"synonyms",
+			"body_mass_v2",
+			"auto",
+			"loggersatbarrow.rfid",
+			"EXTRA_PESAatWESTERHOLZ",
+			"2016_ARGOS",
+			"EXTRA_PESAatBARROW",
+			"buteo",
+			"trusty",
+			"`",
+			"wart",
+			"collar",
+			"\"",
+			"locationDate",
+			":=",
+			"NULL",
+			"character",
+			"factor",
+			";",
+			"`",
+			"g[i",
+			"basepath",
+			"NULL",
+			"`",
+			", ",
+			"NULL",
+			"if not exists",
+			"IF NOT EXISTS ",
+			"localcon",
+			":",
+			"=",
+			"migration_backup_27012016_set2",
+			".",
+			"\tloci",
+			"KOLBETERBERG",
+			"`",
+			"lab_ID",
+			"WESTERHOLZ",
+			"psantema",
+			"O",
+			"6",
+			"12",
+			"compound_id",
+			".Y_",
+			".Y_protInfo WHERE reverse is  NULL AND contam is  NULL)\n\t\t                   \")",
+			";",
+			" ",
+			"E_no",
+			" ",
+			"Scale",
+			"sc",
+			"totcar",
+			"A",
+			"\"",
+			"inBox",
+			"conc",
+			"xa",
+			"conc",
+			"E_NO",
+			"E_no",
+			"E_NO",
+			"E_no",
+			"sex",
+			"Age_female_b",
+			"      sl = melt(s, id.vars = c('clutch', 'firstEgg', 'tarsus_female', 'tarsus_male', 'Age_female_b', 'Age_male' , 'box') )\n",
+			"\"",
+			"tarsus_male",
+			"tarsus_female",
+			"con = dbcon(\"mihai\", host = \"scidb.mpio.orn.mpg.de\")",
+			"con = dbcon(\"cvalcu\", host = \"scidb.mpio.orn.mpg.de\")",
+			"%dopar%",
+			"m",
+			"f = system.file(package = \"rangeMapper\", \"extdata\", \"wrens\", \"vector_combined\")",
+			"\"",
+			"object",
+			"rangeMapper:::",
+			"\"",
+			" @describeIn",
+			"\\code{\\link{sp::spplot}}",
+			"\\cr",
+			"\\tab",
+			"}",
+			"rangeMapper:::",
+			"RMQuery",
+			",",
+			"classInt",
+			"notrun",
+			", ...",
+			"sp",
+			"parallel",
+			"parralel",
+			"processRanges",
+			"dbcon",
+			"RMQuery",
+			"ri",
+			"sqlitecon",
+			"SQLiteCon",
+			"sqlitecon",
+			"object",
+			"code",
+			"code foldin",
+			"vertice",
+			"vert",
+			"spdf",
+			"vertices",
+			"object"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			" ",
+			"source('./R/settings.R')",
+			"%trypar%",
+			"con"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "inst/UI/DB/BTatWESTERHOLZ/ADULTS/global.R",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2098,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Boxy Tomorrow.tmTheme",
+							"syntax": "Packages/R-Box/syntax/R Extended.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "inst/UI/DB/SNBatWESTERHOLZ/file_status/server.R",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Boxy Tomorrow.tmTheme",
+							"syntax": "Packages/R-Box/syntax/R Extended.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "inst/UI/DB/SNBatWESTERHOLZ/file_status/ui.R",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34,
+								23
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										33,
+										34
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										32,
+										33
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Boxy Tomorrow.tmTheme",
+							"syntax": "Packages/R-Box/syntax/R Extended.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "DataEntry.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 669.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/ownCloud/PACKAGES/bib2/bib2.sublime-project"
+			],
+			[
+				"ge",
+				"~/ownCloud/PACKAGES/geotag/geotag.sublime-project"
+			],
+			[
+				"sys",
+				"~/ownCloud/PACKAGES/sysmanager/sysmanager.sublime-project"
+			],
+			[
+				"e",
+				"~/ownCloud/PROJECTS/BLUE_TIT/Egg_Proteomics/Egg_proteomics.sublime-project"
+			],
+			[
+				"sdb",
+				"~/ownCloud/PACKAGES/sdb/sdb.sublime-project"
+			],
+			[
+				"sd",
+				"~/ownCloud/PACKAGES/sdb/sdb.sublime-project"
+			],
+			[
+				"snb",
+				"~/ownCloud/PACKAGES/SNB/SNB.sublime-project"
+			],
+			[
+				"td",
+				"~/ownCloud/PACKAGES/tdm/tdm.sublime-project"
+			],
+			[
+				"s",
+				"~/ownCloud/PACKAGES/sysmanager/sysmanager.sublime-project"
+			],
+			[
+				"db",
+				"~/ownCloud/PACKAGES/sdb/sdb.sublime-project"
+			],
+			[
+				"d",
+				"~/ownCloud/DATABASE_MANAGEMENT/db_management.sublime-project"
+			],
+			[
+				"tdm",
+				"~/ownCloud/PACKAGES/tdm/tdm.sublime-project"
+			],
+			[
+				"se",
+				"~/ownCloud/PROJECTS/PECTORAL_SANDPIPER/sea_ice_flights/sea_ice_flights.sublime-project"
+			],
+			[
+				"ar",
+				"~/ownCloud/PACKAGES/argos/argos.sublime-workspace"
+			],
+			[
+				"ex",
+				"~/ownCloud/PROJECTS/PECTORAL_SANDPIPER/Exploded_lek/exploded_lek.sublime-project"
+			],
+			[
+				"egg",
+				"~/ownCloud/PROJECTS/BLUE_TIT/Egg_Proteomics/Egg_proteomics.sublime-project"
+			],
+			[
+				"aves",
+				"~/ownCloud/PACKAGES/aves/aves.sublime-project"
+			],
+			[
+				"SNB",
+				"~/ownCloud/PACKAGES/SNB/SNB.sublime-project"
+			],
+			[
+				"g",
+				"~/ownCloud/PACKAGES/geotag/geotag.sublime-project"
+			],
+			[
+				"geo",
+				"~/ownCloud/PACKAGES/geotag/geotag.sublime-project"
+			],
+			[
+				"sni",
+				"~/ownCloud/SNIPPETS/snippets.sublime-project"
+			],
+			[
+				"pesa",
+				"~/ownCloud/PACKAGES/pesa/pesa.sublime-project"
+			],
+			[
+				"eg",
+				"~/ownCloud/PROJECTS/BLUE_TIT/Egg_Proteomics/Egg_proteomics.sublime-project"
+			],
+			[
+				"ru",
+				"~/ownCloud/PACKAGES/ruff/ruff.sublime-project"
+			],
+			[
+				"sy",
+				"/media/mihai/M/projectManager/systems_management.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 255.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
