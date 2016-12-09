@@ -5,7 +5,7 @@
 # dbWriteTable(con, 'file_status', data.table(id = NA, author = NA, box = 1:10, datetime_ = rep(Sys.Date() %>% as.character, 5), bat_status = NA, firmware_status = NA), append =TRUE, row.names = FALSE)
 
 # settings
-  sapply(c('SNB', 'sdb','shiny','shinyjs','shinydashboard','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
+  sapply(c('sdb', 'SNB','shiny','shinyjs','shinydashboard','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
   require, character.only = TRUE, quietly = TRUE)
 
   host   = 'localhost'
