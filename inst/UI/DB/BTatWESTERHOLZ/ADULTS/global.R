@@ -7,7 +7,7 @@
     require, character.only = TRUE, quietly = TRUE)
 
   user          = 'bt'
-  host          = 'localhost'
+  host          = '127.0.0.1'
   db            = 'FIELD_BTatWESTERHOLZ'
   table         =  'ADULTS'
   n_empty_lines = 5

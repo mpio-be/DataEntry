@@ -8,7 +8,7 @@
   sapply(c('sdb', 'SNB','shiny','shinyjs','shinydashboard','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
   require, character.only = TRUE, quietly = TRUE)
 
-  host   = 'localhost'
+  host   = '127.0.0.1'
   user   = getOption('DB_user')
   db     =  getOption('snbDB')
   table  = 'file_status'
