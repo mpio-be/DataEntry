@@ -569,7 +569,7 @@
 	},
 	"select_project":
 	{
-		"height": 669.0,
+		"height": 961.0,
 		"last_filter": "sci",
 		"selected_items":
 		[
@@ -682,7 +682,7 @@
 				"/media/mihai/M/projectManager/systems_management.sublime-workspace"
 			]
 		],
-		"width": 380.0
+		"width": 468.0
 	},
 	"select_symbol":
 	{
