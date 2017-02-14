@@ -19,7 +19,7 @@
 
 # Functions
 
-  get_table_for_data_entry <- function()  {
+  get_table_for_data_entry <- function() {
 
     con   = dbcon(user = user, host = host)
     on.exit(dbDisconnect(con))
@@ -36,7 +36,7 @@
    if(is.null(d))
       d = data.table(note = 'There are no new data!') else {
         d[, datetime_ := as.POSIXct(datetime_)]
-        d[, `:=`(day             = as.numeric(format(datetime_, "%d")),
+        d[, `:=`(day             = as.integer(format(datetime_, "%d")),
                  month           = month(datetime_),
                  year            = year(datetime_),
                  hour            = as.integer(NA),
@@ -65,9 +65,8 @@
     d[, datetime_ := ISOdatetime(year, month, day, hour, min, sec = 0), ]
     d = d[ !is.na(datetime_), .(id, author, datetime_, bat_status, firmware_status)]
 
-    dbq(con, "DROP TEMPORARY TABLE IF EXISTS temp")
-    dbq(con, "CREATE TEMPORARY TABLE temp (id INT, author VARCHAR(4), datetime_ DATETIME,
-        bat_status TINYINT, firmware_status TINYINT)")
+    dbq(con, "DROP  TABLE IF EXISTS temp")
+    dbq(con, "CREATE  TABLE temp (id INT, author VARCHAR(4), datetime_ DATETIME, bat_status TINYINT, firmware_status TINYINT)")
 
     res = dbWriteTable(con, "temp", d,  row.names = FALSE, append = TRUE)
     o = dbq(con, 'UPDATE file_status f, temp t
@@ -77,7 +76,7 @@
                 f.firmware_status = t.firmware_status
                   WHERE f.id = t.id')
 
-    dbq(con, "DROP TEMPORARY TABLE IF EXISTS temp")
+    dbq(con, "DROP  TABLE IF EXISTS temp")
 
     res
 

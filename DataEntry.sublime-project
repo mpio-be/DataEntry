@@ -1,7 +1,7 @@
 {
 	"folders":[{
 		"name": "package: DataEntry",
-		"path": "/home/mihai/ownCloud/PACKAGES/DataEntry",
+		"path": ".",
 		"folder_exclude_patterns": ["*_cache", "cache", "figure", "*_files", ".Rproj.user"]
 		}]
 
