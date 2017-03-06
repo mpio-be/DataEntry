@@ -1,4 +1,5 @@
 
+# require(sdb)
 # my_remote2local('SNBatWESTERHOLZ', 'file_status', 'mihai')
 # runApp('inst/UI/DB/SNBatWESTERHOLZ/file_status')
 
