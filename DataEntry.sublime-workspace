@@ -150,9 +150,9 @@
 	],
 	"file_history":
 	[
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/NESTS/global.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/ADULTS/global.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/validators.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/NESTS/global.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/utils.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/NESTS/server.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/NESTS/ui.R",
@@ -483,9 +483,13 @@
 	"select_project":
 	{
 		"height": 715.0,
-		"last_filter": "bib2",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/ownCloud/PACKAGES/bib2/bib2.sublime-project"
+			],
 			[
 				"bib2",
 				"~/ownCloud/PACKAGES/bib2/bib2.sublime-project"
@@ -493,10 +497,6 @@
 			[
 				"bib",
 				"~/ownCloud/PACKAGES/bib/bib.sublime-project"
-			],
-			[
-				"",
-				"~/ownCloud/PROJECTS/BLUE_TIT/Egg_Proteomics/Egg_proteomics.sublime-project"
 			],
 			[
 				"egg",

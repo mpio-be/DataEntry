@@ -10,7 +10,7 @@
   host          = '127.0.0.1'
   db            = 'FIELD_BTatWESTERHOLZ'
   table         =  'NESTS'
-  n_empty_lines = 2
+  n_empty_lines = 50
 
 # data
   H = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' limit 1') )[-1]
