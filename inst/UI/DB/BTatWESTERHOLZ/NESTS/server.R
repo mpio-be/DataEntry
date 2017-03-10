@@ -78,8 +78,8 @@ shinyServer( function(input, output,session) {
   output$table  <- renderRHandsontable({
     rhandsontable(H) %>%
       hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
-      hot_rows(fixedRowsTop = 1) %>%
-      hot_col(col = "method", type = "dropdown", source = 0:5)
+      hot_rows(fixedRowsTop = 1) # %>%
+      # hot_col(col = "method", type = "dropdown", source = 0:5)
 
    })
 

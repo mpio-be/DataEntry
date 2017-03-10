@@ -16,4 +16,3 @@ grand_n(table, db, user, host)
 \description{
 table size (nrow)
 }
-

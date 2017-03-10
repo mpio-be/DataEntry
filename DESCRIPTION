@@ -7,6 +7,7 @@ Depends:
     R (>= 3.0.0),
     data.table,
     devtools,
+    stringr,
     shiny (>= 0.8.0),
     rhandsontable (>= 0.3.4.01),
     shinydashboard,
@@ -14,6 +15,7 @@ Depends:
     shinyjs,
     shinytoastr,
     miniUI
+Remotes: jrowen/rhandsontable
 Description: Data entry interfaces for scidb.mpio.orn.mpg.de
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 VignetteBuilder: knitr

@@ -16,4 +16,3 @@ column_comment(table, db, user, host)
 \description{
 select mariadb column's comment
 }
-

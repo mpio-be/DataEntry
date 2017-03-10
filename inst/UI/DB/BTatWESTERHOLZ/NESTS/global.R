@@ -1,6 +1,6 @@
 
- # my_remote2local('FIELD_BTatWESTERHOLZ', 'ADULTS', 'mihai')
-# shiny::runApp('inst/UI/DB/BTatWESTERHOLZ/ADULTS')
+ # my_remote2local('FIELD_BTatWESTERHOLZ', remoteUser = 'mihai', localUser = 'mihai')
+ # shiny::runApp('inst/UI/DB/BTatWESTERHOLZ/NESTS')
 
 # settings
   sapply(c('sdb','shiny','shinyjs','rhandsontable','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
@@ -9,48 +9,48 @@
   user          = 'bt'
   host          = '127.0.0.1'
   db            = 'FIELD_BTatWESTERHOLZ'
-  table         =  'ADULTS'
-  n_empty_lines = 5
+  table         =  'NESTS'
+  n_empty_lines = 2
 
 # data
   H = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' limit 1') )[-1]
-  H[, ad_pk := NULL]
-  H = rbind(H, data.table(box = rep(NA,n_empty_lines)), fill = TRUE)
+  H[, N_pk := NULL]
+  H = rbind(H, data.table(date_time = rep( as.character(Sys.Date()) ,n_empty_lines)), fill = TRUE)
+  H[, box := as.integer(box)]
   H[, box := as.integer(box)]
 
   comments = comments = column_comment(table, db, user, host )[COLUMN_NAME %in% names(H)]
 
+  nest_stages = c( 'U','LT','R','B','BC','C','LIN','E','WE','Y','NOTA','WSP')
+  nest_failed_reasons = c('R', 'P', 'D', 'H', 'U')
+  authors = dbq(user = user, host = host, q = paste0('SELECT initials from ', db, '.AUTHORS UNION 
+                        SELECT distinct initials from BTatWESTERHOLZ.AUTHORS') )$initials
 
-  # validators
-  measures = dbq(user = user, host = host, q = 'select tarsus, weight, P3 from BTatWESTERHOLZ.ADULTS')
-  measures = melt(measures)[!is.na(value)]
-  measures = measures[, .(lq = quantile(value, 0.005), uq = quantile(value, 0.995)), by = variable]
 
-  nchar = data.table(variable = c('ID', 'UL', 'LL', 'UR', 'LR', 'transponder', 'age', 'sex'), n = c(7, 1, 1, 1, 1, 6, 1, 1) )
-
-# functions
+# inspector [ runs on the handsontable output]
   inspector <- function(x) {
 
-    # always mandatory
-    i1 = is.na_validator(x[, .(date_time_caught, author)])[, reason := 'mandatory']
+    v1 = is.na_validator(x[, .(date_time, author, box, nest_stage)])
+    v2 = POSIXct_validator(x[ , .(date_time)] )
+    
+    v3 = is.element_validator(x[ , .(nest_stage)], data.table(variable = 'nest_stage', set = list(nest_stages) ))
+    v4 = is.element_validator(x[ , .(nest_failed)], data.table(variable = 'nest_failed', set =  list(nest_failed_reasons) ))
+    v5 = is.element_validator(x[ , .(authors)], data.table(variable = 'authors', set = list( authors ) ))
 
-    # mandatory on first recapture
-    i2 = is.na_validator(x[is.na(recapture), .(age,tarsus,weight,P3,transponder)])[, reason := 'mandatory on first recapture']
+    v6 = interval_validator( x[, .(box)], v = data.table(variable = 'box', lq = 1, uq = 277 ) )
+    colNams = c('femaleLeft', 'warm_eggs','eggs_covered') 
+    v7 = interval_validator(subset(x, select = colNams) , data.table(variable = colNams , lq = 0, uq = 1 ) )
+    
+    colNams = c('eggs', 'chicks', 'age_chicks_processing',  'collect_eggs', 'dead_eggs', 'dead_chicks')
+    vvv = data.table(variable = colNams , lq = c(1,1, 13, 1, 1, 1), uq = c(14,14, 15, 15, 15, 15) ) 
+    v8 = interval_validator(subset(x, select = colNams) ,  vvv)
 
-    # datetime
-    i3 = POSIXct_validator(x[ , .(date_time_caught)])[, reason := 'date-time wrong, in the future or older than a week']
-
-    # time
-    i4 = hhmm_validator(x[ , .(handling_start,handling_stop,release_time)])[, reason := 'invalid time']
-
-    # morphometrics
-    i5 = interval_validator(x[ , .(tarsus,P3, weight)], measures)[, reason := 'unusually small or large measure']
-
-    # n chars
-    i6 = nchar_validator(x[ , .(ID,UL,LL,UR,LR,transponder,age,sex)], nchar)[, reason := 'incorrect length']
-
-
-    o = list(i1, i2, i3, i4, i5, i6) %>% rbindlist
+    v9 = interval_validator(subset(x, select = 'female_inside_box') , data.table(variable = 'female_inside_box' , lq = 1, uq = 2 ) )
+    
+    colNams = c('hatching_START','laying_START','incubation_START', 'fledging_START', 'herbs', 'guessed')
+    v10 = is.identical_validator(subset(x, select = colNams) , data.table(variable = colNams , x = 1) )
+ 
+    o = list(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) %>% rbindlist
     o[, .(rowid = paste(rowid, collapse = ',')), by = .(variable, reason)]
 
     }

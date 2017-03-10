@@ -14,4 +14,3 @@ cleaner(x)
 Cleans a data table
 Removes NA rows, replaces 'NA' with NA
 }
-
