@@ -6,10 +6,10 @@
   sapply(c('sdb','shiny','shinyjs','rhandsontable','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
     require, character.only = TRUE, quietly = TRUE)
 
-  user          = 'bt'
-  host          = '127.0.0.1'
-  db            = 'FIELD_BTatWESTERHOLZ'
-  table         =  'NESTS'
+  user                 = 'bt'
+  host                 = '127.0.0.1'
+  db                    = 'FIELD_BTatWESTERHOLZ'
+  table                =  'NESTS'
   n_empty_lines = 50
 
 # data
@@ -21,7 +21,7 @@
 
   comments = comments = column_comment(table, db, user, host )[COLUMN_NAME %in% names(H)]
 
-  nest_stages = c( 'U','LT','R','B','BC','C','LIN','E','WE','Y','NOTA','WSP')
+  nest_stages = c('U', 'LT','R','B','BC','C','LIN','E','WE','Y','NOTA','WSP')
   nest_failed_reasons = c('R', 'P', 'D', 'H', 'U')
   authors = dbq(user = user, host = host, q = paste0('SELECT initials from ', db, '.AUTHORS UNION 
                         SELECT distinct initials from BTatWESTERHOLZ.AUTHORS') )$initials
