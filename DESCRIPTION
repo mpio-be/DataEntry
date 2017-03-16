@@ -16,8 +16,9 @@ Depends:
     shinyjs,
     shinytoastr,
     miniUI
-Remotes: jrowen/rhandsontable
-Remotes: valcu/sdb
+Remotes: 
+    jrowen/rhandsontable, 
+    valcu/sdb
 Description: Data entry interfaces for scidb.mpio.orn.mpg.de
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr

@@ -1,7 +1,7 @@
 
-# commit & push
-  system("git add /home/mihai/ownCloud/PACKAGES/DataEntry -A && git commit -a -m '-' && git push")
 
-# install from git repo
- devtools::install_git('/ds/raw_data_kemp/GIT/DataEntry', dependencies = FALSE)
+# local
+require(sysmanager); push_github_all('DataEntry')
 
+# server
+require(sysmanager);install_github('valcu/DataEntry', auth_token = github_pat(TRUE) )
