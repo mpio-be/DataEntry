@@ -10,7 +10,7 @@
   host                 = '127.0.0.1'
   db                    = 'FIELD_BTatWESTERHOLZ'
   table                =  'NESTS'
-  n_empty_lines = 50
+  n_empty_lines = 25
 
 # data
   H = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' limit 1') )[-1]
@@ -47,7 +47,7 @@
 
     v9 = interval_validator(subset(x, select = 'female_inside_box') , data.table(variable = 'female_inside_box' , lq = 1, uq = 2 ) )
     
-    colNams = c('hatching_START','laying_START','incubation_START', 'fledging_START', 'herbs', 'guessed')
+    colNams = c('herbs', 'guessed')
     v10 = is.identical_validator(subset(x, select = colNams) , data.table(variable = colNams , x = 1) )
  
     o = list(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) %>% rbindlist
