@@ -21,7 +21,7 @@
   comments = column_comment(table, db, user, host )[COLUMN_NAME %in% names(H)]
 
 
-  # validators
+  # validator parameters
   measures = dbq(user = user, host = host, q = 'select tarsus, weight, P3 from BTatWESTERHOLZ.ADULTS')
   measures = melt(measures)[!is.na(value)]
   measures = measures[, .(lq = quantile(value, 0.005), uq = quantile(value, 0.995)), by = variable]
