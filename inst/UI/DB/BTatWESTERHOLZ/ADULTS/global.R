@@ -11,14 +11,15 @@
   db            = 'FIELD_BTatWESTERHOLZ'
   table         =  'ADULTS'
   n_empty_lines = 20
+  excludeColumns = 'ad_pk'
 
 # data
-  H = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' limit 1') )[-1]
-  H[, ad_pk := NULL]
-  H = rbind(H, data.table(box = rep(NA,n_empty_lines)), fill = TRUE)
-  H[, box := as.integer(box)]
+  H = emptyFrame(user, host, db, table, n = 10, excludeColumns, 
+        preFilled = list(
+            date_time_caught = as.character(Sys.Date()) ) 
+        )
+  comments = column_comment(user, host, db, table,excludeColumns)
 
-  comments = column_comment(table, db, user, host )[COLUMN_NAME %in% names(H)]
 
 
   # validator parameters

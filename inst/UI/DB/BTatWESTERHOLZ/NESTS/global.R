@@ -10,21 +10,23 @@
   host                 = '127.0.0.1'
   db                    = 'FIELD_BTatWESTERHOLZ'
   table                =  'NESTS'
-  n_empty_lines = 25
+  n_empty_lines        = 25
+   excludeColumns       = 'N_pk'
 
 # data
-  H = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' limit 1') )[-1]
-  H[, N_pk := NULL]
-  H = rbind(H, data.table(date_time = rep( as.character(Sys.Date()) ,n_empty_lines)), fill = TRUE)
+  H = emptyFrame(user, host, db, table, n = 10, excludeColumns, 
+        preFilled = list(
+            date_time = as.character(Sys.Date()) ) 
+        )
   H[, box := as.integer(box)]
-  H[, box := as.integer(box)]
+  comments = column_comment(user, host, db, table,excludeColumns)
 
-  comments = comments = column_comment(table, db, user, host )[COLUMN_NAME %in% names(H)]
 
-  nest_stages = c('U', 'LT','R','B','BC','C','LIN','E','WE','Y','NOTA','WSP')
-  nest_failed_reasons = c('R', 'P', 'D', 'H', 'U')
-  authors = dbq(user = user, host = host, q = paste0('SELECT initials from ', db, '.AUTHORS UNION 
-                        SELECT distinct initials from BTatWESTERHOLZ.AUTHORS') )$initials
+  # validator parameters
+    nest_stages = c('U', 'LT','R','B','BC','C','LIN','E','WE','Y','NOTA','WSP')
+    nest_failed_reasons = c('R', 'P', 'D', 'H', 'U')
+    authors = dbq(user = user, host = host, q = paste0('SELECT initials from ', db, '.AUTHORS UNION 
+                          SELECT distinct initials from BTatWESTERHOLZ.AUTHORS') )$initials
 
 
 # inspector [ runs on the handsontable output]

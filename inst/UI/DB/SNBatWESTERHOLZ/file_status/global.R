@@ -14,6 +14,12 @@
   db     =  getOption('snbDB')
   table  = 'file_status'
 
+
+# data
+ comments = column_comment(user, host, db, table)
+
+
+
 # validators
   hhmm = data.table(variable = c('hour', 'min'), lq = c(0, 0), uq = c(23, 59) )
 
@@ -95,4 +101,3 @@
     }
 
 
-  comments = column_comment(table, db, user, host )
