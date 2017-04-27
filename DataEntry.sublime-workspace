@@ -27,7 +27,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 400.0,
+		"height": 357.0,
 		"last_filter": "",
 		"selected_items":
 		[
@@ -52,7 +52,7 @@
 				"Colorsublime: Install Theme"
 			]
 		],
-		"width": 609.0
+		"width": 623.0
 	},
 	"console":
 	{
@@ -73,31 +73,13 @@
 	"expanded_folders":
 	[
 		"/home/mihai/ownCloud/PACKAGES/DataEntry",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/ADULTS",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/NESTS",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/SNBatWESTERHOLZ",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/SNBatWESTERHOLZ/file_status",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test"
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R"
 	],
 	"file_history":
 	[
+		"/home/mihai/ownCloud/PACKAGES/wader/R/map_elements.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/ADULTS/global.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/NESTS/global.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/SNBatWESTERHOLZ/file_status/global.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test/server.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test/ui.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test/global.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/ui_elements.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/ui_helpers.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test/.testdb.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/server_elements.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/NESTS/ui.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/preset_queries.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/notes.md",
 		"/home/mihai/ownCloud/PACKAGES/wader/server_install.R",
 		"/home/mihai/ownCloud/PACKAGES/wader/inst/UI/main/global.R",
@@ -114,7 +96,6 @@
 		"/home/mihai/ownCloud/PACKAGES/wader/todo.md",
 		"/home/mihai/ownCloud/PACKAGES/wader/inst/demo/install_demo.R",
 		"/home/mihai/ownCloud/PACKAGES/wader/R/data_elements.R",
-		"/home/mihai/ownCloud/PACKAGES/wader/R/map_elements.R",
 		"/home/mihai/ownCloud/PACKAGES/bib2/inst/UI/main/server.R",
 		"/home/mihai/ownCloud/PACKAGES/bib2/inst/UI/main/global.R",
 		"/home/mihai/ownCloud/PACKAGES/wader/inst/demo/tables_definition.sql",
@@ -155,8 +136,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"date_time",
-			"`",
 			"h",
 			"H",
 			"host",
@@ -234,7 +213,7 @@
 	"project": "DataEntry.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -254,7 +233,15 @@
 		[
 			[
 				"",
-				"~/ownCloud/PACKAGES/sysmanager/sysmanager.sublime-project"
+				"~/ownCloud/DATABASE_MANAGEMENT/scidb.mpio.orn.mpg.de/scidb_management.sublime-project"
+			],
+			[
+				"Data",
+				"~/ownCloud/PACKAGES/DataEntry/DataEntry.sublime-project"
+			],
+			[
+				"data",
+				"~/ownCloud/PACKAGES/DataEntry/DataEntry.sublime-project"
 			],
 			[
 				"sys",
@@ -280,7 +267,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 267.0,
+	"side_bar_width": 226.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
