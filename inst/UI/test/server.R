@@ -30,7 +30,7 @@ function(input, output,session) {
     }
 
     # inspector
-      cc = inspector(x)
+      cc = inspector(sqlInspector, x, user, db, host)
       #cc<<- cc
 
       if(nrow(cc) > 0 & !ignore_validators) {

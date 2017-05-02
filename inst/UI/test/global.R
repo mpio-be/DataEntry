@@ -1,4 +1,4 @@
-
+ # source('inst/UI/test/.testdb.R')
  # shiny::runApp('inst/UI/test/')
 
 # settings
@@ -10,6 +10,7 @@
   db             = 'test'
   table          =  'test_tbl'
   excludeColumns = c('pk', 'notShow')
+  sqlInspector   = 'select script from validators where table_name = "test_tbl"'
 
 
   H = emptyFrame(user, host, db, table, n = 10, excludeColumns, 
@@ -20,19 +21,5 @@
 
 
 
-# inspector [ runs on the handsontable output]
-  inspector <- function(x) {
-
-    v1 = is.na_validator(x[, .(datetime_, author, nest)])
-    v2 = POSIXct_validator(x[ , .(datetime_)] )
-    v3 = is.element_validator(x[ , .(author)], 
-         v = data.table(variable = 'author', set = list( c('AI', 'AA', 'XY') ) ))
-    v4 = interval_validator( x[, .(measure)], 
-         v = data.table(variable = 'measure', lq = 1, uq = 10 ) )
-    
-
-    o = list(v1, v2, v3, v4) %>% rbindlist
-    o[, .(rowid = paste(rowid, collapse = ',')), by = .(variable, reason)]
-    }
 
 
