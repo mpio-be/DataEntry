@@ -1,7 +1,5 @@
  # source('inst/UI/test/.testdb.R')
- # shiny::runApp('inst/UI/test/')
-
-# settings
+ # shiny::runApp('inst/UI/test/')settings
   sapply(c('sdb','shiny','shinyjs','rhandsontable','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
     require, character.only = TRUE, quietly = TRUE)
 
