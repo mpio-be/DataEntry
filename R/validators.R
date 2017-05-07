@@ -75,6 +75,47 @@ hhmm_validator <- function(x, reason = 'invalid time') {
     o
     }
 
+#' @rdname  validators
+#' @name    datetime_validator
+#' @export
+#' @examples
+#'  #----------------------------------------------------#
+#' x = data.table(v1 = c('2017-01-21 02:04' , '2012-04-21 16:56', '2017-05-21 23:59'  ),
+#'                v2 = c('2017-07-27 00:00' , '2017-01-21', '2015-01-09 23:59'  ) )
+#' datetime_validator(x)
+
+datetime_validator <- function(x, reason = 'invalid datetime_ - should be: yyyy-mm-dd hh:mm') {
+  regexp = '^\\d\\d\\d\\d-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01]) ([0-1][0-9]|[2][0-3]):([0-5][0-9])$' # YYYY-MM-DD hh:mm
+  o = meltall(x)
+  o = o[, v := str_detect(value , regexp) , by = variable]
+  
+  o = o[ (!v) , .(rowid, variable)]
+  o[, reason := reason]
+  o
+}
+
+#' @rdname  validators
+#' @name    time_order_validator
+#' @param v  for time_order_validator: datatable with times that are before the test time 
+#' @export
+#' @examples
+#'  #----------------------------------------------------#
+#' x = data.table(v1 = c('10:10' , '16:30', '02:08'  ) )
+#' v = data.table(v2 = c('10:04' , '16:40', '01:55'  ) )
+#' time_order_validator(x, v)
+
+time_order_validator <- function(x, v, reason = 'invalid time order') {
+  o = meltall(x)
+  o = cbind(o, v, by = 'variable', sort = FALSE)
+  colnames(o)[4] = 'value2'
+  
+  o[, v := ifelse(difftime(strptime(value, format = "%H:%M"), strptime(value2, format = "%H:%M")) >= 0, TRUE, FALSE), by =  .(rowid, variable)] # works but gives warning messages
+  
+  o = o[ (!v) , .(rowid, variable)]
+  o[, reason := reason]
+  o
+}
+
 #' @rdname   validators
 #' @name     interval_validator
 #' @param v  for interval_validator: a data.table with variable, lq, uq columns
