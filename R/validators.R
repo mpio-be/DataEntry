@@ -144,6 +144,28 @@ is.element_validator <- function(x, v, reason = 'invalid entry') {
  }
 
 #' @rdname    validators
+#' @name      is.duplicate_validator 
+#' @param v   for is.duplicate_validator: a data.table with variable and set (a vector of lists containing the already existing values for each variable )
+#' @export
+#' @examples
+#'  #----------------------------------------------------#
+#' x = data.table(v1 = c('A', 'B', 'C')  , v2 = c('ZZ', 'YY', 'QQ')  )
+#' v = data.table(variable = c('v1', 'v2'), 
+#'                set = c( list( c('A', 'C') ), list( c('YY')  )) )
+#' is.duplicate_validator(x, v)
+
+is.duplicate_validator <- function(x, v, reason = 'duplicate entry') {
+	o = meltall(x)
+	o = merge(o, v, by = 'variable', sort = FALSE)
+	
+	o[, v := is.element(value, unlist(set) )  , by =  .(rowid, variable) ]
+	
+	o = o[ (v) , .(rowid, variable)]
+	o[, reason := reason]
+	o
+}
+
+#' @rdname    validators
 #' @name      is.identical_validator 
 #' @param v   for is.identical_validator: a data.table with variable and x (the value to test against)
 #' @export
