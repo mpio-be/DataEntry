@@ -2,9 +2,6 @@ function(input, output,session) {
 
   observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
 
-  saved_session <<- FALSE
-
-
   observeEvent(input$refresh, {
         shinyjs::js$refresh()
       })
@@ -23,12 +20,6 @@ function(input, output,session) {
 
     isolate(ignore_validators <- input$ignore_checks )
 
-    if(saved_session) {
-      msg = 'This set was already saved to the database. Press Start New to enter another set.'
-      toastr_error(msg)
-      stop(msg)
-    }
-
     # inspector
       cc = inspector(sqlInspector, x, user, db, host)
       #cc<<- cc
@@ -44,12 +35,17 @@ function(input, output,session) {
 
         con = dbcon(user = user,  host = host)
         dbq(con, paste('USE', db) )
-        saved_set = dbWriteTable(con, table, x, append = TRUE, row.names = FALSE)
+        
+        update_ok = dbWriteTable(con, 'TEMP', x, append = TRUE, row.names = FALSE)
 
-        if(saved_set) {
-          toastr_success( paste(nrow(x), "rows saved to database.") )
-          toastr_info('Before entering a new set press Start new.')
-          saved_session <<- TRUE
+        if(update_ok) {
+          
+          dbq(con, paste('DROP TABLE', table) )
+          dbq(con, paste('RENAME TABLE TEMP to', table) )
+
+          toastr_success('Table updated successfully.')
+
+
           }
 
         dbDisconnect(con)
@@ -77,11 +73,15 @@ function(input, output,session) {
 
 
   output$table  <- renderRHandsontable({
+    
+    H = dbq(q = paste('SELECT * FROM', table), user = user, host = host, db = db)
+  
     rhandsontable(H) %>%
       hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
-      hot_rows(fixedRowsTop = 1)  # %>%
-      
-      # hot_col(col = "nest_stage", type = "dropdown", source = nest_stages )
+      hot_rows(fixedRowsTop = 1)
+
+       
+
 
    })
 

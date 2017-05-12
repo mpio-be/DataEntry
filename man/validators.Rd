@@ -8,6 +8,7 @@
 \alias{interval_validator}
 \alias{nchar_validator}
 \alias{is.element_validator}
+\alias{is.duplicate_validator}
 \alias{is.identical_validator}
 \title{data validators}
 \usage{
@@ -24,6 +25,8 @@ nchar_validator(x, v, reason = "incorrect number of characters")
 
 is.element_validator(x, v, reason = "invalid entry")
 
+is.duplicate_validator(x, v, reason = "duplicate entry")
+
 is.identical_validator(x, v, reason = "invalid entry")
 }
 \arguments{
@@ -38,6 +41,8 @@ is.identical_validator(x, v, reason = "invalid entry")
 \item{v}{for nchar_validator: a data.table with variable and n (number of characters)}
 
 \item{v}{for is.element_validator: a data.table with variable and set (a vector of lists containing the valid elements for each variable )}
+
+\item{v}{for is.duplicate_validator: a data.table with variable and set (a vector of lists containing the already existing values for each variable )}
 
 \item{v}{for is.identical_validator: a data.table with variable and x (the value to test against)}
 }
@@ -84,6 +89,11 @@ x = data.table(v1 = c('A', 'B', 'C')  , v2 = c('ZZ', 'YY', 'QQ')  )
 v = data.table(variable = c('v1', 'v2'), 
                set = c( list( c('A', 'C') ), list( c('YY')  )) )
 is.element_validator(x, v)
+ #----------------------------------------------------#
+x = data.table(v1 = c('A', 'B', 'C')  , v2 = c('ZZ', 'YY', 'QQ')  )
+v = data.table(variable = c('v1', 'v2'), 
+               set = c( list( c('A', 'C') ), list( c('YY')  )) )
+is.duplicate_validator(x, v)
  #----------------------------------------------------#
 x = data.table(v1 = 1:3  , v2 = c('a', 'b', 'c')  )
 v = data.table(variable = c('v1', 'v2'),  x = c(1, 'd'))
