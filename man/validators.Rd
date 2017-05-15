@@ -10,6 +10,8 @@
 \alias{is.element_validator}
 \alias{is.duplicate_validator}
 \alias{is.identical_validator}
+\alias{time_order_validator}
+\alias{datetime_validator}
 \title{data validators}
 \usage{
 is.na_validator(x, reason = "mandatory")
@@ -28,6 +30,11 @@ is.element_validator(x, v, reason = "invalid entry")
 is.duplicate_validator(x, v, reason = "duplicate entry")
 
 is.identical_validator(x, v, reason = "invalid entry")
+
+time_order_validator(x, v, reason = "invalid time order")
+
+datetime_validator(x,
+  reason = "invalid datetime_ - should be: yyyy-mm-dd hh:mm")
 }
 \arguments{
 \item{x}{a data.table whose entries needs to be validated.}
@@ -45,6 +52,8 @@ is.identical_validator(x, v, reason = "invalid entry")
 \item{v}{for is.duplicate_validator: a data.table with variable and set (a vector of lists containing the already existing values for each variable )}
 
 \item{v}{for is.identical_validator: a data.table with variable and x (the value to test against)}
+
+\item{v}{for time_order_validator: datatable with times that are before the test time}
 }
 \value{
 a data.table with two columns: variable (the names of the columns in x) 
@@ -98,4 +107,12 @@ is.duplicate_validator(x, v)
 x = data.table(v1 = 1:3  , v2 = c('a', 'b', 'c')  )
 v = data.table(variable = c('v1', 'v2'),  x = c(1, 'd'))
 is.identical_validator(x, v)
+ #----------------------------------------------------#
+x = data.table(v1 = c('10:10' , '16:30', '02:08'  ) )
+v = data.table(v2 = c('10:04' , '16:40', '01:55'  ) )
+time_order_validator(x, v)
+ #----------------------------------------------------#
+x = data.table(v1 = c('2017-01-21 02:04' , '2012-04-21 16:56', '2017-05-21 23:59'  ),
+               v2 = c('2017-07-27 00:00' , '2017-01-21', '2015-01-09 23:59'  ) )
+datetime_validator(x)
 }
