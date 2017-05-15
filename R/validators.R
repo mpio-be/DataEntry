@@ -188,6 +188,24 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 
 
 
+#' @rdname  validators
+#' @name    time_order_validator
+#' @param v  for time_order_validator: datatable with times that are before the test time 
+#' @export
+#' @examples
+#'  #----------------------------------------------------#
+#' x = data.table(v1 = c('10:10' , '16:30', '02:08'  ) )
+#' v = data.table(v2 = c('10:04' , '16:40', '01:55'  ) )
+#' time_order_validator(x, v)
 
-
-
+time_order_validator <- function(x, v, reason = 'invalid time order') {
+  o = meltall(x)
+  o = cbind(o, v, by = 'variable', sort = FALSE)
+  colnames(o)[4] = 'value2'
+  
+  o[, v := ifelse(difftime(strptime(value, format = "%H:%M"), strptime(value2, format = "%H:%M")) >= 0, TRUE, FALSE), by =  .(rowid, variable)] # works but gives warning messages
+  
+  o = o[ (!v) , .(rowid, variable)]
+  o[, reason := reason]
+  o
+}
