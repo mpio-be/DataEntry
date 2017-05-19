@@ -19,6 +19,7 @@ DataEntryMiniUI <- function() {
       useToastr(),
       useShinyjs(),
       extendShinyjs(text = "shinyjs.refresh = function() { location.reload(); }"),
+      js_insertMySQLTimeStamp(),
 
       gadgetTitleBar(  textOutput('title')    ,
         left = miniTitleBarButton("saveButton", "Save", primary = TRUE),
