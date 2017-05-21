@@ -81,10 +81,9 @@
 	],
 	"file_history":
 	[
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/js.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/ui.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/server.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/ui.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/ui.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/global.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/server.R",
