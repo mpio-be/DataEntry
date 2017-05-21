@@ -9,14 +9,12 @@ Depends:
     devtools,
     stringr,
     shiny (>= 0.8.0),
-    rhandsontable (>= 0.3.4.01),
+    rhandsontable ,
     shinydashboard,
     shinyBS,
     shinyjs,
     shinytoastr,
     miniUI
-Remotes: 
-    jrowen/rhandsontable
 Description: Data entry interfaces for scidb.mpio.orn.mpg.de
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
