@@ -14,6 +14,8 @@ function(input, output,session) {
     return(hot_to_r(input$table))
 
    })
+  
+  
 
   output$run_save <- renderUI({
     x = Save() %>% data.table

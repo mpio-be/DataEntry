@@ -1,5 +1,5 @@
 
- # shiny::runApp('inst/UI/test_js/')
+ # shiny::runApp('~/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/')
   sapply(c('sdb','shiny','shinyjs','rhandsontable','shinyBS','shinytoastr','knitr', 'DataEntry'),
     require, character.only = TRUE, quietly = TRUE)
 

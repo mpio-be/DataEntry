@@ -75,7 +75,8 @@ function(input, output,session) {
   output$table  <- renderRHandsontable({
     
     H = dbq(q = paste('SELECT * FROM', table), user = user, host = host, db = db)
-  
+    
+    
     rhandsontable(H) %>%
       hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
       hot_rows(fixedRowsTop = 1)
