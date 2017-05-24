@@ -34,8 +34,8 @@ function(input, output,session) {
       #cc<<- cc
 
       if(nrow(cc) > 0 & !ignore_validators) {
-          toastr_success( boostrap_table(cc),
-            title = HTML('<p>Data entry errors. Check <q>Ignore warnings</q> to by-pass this filter and save the data as it is.<br> WRITE IN THE COMMENTS WHY DID YOU IGNORE WARNINGS!</p>') ,
+          toastr_error( boostrap_table(cc),
+            title = HTML('<p>Data entry errors. Check <q>No validation</q> to by-pass this filter and save the data as it is.<br> WRITE IN THE COMMENTS WHY DID YOU IGNORE WARNINGS!</p>') ,
             timeOut = 100000, closeButton = TRUE, position = 'top-full-width')
        }
 
@@ -61,22 +61,12 @@ function(input, output,session) {
     })
 
 
-   # title
-    N <- reactiveValues(n = grand_n(table, db, user, host))
-
-    output$title <- renderText({
-      observe({
-      input$saveButton
-      N$n <- grand_n(table, db, user, host)
-      })
-
-      paste( paste(table, db, sep = '.'),  '[Total entries:', N$n, ']' )
-
-      })
 
 
 
   output$table  <- renderRHandsontable({
+    H = data.table( replicate(100, rnorm(1000))  )
+
     rhandsontable(H) %>%
       hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
       hot_rows(fixedRowsTop = 1)  

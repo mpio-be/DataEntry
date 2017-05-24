@@ -1,6 +1,6 @@
 
- # shiny::runApp('~/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/')
-  sapply(c('sdb','shiny','shinyjs','rhandsontable','shinyBS','shinytoastr','knitr', 'DataEntry'),
+ # shiny::runApp('~/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/')
+  sapply(c('sdb','shiny', 'js', 'shinyjs','rhandsontable','shinyBS','shinytoastr','knitr', 'DataEntry'),
     require, character.only = TRUE, quietly = TRUE)
 
   user           = 'mihai'
@@ -15,6 +15,10 @@
         preFilled = list(
             datetime_ = as.character(Sys.Date()), author = 'AI') 
         )
+
+  
+
+
   comments = column_comment(user, host, db, table,excludeColumns)
 
 

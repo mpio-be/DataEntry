@@ -27,10 +27,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 357.0,
-		"last_filter": "",
+		"height": 400.0,
+		"last_filter": "uni",
 		"selected_items":
 		[
+			[
+				"uni",
+				"Unicode Character Insert: Show Panel"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
 			[
 				"align",
 				"Preferences: Alignment Key Bindings – Default"
@@ -38,10 +46,6 @@
 			[
 				"in",
 				"Indent XML"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
 			],
 			[
 				"del",
@@ -52,7 +56,7 @@
 				"Colorsublime: Install Theme"
 			]
 		],
-		"width": 623.0
+		"width": 601.0
 	},
 	"console":
 	{
@@ -76,16 +80,23 @@
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update"
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/www"
 	],
 	"file_history":
 	[
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/ui.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/UIs.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/DESCRIPTION",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/www/floatingButton.css",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/UI_elements.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/server.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/global.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/DESCRIPTION",
 		"/home/mihai/Desktop/toR.R",
 		"/home/mihai/Desktop/get_col_types.R",
 		"/home/mihai/Desktop/DESCRIPTION",
@@ -93,7 +104,6 @@
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/ui.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/global.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/server.R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update/global.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update/ui.R",
 		"/home/mihai/Desktop/temp.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/validators.R",
@@ -162,6 +172,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"reminder",
+			"40px",
+			"someSwitchOptionDanger",
+			"\"",
+			"btn btn-danger",
+			"btn btn-danger ",
+			"btn btn-danger",
+			" </",
+			"info",
+			"default",
+			"success",
+			"nd1",
+			"nd5",
+			"img",
+			"imag",
+			"imae",
+			"ima",
+			"img",
 			"genRowHeaders",
 			"genColHeaders",
 			"cleanedValue",
@@ -192,7 +220,7 @@
 			" "
 		],
 		"highlight": false,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -220,7 +248,7 @@
 	},
 	"input":
 	{
-		"height": 39.0
+		"height": 38.0
 	},
 	"layout":
 	{
@@ -272,20 +300,20 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "wader",
+		"last_filter": "wa",
 		"selected_items":
 		[
-			[
-				"wader",
-				"~/ownCloud/PACKAGES/wader/wader.sublime-project"
-			],
 			[
 				"wa",
 				"~/ownCloud/PACKAGES/wader/wader.sublime-project"
 			],
 			[
 				"",
-				"~/ownCloud/PACKAGES/bib2/bib2.sublime-project"
+				"~/ownCloud/PACKAGES/wader/wader.sublime-project"
+			],
+			[
+				"wader",
+				"~/ownCloud/PACKAGES/wader/wader.sublime-project"
 			],
 			[
 				"egg",
