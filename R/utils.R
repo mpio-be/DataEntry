@@ -37,7 +37,7 @@ meltall <- function(x, na.rm = TRUE) {
 #' @examples
 #' colorCombos()
 colorCombos <- function(v = c("R", "Y", "W", "DB", "G", "O") ) {
-  setA       = permutations(length(v), 3, v, repeats=TRUE)
+  setA       = gtools::permutations(length(v), 3, v, repeats=TRUE)
   L_combos = paste('M', setA[,1], setA[,2],  'Y', setA[,3],  sep = ",")
   R_combos = paste('M', setA[,3],  'Y', setA[,1], setA[,2],  sep = ",")
   c(L_combos, R_combos)

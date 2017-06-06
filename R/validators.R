@@ -230,7 +230,8 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 
 #' @rdname    validators
 #' @name      combo_validator 
-#' @param v   for combo_validator: a vector containing the possible colours 
+#' @param validSet   for combo_validator: a vector containing the possible colours 
+#' @param include    for combo_validator: if FALSE (default) validate is combo not in validSet else otherwise.
 #' @export
 #' @examples
 #'  #----------------------------------------------------#
@@ -239,11 +240,18 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 #' require(wader)
 #' combo_validator(x, validSet  = idbq('select CONCAT_WS(",", UL, LL, UR, LR) combo FROM CAPTURES' )$combo )
 
-combo_validator <- function(x, validSet, reason = 'colour combo does not exist') {
-  require(gtools)
+combo_validator <- function(x, validSet, include = TRUE, reason = 'colour combo does not exist') {
+  
   x[, rowid := 1:nrow(x) ]
   o = x[, .(w = paste(UL, LL, UR, LR, sep = ',')), by = rowid]
-  o[, v := !is.element(w, validSet ), by = rowid ]
+  
+  if(include)
+    o[, v := is.element(w, validSet ), by = rowid ]
+  
+  if(!include)
+    o[, v := !is.element(w, validSet ), by = rowid ]
+  
+  
   o = o[(v)]
 
   o = o[, .(rowid)]

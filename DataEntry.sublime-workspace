@@ -76,16 +76,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/mihai/ownCloud/PACKAGES/DataEntry",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/R",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update",
-		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/www"
+		"/home/mihai/github/DataEntry",
+		"/home/mihai/github/DataEntry/R"
 	],
 	"file_history":
 	[
+		"/home/mihai/github/DataEntry/R/validators.R",
+		"/home/mihai/github/DataEntry/DESCRIPTION",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/ui.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/server.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/global.R",
@@ -158,7 +155,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -244,7 +241,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -285,7 +282,7 @@
 	"project": "DataEntry.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
