@@ -8,3 +8,5 @@
 # server
     require(sysmanager);install_github('valcu/DataEntry', auth_token = github_pat(TRUE) )
     sysmanager::restart_shinyServer()
+    
+    # test
