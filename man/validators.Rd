@@ -5,11 +5,14 @@
 \alias{is.na_validator}
 \alias{POSIXct_validator}
 \alias{hhmm_validator}
+\alias{datetime_validator}
+\alias{time_order_validator}
 \alias{interval_validator}
 \alias{nchar_validator}
 \alias{is.element_validator}
 \alias{is.duplicate_validator}
 \alias{is.identical_validator}
+\alias{combo_validator}
 \alias{time_order_validator}
 \alias{datetime_validator}
 \title{data validators}
@@ -21,6 +24,11 @@ POSIXct_validator(x,
 
 hhmm_validator(x, reason = "invalid time")
 
+datetime_validator(x,
+  reason = "invalid datetime_ - should be: yyyy-mm-dd hh:mm")
+
+time_order_validator(x, v, reason = "invalid time order")
+
 interval_validator(x, v, reason = "unusually small or large measure")
 
 nchar_validator(x, v, reason = "incorrect number of characters")
@@ -30,6 +38,8 @@ is.element_validator(x, v, reason = "invalid entry")
 is.duplicate_validator(x, v, reason = "duplicate entry")
 
 is.identical_validator(x, v, reason = "invalid entry")
+
+combo_validator(x, validSet, reason = "colour combo does not exist")
 
 time_order_validator(x, v, reason = "invalid time order")
 
@@ -43,6 +53,8 @@ datetime_validator(x,
 
 \item{v}{a data.table containing the validation rules.}
 
+\item{v}{for time_order_validator: datatable with times that are before the test time}
+
 \item{v}{for interval_validator: a data.table with variable, lq, uq columns}
 
 \item{v}{for nchar_validator: a data.table with variable and n (number of characters)}
@@ -52,6 +64,8 @@ datetime_validator(x,
 \item{v}{for is.duplicate_validator: a data.table with variable and set (a vector of lists containing the already existing values for each variable )}
 
 \item{v}{for is.identical_validator: a data.table with variable and x (the value to test against)}
+
+\item{v}{for combo_validator: a vector containing the possible colours}
 
 \item{v}{for time_order_validator: datatable with times that are before the test time}
 }
@@ -82,6 +96,14 @@ x = data.table(v1 = c('02:04' , '16:56', '23:59'  ),
  v2 = c('24:04' , NA, '23:59'  ) )
 hhmm_validator(x)
  #----------------------------------------------------#
+x = data.table(v1 = c('2017-01-21 02:04' , '2012-04-21 16:56', '2017-05-21 23:59'  ),
+               v2 = c('2017-07-27 00:00' , '2017-01-21', '2015-01-09 23:59'  ) )
+datetime_validator(x)
+ #----------------------------------------------------#
+x = data.table(v1 = c('10:10' , '16:30', '02:08'  ) )
+v = data.table(v2 = c('10:04' , '16:40', '01:55'  ) )
+time_order_validator(x, v)
+ #----------------------------------------------------#
 x = data.table(v1 = runif(5)  , v2 = runif(5) )
 v = data.table(variable = c('v1', 'v2'), lq = c(-1, 0.2), uq = c(.7, 0.5) )
 interval_validator(x,v)
@@ -107,6 +129,11 @@ is.duplicate_validator(x, v)
 x = data.table(v1 = 1:3  , v2 = c('a', 'b', 'c')  )
 v = data.table(variable = c('v1', 'v2'),  x = c(1, 'd'))
 is.identical_validator(x, v)
+ #----------------------------------------------------#
+x = data.table(UL = c('M', 'M')  , LL = c('G,DB', 'G,P'), UR = c('Y', 'Y'), LR = c('R', 'G') )
+combo_validator(x, validSet  = colorCombos() )
+require(wader)
+combo_validator(x, validSet  = idbq('select CONCAT_WS(",", UL, LL, UR, LR) combo FROM CAPTURES' )$combo )
  #----------------------------------------------------#
 x = data.table(v1 = c('10:10' , '16:30', '02:08'  ) )
 v = data.table(v2 = c('10:04' , '16:40', '01:55'  ) )

@@ -235,20 +235,15 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 #' @examples
 #'  #----------------------------------------------------#
 #' x = data.table(UL = c('M', 'M')  , LL = c('G,DB', 'G,P'), UR = c('Y', 'Y'), LR = c('R', 'G') )
-#' v = c("R", "Y", "W", "DB", "G", "O")
-#' combo_validator(x, v)
+#' combo_validator(x, validSet  = colorCombos() )
+#' require(wader)
+#' combo_validator(x, validSet  = idbq('select CONCAT_WS(",", UL, LL, UR, LR) combo FROM CAPTURES' )$combo )
 
-combo_validator <- function(x, v, reason = 'colour combo does not exist') {
-  
+combo_validator <- function(x, validSet, reason = 'colour combo does not exist') {
   require(gtools)
-  setA       = permutations(length(v), 3, v, repeats=TRUE)
-  L_combos = paste('M', setA[,1], setA[,2],  'Y', setA[,3],  sep = ",")
-  R_combos = paste('M', setA[,3],  'Y', setA[,1], setA[,2],  sep = ",")
-  A_combos = c(L_combos, R_combos)
   x[, rowid := 1:nrow(x) ]
-
   o = x[, .(w = paste(UL, LL, UR, LR, sep = ',')), by = rowid]
-  o[, v := !is.element(w, A_combos ), by = rowid ]
+  o[, v := !is.element(w, validSet ), by = rowid ]
   o = o[(v)]
 
   o = o[, .(rowid)]
