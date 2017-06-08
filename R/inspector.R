@@ -11,14 +11,28 @@
 #'          x, 'mihai', 'test', '127.0.0.1')
 
   inspector <- function(sql, x, user, db, host) {
-    
-    require(sdb)
-    con = dbcon(user, db = db, host = host); on.exit(dbDisconnect(con))
-    getv = dbq(con, sql)
-    stopifnot( !all(dim(getv) > 1 ) )
+    f = function() {
+      require(sdb)
+      con = dbcon(user, db = db, host = host); on.exit(dbDisconnect(con))
+      getv = dbq(con, sql)
+      stopifnot( !all(dim(getv) > 1 ) )
+      
+      o = getv[[1]]
+      eval( parse(text = o) )  
+    }
 
-    o = getv[[1]]
-    eval( parse(text = o) )
+    o = try(f(), silent = TRUE)
+    if( !inherits(o, 'data.table') ) 
+      o = data.table(variable = '', reason = 'Validation does not work; please contact your server administrator. In the mean-time press ignore validation and try again.', row_id= 0)
     
-   }
+    o
+    
+    }
+  
+  
+  
+  
+  
+  
+  
 

@@ -82,6 +82,7 @@
 	"file_history":
 	[
 		"/home/mihai/github/DataEntry/R/validators.R",
+		"/home/mihai/github/DataEntry/R/utils.R",
 		"/home/mihai/github/DataEntry/DESCRIPTION",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/ui.R",
 		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/server.R",

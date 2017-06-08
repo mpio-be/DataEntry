@@ -39,7 +39,8 @@ is.duplicate_validator(x, v, reason = "duplicate entry")
 
 is.identical_validator(x, v, reason = "invalid entry")
 
-combo_validator(x, validSet, reason = "colour combo does not exist")
+combo_validator(x, validSet, include = TRUE,
+  reason = "colour combo does not exist")
 
 time_order_validator(x, v, reason = "invalid time order")
 
@@ -53,6 +54,10 @@ datetime_validator(x,
 
 \item{v}{a data.table containing the validation rules.}
 
+\item{validSet}{for combo_validator: a vector containing the possible colours}
+
+\item{include}{for combo_validator: if FALSE (default) validate is combo not in validSet else otherwise.}
+
 \item{v}{for time_order_validator: datatable with times that are before the test time}
 
 \item{v}{for interval_validator: a data.table with variable, lq, uq columns}
@@ -64,8 +69,6 @@ datetime_validator(x,
 \item{v}{for is.duplicate_validator: a data.table with variable and set (a vector of lists containing the already existing values for each variable )}
 
 \item{v}{for is.identical_validator: a data.table with variable and x (the value to test against)}
-
-\item{v}{for combo_validator: a vector containing the possible colours}
 
 \item{v}{for time_order_validator: datatable with times that are before the test time}
 }
