@@ -1,0 +1,359 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"temp",
+				"tempfile\t{base}"
+			],
+			[
+				"nest",
+				"nests"
+			],
+			[
+				"geom_",
+				"geom_point"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "uni",
+		"selected_items":
+		[
+			[
+				"uni",
+				"Unicode Character Insert: Show Panel"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"align",
+				"Preferences: Alignment Key Bindings – Default"
+			],
+			[
+				"in",
+				"Indent XML"
+			],
+			[
+				"del",
+				"File: Delete"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/mihai/github/DataEntry",
+		"/home/mihai/github/DataEntry/R"
+	],
+	"file_history":
+	[
+		"/home/mihai/github/DataEntry/R/validators.R",
+		"/home/mihai/github/DataEntry/R/utils.R",
+		"/home/mihai/github/DataEntry/DESCRIPTION",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/ui.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_ui/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/UIs.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/DESCRIPTION",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/www/floatingButton.css",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/UI_elements.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/global.R",
+		"/home/mihai/Desktop/toR.R",
+		"/home/mihai/Desktop/get_col_types.R",
+		"/home/mihai/Desktop/DESCRIPTION",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_js/ui.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/ui.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_newdata/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test_update/ui.R",
+		"/home/mihai/Desktop/temp.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/validators.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/.testdb.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test/server.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/ui_helpers.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/R/inspector.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/test/.testdb.R",
+		"/home/mihai/Desktop/validators.sql",
+		"/home/mihai/ownCloud/PACKAGES/wader/R/map_elements.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/inst/UI/DB/BTatWESTERHOLZ/ADULTS/global.R",
+		"/home/mihai/ownCloud/PACKAGES/DataEntry/notes.md",
+		"/home/mihai/ownCloud/PACKAGES/wader/server_install.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/UI/main/global.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/UI/main/ui.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/UI/main/server.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/UI/main/www/text.js",
+		"/media/mihai/GARMIN/.Trash-1000/dummy.gpx",
+		"/home/mihai/ownCloud/PACKAGES/sysmanager/R/install_site.R",
+		"/etc/sh",
+		"/home/mihai/ownCloud/PACKAGES/wader/R/gps.R",
+		"/tmp/RtmpqJv7xO/file1c1f410fd7ff.gpx",
+		"/tmp/RtmpCbGZt6/file13557ef6e4bd.gpx",
+		"/tmp/RtmpCbGZt6/file1355127fa1f5.gpx",
+		"/home/mihai/ownCloud/PACKAGES/wader/todo.md",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/demo/install_demo.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/R/data_elements.R",
+		"/home/mihai/ownCloud/PACKAGES/bib2/inst/UI/main/server.R",
+		"/home/mihai/ownCloud/PACKAGES/bib2/inst/UI/main/global.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/demo/tables_definition.sql",
+		"/home/mihai/ownCloud/PACKAGES/bib2/R/map_elements.R",
+		"/home/mihai/.config/sublime-text-3/Packages/Alignment/Default (Linux).sublime-keymap",
+		"/home/mihai/ownCloud/PACKAGES/bib2/R/plot_elements.R",
+		"/home/mihai/ownCloud/PACKAGES/bib2/inst/UI/main/ui.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/R/utils.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/DESCRIPTION",
+		"/home/mihai/R/x86_64-pc-linux-gnu-library/3.4",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/demo/GARMIN/GPX/Waypoints_18-APR-17.gpx",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/demo/GARMIN/GPX/POI.gpx",
+		"/home/mihai/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/etc/default/locale",
+		"/home/mihai/ownCloud/PACKAGES/wader/R/db_queries.R",
+		"/home/mihai/ownCloud/PACKAGES/wader/inst/gps/garmin_oregon_450.md",
+		"/home/mihai/Desktop/linux_desktops.sh",
+		"/home/mihai/ownCloud/PACKAGES/U/install.sh",
+		"/home/mihai/ownCloud/NOTES/current_notes.todo",
+		"/etc/bash.bashrc",
+		"/home/mihai/ownCloud/PACKAGES/sysmanager/install.R",
+		"/home/mihai/.config/doublecmd/doublecmd.xml[A",
+		"/home/mihai/Desktop/linux_desktops.md"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"datetime_validator",
+			"dateti",
+			"reminder",
+			"40px",
+			"someSwitchOptionDanger",
+			"\"",
+			"btn btn-danger",
+			"btn btn-danger ",
+			"btn btn-danger",
+			" </",
+			"info",
+			"default",
+			"success",
+			"nd1",
+			"nd5",
+			"img",
+			"imag",
+			"imae",
+			"ima",
+			"img",
+			"genRowHeaders",
+			"genColHeaders",
+			"cleanedValue",
+			"\"",
+			"time_order_validator",
+			"saved_session",
+			"saved_set",
+			"'",
+			"`",
+			"DEFAULT",
+			"NULL",
+			"DEFAULT",
+			"=",
+			"DEFAULT",
+			"`",
+			"test_tbl",
+			"DEFAULT",
+			"h",
+			"H",
+			"host",
+			"= ",
+			"=",
+			"nests",
+			"resightings",
+			"nests",
+			"empty",
+			"`",
+			" "
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "DataEntry.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/github/wader/wader.sublime-project"
+			],
+			[
+				"wa",
+				"~/ownCloud/PACKAGES/wader/wader.sublime-project"
+			],
+			[
+				"wader",
+				"~/ownCloud/PACKAGES/wader/wader.sublime-project"
+			],
+			[
+				"egg",
+				"~/ownCloud/PROJECTS/BLUE_TIT/Egg_Proteomics/Egg_proteomics.sublime-project"
+			],
+			[
+				"Data",
+				"~/ownCloud/PACKAGES/DataEntry/DataEntry.sublime-project"
+			],
+			[
+				"data",
+				"~/ownCloud/PACKAGES/DataEntry/DataEntry.sublime-project"
+			],
+			[
+				"sys",
+				"~/ownCloud/SYSTEMS_MANAGEMENT/system_management.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 234.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
