@@ -25,7 +25,7 @@ boostrap_table <- function(x, class = 'responsive') {
 #' @param preFilled        a named list eg. list(datetime_ = as.character(Sys.Date())) 
 #' @export
 emptyFrame <- function(user, host, db, table,n = 10, excludeColumns = 'pk', preFilled) {
-    F = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' limit 0') )
+    F = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' limit 0'), enhance = FALSE )
 
     if(!missing(excludeColumns))
     F = F[, setdiff(names(F), excludeColumns), with = FALSE]
@@ -36,6 +36,12 @@ emptyFrame <- function(user, host, db, table,n = 10, excludeColumns = 'pk', preF
             set(F, j = names(preFilled[i]), value = preFilled[[i]])
             }
     }
+
+    
+    date_to_char = which( F[, sapply(.SD, function(x) inherits(x, 'POSIXt') ) ] ) %>% names
+
+    F[,(date_to_char) := lapply(.SD, as.character), .SDcols = date_to_char]
+
 
     F
 
