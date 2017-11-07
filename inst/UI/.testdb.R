@@ -11,6 +11,7 @@ dbq(con, "CREATE TABLE test_tbl (
     author    VARCHAR(2)    NULL  DEFAULT NULL COMMENT 'author initials',
     datetime_ DATETIME      NULL  DEFAULT NULL COMMENT 'dt',
     nest      VARCHAR(5)    NULL  DEFAULT NULL COMMENT 'nest',
+    sex       VARCHAR(1)    NULL  DEFAULT NULL COMMENT 'sex',
     measure   DOUBLE(20,10) NULL  DEFAULT NULL COMMENT 'a measure',
     ID        INT(10)       NULL  DEFAULT NULL COMMENT 'an ID',
     comment   TEXT          NULL               COMMENT 'bla bla',

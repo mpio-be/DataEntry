@@ -93,7 +93,15 @@ DataEntryBootstrapPage <- function() {
 DataEntryMaterialFloating <- function(tableName, height = '100%', width = '100%') {
   # https://codepen.io/simoberny/pen/pJZJQY
 
-  fluidPage(
+  dashboardPage(
+  dashboardHeader(title = tableName),
+
+  dashboardSidebar(width = 100, 
+    'Total entries:', br(), 
+    textOutput('title')
+    )  ,
+
+  dashboardBody(
 
   includeCSS(system.file('UI', 'www', 'floatingButton.css', package = 'DataEntry'))   ,
 
@@ -104,6 +112,8 @@ DataEntryMaterialFloating <- function(tableName, height = '100%', width = '100%'
 
 
   rHandsontableOutput("table", height = height, width = width),
+
+
 
   # Menu
    HTML('
@@ -156,6 +166,7 @@ DataEntryMaterialFloating <- function(tableName, height = '100%', width = '100%'
 
 
  )
+)
 
 }
 

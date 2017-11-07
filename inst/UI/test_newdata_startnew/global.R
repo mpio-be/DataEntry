@@ -1,5 +1,5 @@
 
- # shiny::runApp('inst/UI/test_newdata/')
+ # shiny::runApp('inst/UI/test_newdata_startnew')
   sapply(c('sdb','shiny','shinyjs','rhandsontable','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
     require, character.only = TRUE, quietly = TRUE)
 

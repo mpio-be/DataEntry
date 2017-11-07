@@ -27,10 +27,6 @@ boostrap_table <- function(x, class = 'responsive') {
 emptyFrame <- function(user, host, db, table,n = 10, excludeColumns = 'pk', preFilled) {
     F = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' limit 0'), enhance = FALSE )
 
-    # difftime cannot be handled by rhandsontable
-    difftime_to_char = which( F[, sapply(.SD, function(x) inherits(x, 'difftime') ) ] ) %>% names
-    F[,(difftime_to_char) := lapply(.SD, as.character), .SDcols = difftime_to_char]
-
     if(!missing(excludeColumns))
     F = F[, setdiff(names(F), excludeColumns), with = FALSE]
     F = rbind(F, data.table(tempcol = rep(NA, n)), fill = TRUE)[, tempcol := NULL]
@@ -41,8 +37,12 @@ emptyFrame <- function(user, host, db, table,n = 10, excludeColumns = 'pk', preF
             }
     }
 
-    
+    # convert un-handled rhandsontable types to characters
+    difftime_to_char = which( F[, sapply(.SD, function(x) inherits(x, 'difftime') ) ] ) %>% names
+    F[,(difftime_to_char) := lapply(.SD, as.character), .SDcols = difftime_to_char]
 
+    POSIXt_to_char = which( F[, sapply(.SD, function(x) inherits(x, 'POSIXt') ) ] ) %>% names
+    F[,(POSIXt_to_char) := lapply(.SD, as.character), .SDcols = POSIXt_to_char]
 
     F
 
