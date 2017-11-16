@@ -76,26 +76,22 @@
 	},
 	"expanded_folders":
 	[
-		"/home/mihai/github/DataEntry",
-		"/home/mihai/github/DataEntry/R",
-		"/home/mihai/github/DataEntry/inst",
-		"/home/mihai/github/DataEntry/inst/UI",
-		"/home/mihai/github/DataEntry/inst/UI/test_newdata_autorefresh",
-		"/home/mihai/github/DataEntry/inst/UI/test_newdata_startnew"
+		"/home/mihai/github/DataEntry"
 	],
 	"file_history":
 	[
+		"/home/mihai/github/DataEntry/R/UI_elements.R",
+		"/home/mihai/github/DataEntry/DESCRIPTION",
+		"/home/mihai/Desktop/ALTER TABLE FIELD_BTatWESTERHOLZ.SQL",
 		"/home/mihai/github/DataEntry/inst/UI/.testdb.R",
 		"/home/mihai/github/DataEntry/inst/UI/test_newdata_autorefresh/global.R",
 		"/home/mihai/github/DataEntry/inst/UI/test_newdata_autorefresh/server.R",
 		"/home/mihai/github/DataEntry/inst/UI/test_newdata_autorefresh/ui.R",
 		"/home/mihai/github/DataEntry/R/UIs.R",
-		"/home/mihai/github/DataEntry/DESCRIPTION",
 		"/home/mihai/github/DataEntry/inst/UI/test_newdata_startnew/global.R",
 		"/home/mihai/github/DataEntry/inst/UI/test_newdata_startnew/server.R",
 		"/home/mihai/github/DataEntry/inst/UI/test_newdata_startnew/ui.R",
 		"/home/mihai/github/wader/inst/UI/DataEntry/RESIGHTINGS/server.R",
-		"/home/mihai/github/DataEntry/R/UI_elements.R",
 		"/home/mihai/github/DataEntry/inst/UI/test_newdata_w_startNew/global.R",
 		"/home/mihai/github/DataEntry/inst/UI/test_newdata_w_startNew/server.R",
 		"/home/mihai/github/DataEntry/R/validators.R",
@@ -186,6 +182,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"table",
 			"height",
 			"saveButton",
 			"'",
@@ -332,6 +329,10 @@
 				"~/github/bib2/bib2.sublime-project"
 			],
 			[
+				"bi",
+				"~/github/bib2/bib2.sublime-project"
+			],
+			[
 				"sni",
 				"~/github/snippets/snippets.sublime-project"
 			],
@@ -383,7 +384,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 266.0,
+	"side_bar_width": 277.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
