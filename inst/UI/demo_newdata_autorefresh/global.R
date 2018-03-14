@@ -1,5 +1,5 @@
 
-# shiny::runApp('inst/UI/test_newdata_autorefresh')
+# shiny::runApp('inst/UI/demo_newdata_autorefresh')
 
 
   sapply(c('sdb','shiny','shinyjs','rhandsontable','shinytoastr', 'shinydashboard' ,'knitr', 'DataEntry'),

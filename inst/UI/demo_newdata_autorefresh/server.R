@@ -29,8 +29,8 @@ function(input, output,session) {
 
       if(nrow(cc) > 0 & !ignore_validators) {
           toastr_error( boostrap_table(cc),
-            title = HTML('<p>Data entry errors. Check <q>Ignore warnings</q> to by-pass this filter and save the data as it is.<br> WRITE IN THE COMMENTS WHY DID YOU IGNORE WARNINGS!</p>') ,
-            timeOut = 100000, closeButton = TRUE, position = 'top-full-width')
+            title = HTML('<p>Data entry errors. Check <q>No validation!</q> to by-pass this filter and save the data as it is. Write in the comments why did you ignore warnings!</p>') ,
+            timeOut = 1000000, closeButton = TRUE, position = 'top-full-width')
        }
 
     # db update
