@@ -3,6 +3,7 @@ Version: 0.4.5
 Author: Mihai Valcu
 Maintainer: Mihai Valcu <valcu@orn.mpg.de>
 Title: Data entry interfaces
+Description: Database entry interfaces based on rhandsontable
 Depends:
     R (>= 3.0.0),
     data.table,
@@ -20,7 +21,6 @@ Suggests:
     gtools   
 Remotes: 
     jrowen/rhandsontable
-Description: Data entry interfaces for scidb.mpio.orn.mpg.de
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
 
