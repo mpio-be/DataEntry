@@ -26,3 +26,8 @@ emptyFrame(user, host, db, table, n = 10, excludeColumns = "pk", preFilled)
 emptyFrame 
 emptyFrame used by handsontable
 }
+\examples{
+emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS')
+emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS', preFilled = list(datetime_ = as.character(Sys.Date())) )
+
+}
