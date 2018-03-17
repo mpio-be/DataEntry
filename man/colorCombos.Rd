@@ -7,7 +7,7 @@
 colorCombos(v = c("R", "Y", "W", "DB", "G", "O"))
 }
 \arguments{
-\item{v}{strip datetime or date}
+\item{v}{character vector containing the colors}
 }
 \examples{
 colorCombos()

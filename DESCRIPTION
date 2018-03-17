@@ -3,27 +3,32 @@ Version: 0.4.5
 Author: Mihai Valcu
 Maintainer: Mihai Valcu <valcu@orn.mpg.de>
 Title: Data entry interfaces
-Description: Database entry interfaces based on rhandsontable
+Description: Database entry interfaces based on rhandsontable.
 License: GPL (>= 2)
 Depends:
-    R (>= 3.0.0),
+    R (>= 3.0.0)
+Imports:
+    methods,
     data.table,
-    devtools,
+    magrittr,
     stringr,
-    shiny (>= 0.8.0),
-    rhandsontable,
-    shinydashboard,
-    shinyBS,
+    shiny,
     shinyjs,
-    shinytoastr,
-    miniUI,
-    shinymaterial
+    rhandsontable,
+    shinyBS,
+    shinydashboard,
+    shinytoastr
 Suggests:
-    gtools   
+    shinymaterial,
+    miniUI,
+    devtools,
+    gtools,
+    testthat,
+    devtools   
 Remotes: 
     jrowen/rhandsontable
 RoxygenNote: 6.0.1
-VignetteBuilder: knitr
+Encoding: UTF-8
 
 
 

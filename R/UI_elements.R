@@ -9,7 +9,6 @@ boostrap_table <- function(x, class = 'responsive') {
     paste0( '<div class="table-', class , '"> <table class="table">',  
         knitr::kable(x, format = 'html', align = 'c'), 
         ' </table> </div>' )
-
 }
 
 

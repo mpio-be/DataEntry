@@ -1,25 +1,25 @@
 
 #' @export
 DataEntryMiniUI <- function() {
-    miniPage(
+    miniUI::miniPage(
       useToastr(),
       useShinyjs(),
       extendShinyjs(text = "shinyjs.refresh = function() { location.reload(); }"),
       js_insertMySQLTimeStamp(),
 
-      gadgetTitleBar(  textOutput('title')    ,
-        left = miniTitleBarButton("saveButton", "Save", primary = TRUE),
-        right = miniTitleBarButton("refresh", "Start New", primary = FALSE)
+      miniUI::gadgetTitleBar(  textOutput('title')    ,
+        left = miniUI::miniTitleBarButton("saveButton", "Save", primary = TRUE),
+        right = miniUI::miniTitleBarButton("refresh", "Start New", primary = FALSE)
         ),
 
-       miniTabstripPanel(
+       miniUI::miniTabstripPanel(
 
-        miniTabPanel("Data",
+        miniUI::miniTabPanel("Data",
 
-            miniContentPanel(
+            miniUI::miniContentPanel(
                 rHandsontableOutput("table") ),
 
-            miniButtonBlock(
+            miniUI::miniButtonBlock(
                 checkboxInput('ignore_checks', 'Ignore warnings'),
                 actionButton("helpButton", "Columns definition") ),
 

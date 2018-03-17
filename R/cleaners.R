@@ -6,6 +6,6 @@
 #' @export
 cleaner <- function(x) {
   for(j in seq_along(x) ) { set(x, i=which(x[[j]] ==  'NA'), j=j, value=NA) } 
-  o = x[rowSums(is.na(x)) != ncol(x) ]
-  return(o)
+  # o = x[rowSums( as.matrix( is.na(x) ))  != ncol(x) ]
+  # return(o)
   }

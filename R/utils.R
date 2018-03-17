@@ -32,7 +32,7 @@ meltall <- function(x, na.rm = TRUE) {
 
 #' @name      colorCombos
 #' @title     all color combinations
-#' @param v   strip datetime or date
+#' @param v   character vector containing the colors
 #' @export
 #' @examples
 #' colorCombos()
