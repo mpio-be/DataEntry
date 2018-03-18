@@ -18,7 +18,7 @@ context("Functions returning data.table-s")
 
     test_that("DT is returned", {
 
-    x = data.table(x = 1:40, y = 1:40, 
+    x = data.table::data.table(x = 1:40, y = 1:40, 
     z = rep(letters, 40, TRUE), q = rep(letters, 40, TRUE))
     x[1:10,z := 'NA']
 

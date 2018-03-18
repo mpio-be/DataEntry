@@ -6,13 +6,14 @@ Title: Data entry interfaces
 Description: Database entry interfaces based on rhandsontable.
 License: GPL (>= 2)
 Depends:
-    R (>= 3.0.0)
+    R (>= 3.0.0),
+    shiny,
+    rhandsontable
 Imports:
     methods,
     data.table,
     magrittr,
     stringr,
-    shiny,
     shinyjs,
     rhandsontable,
     shinyBS,

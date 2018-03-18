@@ -1,3 +1,7 @@
+# ==========================================================================
+# UI js
+# ==========================================================================
+
 # http://stackoverflow.com/questions/5266522/on-keypress-event-how-do-i-change-a-to-a
 # http://keycode.info/
 
@@ -22,3 +26,4 @@ js_insertMySQLTimeStamp <- function() {
     ")
 
 }
+

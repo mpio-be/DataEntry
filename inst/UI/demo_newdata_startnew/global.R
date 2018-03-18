@@ -1,6 +1,6 @@
 
- # shiny::runApp('inst/UI/test_newdata_startnew')
-  sapply(c('sdb','shiny','shinyjs','rhandsontable','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
+ # shiny::runApp('inst/UI/demo_newdata_startnew')
+  sapply(c('sdb', 'data.table','shiny','shinyjs','rhandsontable','miniUI','shinyBS','shinytoastr','knitr', 'DataEntry'),
     require, character.only = TRUE, quietly = TRUE)
 
   user           = 'mihai'
@@ -8,15 +8,13 @@
   db             = 'test'
   table          =  'test_tbl'
   excludeColumns = c('pk', 'notShow')
-  sqlInspector   = 'select script from validators where table_name = "test_tbl"'
-
-
+  
   H = emptyFrame(user, host, db, table, n = 10, excludeColumns, 
         preFilled = list(
             datetime_ = as.character(Sys.Date()), author = 'AI') 
         )
+  
   comments = column_comment(user, host, db, table,excludeColumns)
-
 
 
 

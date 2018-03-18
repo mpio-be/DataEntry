@@ -19,7 +19,8 @@ function(input, output,session) {
 
   output$run_save <- renderUI({
     x = Save() %>% data.table
-    x = cleaner(x)
+    
+    cleaner(x)
 
     x<<- x
 

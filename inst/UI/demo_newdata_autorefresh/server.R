@@ -1,13 +1,8 @@
-#######################
 
 function(input, output,session) {
 
   observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
 
-
-  observeEvent(input$refresh, {
-        shinyjs::js$refresh()
-      })
 
   Save <- eventReactive(input$saveButton, {
 
@@ -17,9 +12,10 @@ function(input, output,session) {
 
   output$run_save <- renderUI({
     x = Save() %>% data.table
-    x = cleaner(x)
-
     # x<<- x
+    
+    cleaner(x)
+
 
     isolate(ignore_validators <- input$ignore_checks )
 
@@ -38,14 +34,17 @@ function(input, output,session) {
 
         con = dbcon(user = user,  host = host)
         dbq(con, paste('USE', db) )
-        saved_set = dbWriteTable(con, table, x, append = TRUE, row.names = FALSE)
+        saved_set = dbWriteTable(con, tableName, x, append = TRUE, row.names = FALSE)
 
         if(saved_set) {
           toastr_success( paste(nrow(x), "rows saved to database.") )
           toastr_warning('Refreshing in 5 secs ...', progressBar = TRUE, timeOut = 5000) 
-          Sys.sleep(6)
-           shinyjs::js$refresh()
+          Sys.sleep(5)
+          shinyjs::js$refresh()
 
+
+           
+        
           }
 
         dbDisconnect(con)
@@ -57,33 +56,34 @@ function(input, output,session) {
     })
 
 
-   # title
-    N <- reactiveValues(n = grand_n(table, db, user, host))
 
-    output$title <- renderText({
-      observe({
-      input$saveButton
-      N$n <- grand_n(table, db, user, host)
-      })
-
-      as.integer(N$n)
-
-      })
 
   output$table  <- renderRHandsontable({
     rhandsontable(H) %>%
       hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
       hot_rows(fixedRowsTop = 1) %>%
       hot_col(col = "sex",     type = "dropdown", source = c('male',  'female') ) 
+    })
 
-
-  })
-
-
-
+  # MODALS
+  # column definitions
   output$column_comments <- renderTable({
       comments
   })
+
+ 
+  getDataSummary <- eventReactive(input$tableInfoButton, {
+
+    data.frame( grand_n(tableName, db, user, host) )
+
+   })
+
+  output$data_summary <- renderTable({
+
+      getDataSummary()
+
+      })
+
 
  }
 

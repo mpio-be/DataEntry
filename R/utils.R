@@ -24,7 +24,7 @@ strp_date_or_time <- function(x) {
 meltall <- function(x, na.rm = TRUE) {
     x[, rowid := 1:.N]
     
-    suppressWarnings(melt(x, id.vars = 'rowid', variable.factor = FALSE, value.factor = FALSE, na.rm = na.rm))
+    suppressWarnings(data.table::melt(x, id.vars = 'rowid', variable.factor = FALSE, value.factor = FALSE, na.rm = na.rm))
 	
 	}
 
