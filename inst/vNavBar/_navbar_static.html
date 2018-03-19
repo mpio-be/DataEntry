@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>navbar static</title>
+
+    <!-- Bootstrap --> 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    <!-- navbar -->
+     <link rel="stylesheet" type="text/css" href="navbar.css"/>
+     <script src="navbar.js"></script>
+
+
+  </head>
+
+
+  <body>
+
+  
+    <!-- the content of navbar.html -->  
+
+    <div class="navbar navbar-inverse navbar-twitch" role="navigation">
+    <div class="container">
+
+        <ul class="nav navbar-nav">
+
+            <li>
+                <a id="saveButton" class="action-button">
+                    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Save"> 
+                    <span class="glyphicon glyphicon-save"></span>
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a id="helpButton" class="action-button">
+                    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Data entry help"> 
+                    <span class="glyphicon glyphicon-list"></span>
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a>
+                    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Bypass data validation!"> 
+              <form role="form">
+               <input id="ignore_checks" class="form-check-input" type="checkbox" >
+              </form>
+            </span>
+                </a>
+            </li>
+
+            <li>
+                <a id="tableInfoButton" class="action-button">
+                    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Table summary"> 
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    </span>
+                </a>
+            </li>
+
+            <a class="vertical", id = "TABLE_NAME">
+
+            NAME 
+
+            </a>
+
+        </ul>
+
+    </div>
+    </div>
+
+  <!-- A table  -->  
+
+  <table class="rhandsontable handsontable">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  
+  </body>
+</html>

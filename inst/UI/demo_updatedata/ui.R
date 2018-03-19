@@ -1,7 +1,0 @@
-
-
-
-shinyUI(
-    DataEntry::DataEntryMiniUI()
-
-    )

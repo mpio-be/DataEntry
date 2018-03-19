@@ -27,3 +27,20 @@ js_insertMySQLTimeStamp <- function() {
 
 }
 
+
+#' @export
+jquery_change_by_id <- function(divid, newtext) {
+  
+  # $("#TABLE_NAME").css("color", "red");
+
+  x = (paste0('<script>
+  $(document).ready(function() {
+  $("#', divid, '").text("',newtext,'");
+  });
+  </script>'
+  ))
+
+  HTML(x)
+
+}
+

@@ -16,7 +16,6 @@ function(input, output,session) {
     
     cleaner(x)
 
-
     isolate(ignore_validators <- input$ignore_checks )
 
     # inspector
@@ -41,9 +40,6 @@ function(input, output,session) {
           toastr_warning('Refreshing in 5 secs ...', progressBar = TRUE, timeOut = 5000) 
           Sys.sleep(5)
           shinyjs::js$refresh()
-
-
-           
         
           }
 
@@ -74,7 +70,7 @@ function(input, output,session) {
  
   getDataSummary <- eventReactive(input$tableInfoButton, {
 
-    data.frame( grand_n(tableName, db, user, host) )
+    table_smry()
 
    })
 

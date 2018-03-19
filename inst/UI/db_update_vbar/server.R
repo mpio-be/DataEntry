@@ -1,10 +1,8 @@
+
 function(input, output,session) {
 
   observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
 
-  observeEvent(input$refresh, {
-        shinyjs::js$refresh()
-      })
 
   Save <- eventReactive(input$saveButton, {
 
@@ -14,9 +12,10 @@ function(input, output,session) {
 
   output$run_save <- renderUI({
     x = Save() %>% data.table
-    x = cleaner(x)
+    # x<<- x
+    
+    cleaner(x)
 
-    x<<- x
 
     isolate(ignore_validators <- input$ignore_checks )
 
@@ -26,8 +25,8 @@ function(input, output,session) {
 
       if(nrow(cc) > 0 & !ignore_validators) {
           toastr_error( boostrap_table(cc),
-            title = HTML('<p>Data entry errors. Check <q>Ignore warnings</q> to by-pass this filter and save the data as it is.<br> WRITE IN THE COMMENTS WHY DID YOU IGNORE WARNINGS!</p>') ,
-            timeOut = 100000, closeButton = TRUE, position = 'top-full-width')
+            title = HTML('<p>Data entry errors. Check <q>No validation!</q> to by-pass this filter and save the data as it is. Write in the comments why did you ignore warnings!</p>') ,
+            timeOut = 1000000, closeButton = TRUE, position = 'top-full-width')
        }
 
     # db update
@@ -57,38 +56,37 @@ function(input, output,session) {
     })
 
 
-   # title
-    N <- reactiveValues(n = grand_n(table, db, user, host))
-
-    output$title <- renderText({
-      observe({
-      input$saveButton
-      N$n <- grand_n(table, db, user, host)
-      })
-
-      paste( paste(table, db, sep = '.'),  '[Total entries:', N$n, ']' )
-
-      })
-
-
-
   output$table  <- renderRHandsontable({
     
     H = dbq(q = paste('SELECT * FROM', table), user = user, host = host, db = db)
-    
-    
+       
     rhandsontable(H) %>%
       hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
-      hot_rows(fixedRowsTop = 1)
+       hot_col(col = "sex",     type = "dropdown", source = c('male',  'female') ) %>%
+       hot_rows(fixedRowsTop = 1)
+    
+    })
 
-       
 
+  # MODALS
+  # column definitions
+  output$column_comments <- renderTable({
+      comments
+  })
+
+ 
+  getDataSummary <- eventReactive(input$tableInfoButton, {
+
+    table_smry()
 
    })
 
-   output$column_comments <- renderTable({
-      comments
-  })
+  output$data_summary <- renderTable({
+
+      getDataSummary()
+
+      })
+
 
  }
 

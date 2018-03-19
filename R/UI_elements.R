@@ -62,8 +62,6 @@ column_comment <- function(user, host, db, table, excludeColumns = 'pk') {
                 WHERE TABLE_SCHEMA =', shQuote(db), 'AND TABLE_NAME =', shQuote(table)) )
 
     x[!Column %in% excludeColumns]
-
-   
-}
+ }
 
 
