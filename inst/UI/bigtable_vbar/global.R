@@ -4,7 +4,7 @@
 # ==========================================================================
 
 
-  sapply(c('DataEntry', 'sdb'),require, character.only = TRUE, quietly = TRUE)
+  sapply(c('DataEntry', 'sdb', 'shinyBS'),require, character.only = TRUE, quietly = TRUE)
 
   tableName = "Large table test"
 

@@ -11,15 +11,13 @@ NULL
 # utils::globalVariables(c('i', '.', ':='))
 
 
-#' @import methods stringr shinydashboard shinytoastr data.table
+#' @import methods stringr shinydashboard shinytoastr shinyBS data.table
 NULL
 
 
 #' @importFrom shinyjs useShinyjs extendShinyjs
 NULL
 
-#' @importFrom shinyBS bsModal
-NULL
 
 #' @importFrom grDevices colorRampPalette
 NULL

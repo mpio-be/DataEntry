@@ -56,17 +56,15 @@ function(input, output,session) {
     })
 
 
-  output$table  <- renderRHandsontable({
-    
-    H = dbq(q = paste('SELECT * FROM', table), user = user, host = host, db = db)
-       
-    rhandsontable(H) %>%
-      hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
-       hot_col(col = "sex",     type = "dropdown", source = c('male',  'female') ) %>%
-       hot_rows(fixedRowsTop = 1)
-    
-    })
+  # ---------------------------------------------------------------------------------------
 
+  # HOT table
+  output$table  <- renderRHandsontable({
+    rhandsontable(H) %>%
+      hot_cols(columnSorting = FALSE, manualColumnResize = TRUE, halign = 'htCenter' ) %>%
+      hot_rows(fixedRowsTop = 1) 
+
+    })
 
   # MODALS
   # column definitions
@@ -74,18 +72,19 @@ function(input, output,session) {
       comments
   })
 
- 
+  # DATA summary
   getDataSummary <- eventReactive(input$tableInfoButton, {
-
     table_smry()
-
    })
-
   output$data_summary <- renderTable({
+    getDataSummary()
+    })
 
-      getDataSummary()
-
-      })
+  # CHEATSHEET
+  output$cheatsheet_show <- renderUI({
+      includeMarkdown(system.file('cheatsheet.md', package = "DataEntry"))
+  
+  })
 
 
  }

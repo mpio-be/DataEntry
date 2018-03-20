@@ -1,5 +1,5 @@
 Package: DataEntry
-Version: 0.4.5
+Version: 0.4.6
 Author: Mihai Valcu
 Maintainer: Mihai Valcu <valcu@orn.mpg.de>
 Title: Data entry interfaces
@@ -21,8 +21,6 @@ Imports:
     shinydashboard,
     shinytoastr
 Suggests:
-    shinymaterial,
-    miniUI,
     devtools,
     gtools,
     testthat,
