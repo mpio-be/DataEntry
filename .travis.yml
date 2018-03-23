@@ -1,5 +1,11 @@
 language: r
 cache: packages
+latex: false
+fortran: false
 
 warnings_are_errors: false
 
+
+
+
+  

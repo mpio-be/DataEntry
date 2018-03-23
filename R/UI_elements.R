@@ -3,7 +3,7 @@
 #' @param x  a data.table
 #' @export
 #' @examples
-#' boostrap_table( data.table(x = 1, y = 'a') )
+#' boostrap_table( data.table::data.table(x = 1, y = 'a') )
 
 boostrap_table <- function(x, class = 'responsive') {
     paste0( '<div class="table-', class , '"> <table class="table">',  
@@ -23,9 +23,10 @@ boostrap_table <- function(x, class = 'responsive') {
 #' @param excludeColumns   default 'pk'
 #' @param preFilled        a named list eg. list(datetime_ = as.character(Sys.Date())) 
 #' @export
-#' @examples
+#' @examples \dontrun{
 #' emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS')
 #' emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS', preFilled = list(datetime_ = as.character(Sys.Date())) )
+#' }
 #' 
 emptyFrame <- function(user, host, db, table,n = 10, excludeColumns = 'pk', preFilled) {
     F = dbq(user = user, host = host, q = paste0('SELECT * from ', db, '.', table, ' where FALSE'), enhance = FALSE )

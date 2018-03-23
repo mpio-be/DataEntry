@@ -11,7 +11,7 @@ NULL
 # utils::globalVariables(c('i', '.', ':='))
 
 
-#' @import methods stringr shinydashboard shinytoastr shinyBS data.table
+#' @import methods stringr shinydashboard shinytoastr shinyBS
 NULL
 
 

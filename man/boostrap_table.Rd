@@ -13,5 +13,5 @@ boostrap_table(x, class = "responsive")
 data.table to html (boostrap style)
 }
 \examples{
-boostrap_table( data.table(x = 1, y = 'a') )
+boostrap_table( data.table::data.table(x = 1, y = 'a') )
 }
