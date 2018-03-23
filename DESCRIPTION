@@ -19,7 +19,8 @@ Imports:
     rhandsontable,
     shinyBS,
     shinydashboard,
-    shinytoastr
+    shinytoastr,
+    knitr
 Suggests:
     devtools,
     gtools,
