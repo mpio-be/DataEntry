@@ -1,5 +1,5 @@
 
-#' @name             inspector
+#' @name             inspectorSQL
 #' @title            data inspector
 #' @param sql        sql string returning the script stored in db 
 #' @param x          data to be validated.
@@ -7,10 +7,10 @@
 #' @return           a data.table
 #' @export
 #' @examples
-#' inspector('select script from validators where table_name = "test_tbl"', 
+#' inspectorSQL('select script from validators where table_name = "test_tbl"', 
 #'          x, 'mihai', 'test', '127.0.0.1')
 
-  inspector <- function(sql, x, user, db, host) {
+  inspectorSQL <- function(sql, x, user, db, host) {
     f = function() {
       require(sdb)
       con = dbcon(user, db = db, host = host); on.exit(dbDisconnect(con))
