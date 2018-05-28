@@ -101,7 +101,7 @@ context("Functions for validation")
     #combo_validator
     x = data.table(UL = c('M', 'M')  , LL = c('G,DB', 'G,P'), 
     UR = c('Y', 'Y'), LR = c('R', 'G') )
-    o =  combo_validator(x, validSet  = colorCombos() )
+    o =  combo_validator(x, validSet  = list("M-G,DB|Y-R") )
     expect_equal(nrow(o), 1)
 
 
