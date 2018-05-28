@@ -241,7 +241,7 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 #'  #----------------------------------------------------#
 #' x = data.table(UL = c('M', 'M')  , LL = c('G,DB', 'G,P'), 
 #' UR = c('Y', 'Y'), LR = c('R', 'G') )
-#' combo_validator(x, validSet  = colorCombos() )
+#' combo_validator(x, validSet  = list("M-G,DB|Y-R") )
 
 
 combo_validator <- function(x, validSet, include = TRUE, reason = 'colour combo does not exist') {
@@ -250,10 +250,10 @@ combo_validator <- function(x, validSet, include = TRUE, reason = 'colour combo 
   o = x[, .(w = paste0(UL, '-', LL, '|', UR, '-',LR)), by = rowid]
   
   if(include)
-    o[, v := is.element(w, validSet ), by = rowid ]
+    o[, v := !is.element(w, validSet ), by = rowid ]
   
   if(!include)
-    o[, v := !is.element(w, validSet ), by = rowid ]
+    o[, v := is.element(w, validSet ), by = rowid ]
   
   
   o = o[(v)]
