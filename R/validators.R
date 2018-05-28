@@ -247,7 +247,7 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 combo_validator <- function(x, validSet, include = TRUE, reason = 'colour combo does not exist') {
   
   x[, rowid := 1:nrow(x) ]
-  o = x[, .(w = paste(UL, LL, UR, LR, sep = ',')), by = rowid]
+  o = x[, .(w = paste0(UL, '-', LL, '|', UR, '-',LR)), by = rowid]
   
   if(include)
     o[, v := is.element(w, validSet ), by = rowid ]
