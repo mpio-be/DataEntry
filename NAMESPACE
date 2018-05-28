@@ -3,7 +3,6 @@
 export(POSIXct_validator)
 export(boostrap_table)
 export(cleaner)
-export(colorCombos)
 export(column_comment)
 export(combo_validator)
 export(datetime_validator)
