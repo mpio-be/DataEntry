@@ -22,7 +22,7 @@ strp_date_or_time <- function(x) {
 ## undocumented functions
 #' @export
 meltall <- function(x, na.rm = TRUE) {
-    x[, rowid := 1:.N]
+    x[, rowid := 1:length(x)]
     
     suppressWarnings(data.table::melt(x, id.vars = 'rowid', variable.factor = FALSE, value.factor = FALSE, na.rm = na.rm))
 	
