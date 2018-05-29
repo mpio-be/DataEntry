@@ -121,10 +121,13 @@ time_order_validator <- function(x, time1, time2, time_max, reason = 'invalid ti
   o[, v := fff(time1, format, time2), by =  .(rowid)] 
   
   o = o[ (!v) , .(rowid)]
+  o[, variable := time1]
   o[, reason := reason]
   o
   
 }
+
+
 #' @rdname   validators
 #' @name     interval_validator
 #' @param v  for interval_validator: a data.table with variable, lq, uq columns
