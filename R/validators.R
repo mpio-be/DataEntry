@@ -96,30 +96,35 @@ datetime_validator <- function(x, reason = 'invalid datetime_ - should be: yyyy-
 
 #' @rdname  validators
 #' @name    time_order_validator
-#' @param v  for time_order_validator: datatable with times that are before the test time 
+#' @param time1  start time to compare
+#' @param time2  end time to compare
+#' @param time_max maximal time that is passing validation
 #' @export
 #' @examples
 #'  #----------------------------------------------------#
-#' x = data.table(v1 = c('10:10' , '16:30', '02:08'  ) )
-#' v = data.table(v2 = c('10:04' , '16:40', '01:55'  ) )
-#' time_order_validator(x, v)
+#' x = data.table(cap_time = c('10:04' , '16:40', '01:55'),
+#'                bleeding_time = c('10:10' , '16:30', '04:08'))
+#' t = time_order_validator(x, time1 = 'cap_time', time2 = 'bleeding_time', time_max = 60)
 
-time_order_validator <- function(x, v, reason = 'invalid time order') {
-  o = meltall(x)
-  o = cbind(o, v, by = 'variable', sort = FALSE)
-  colnames(o)[4] = 'value2'
+time_order_validator <- function(x, time1, time2, time_max, reason = 'invalid time order or bird hold for more than max time set') {
   
-  fff = function(value, format, value2) {
-    ifelse(difftime(strptime(value, format = "%H:%M"), strptime(value2, format = "%H:%M")) >= 0, TRUE, FALSE)
-    }
-
-  o[, v := fff(value, format, value2), by =  .(rowid, variable)] # works but gives warning messages
+  o = x[, c(time1, time2), with = FALSE]
+  setnames(o, c('time1', 'time2'))
+  o[, rowid := 1:nrow(o)]
   
-  o = o[ (!v) , .(rowid, variable)]
+  fff = function(t1, format, t2) {
+    ifelse(difftime(strptime(t1, format = "%H:%M"), strptime(t2, format = "%H:%M"), units = 'mins') >= 0
+           | difftime(strptime(t1, format = "%H:%M"), strptime(t2, format = "%H:%M"), units = 'mins') < -1 * time_max
+           , FALSE, TRUE)
+  }
+  
+  o[, v := fff(time1, format, time2), by =  .(rowid)] 
+  
+  o = o[ (!v) , .(rowid)]
   o[, reason := reason]
   o
+  
 }
-
 #' @rdname   validators
 #' @name     interval_validator
 #' @param v  for interval_validator: a data.table with variable, lq, uq columns
