@@ -262,7 +262,7 @@ combo_validator <- function(x, validSet, include = TRUE, reason = 'colour combo 
   if(!include)
     o[, v := is.element(w, validSet ), by = rowid ]
   
-  
+  o[w %in% c(NA, 'M-|Y-COBA', 'M-|W-COBA', '-|-NOBA', '-|-NOBA1', '-|-NOBA2', '-|-NOBA3'), v := FALSE]
   o = o[(v)]
 
   o = o[, .(rowid)]
