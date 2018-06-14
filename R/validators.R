@@ -252,10 +252,12 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 #'               LL = c('G,DB', 'G,P', ''),
 #'               LR = c('R',    'G', 'NOBA'),
 #'               recapture = c(1, 0, 1))
+#'  combo_validator(x, validSet = 'M-G,DB|Y-R')              
 
 combo_validator <- function(x, validSet, reason) {
   
   x[, rowid := 1:nrow(x) ]
+  x[is.na(x)] = ''
   o = x[, .(w = paste0(UL, '-', LL, '|', UR, '-',LR), recapture), by = rowid]
   
   o[recapture == 1, v := !is.element(w, validSet ), by = rowid ]
