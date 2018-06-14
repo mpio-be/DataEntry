@@ -247,30 +247,31 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 #' @export
 #' @examples
 #'  #----------------------------------------------------#
-#' x = data.table(UL = c('M', 'M')  , LL = c('G,DB', 'G,P'), 
-#' UR = c('Y', 'Y'), LR = c('R', 'G') )
-#' combo_validator(x, validSet  = list("M-G,DB|Y-R") )
+#'x = data.table(UL = c('M',    'M', ''),     
+#'               UR = c('Y',    'Y', ''),
+#'               LL = c('G,DB', 'G,P', ''),
+#'               LR = c('R',    'G', 'NOBA'),
+#'               recapture = c(1, 0, 1))
 
-combo_validator <- function(x, validSet, include = TRUE, reason = 'colour combo does not exist') {
+combo_validator <- function(x, validSet, reason) {
   
   x[, rowid := 1:nrow(x) ]
-  o = x[, .(w = paste0(UL, '-', LL, '|', UR, '-',LR)), by = rowid]
+  o = x[, .(w = paste0(UL, '-', LL, '|', UR, '-',LR), recapture), by = rowid]
   
-  if(include)
-    o[, v := !is.element(w, validSet ), by = rowid ]
-  
-  if(!include)
-    o[, v := is.element(w, validSet ), by = rowid ]
+  o[recapture == 1, v := !is.element(w, validSet ), by = rowid ]
+  o[recapture == 0, v := is.element(w, validSet ), by = rowid ]
   
   o[w %in% c(NA, 'M-|Y-COBA', 'M-|W-COBA', '-|-NOBA', '-|-NOBA1', '-|-NOBA2', '-|-NOBA3'), v := FALSE]
   o = o[(v)]
-
-  o = o[, .(rowid)]
-  o[, reason  := reason]
-  o[, variable  := 'color combo']
-  o[, .(rowid, variable, reason)]
   
+  o[recapture == 0, reason  := 'Color combo does already exist in CAPTURES! Recapture?']
+  o[recapture == 1, reason  := 'Color combo does not exist in CAPTURES! First capture?']
+  
+  o[, variable  := 'color combo']
+  
+  o = o[, .(rowid, variable, reason)]
 }
+
 
 
 
