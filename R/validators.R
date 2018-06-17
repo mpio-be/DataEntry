@@ -263,7 +263,7 @@ combo_validator <- function(x, validSet, reason) {
   o[recapture == 1, v := !is.element(w, validSet ), by = rowid ]
   o[recapture == 0, v := is.element(w, validSet ), by = rowid ]
   
-  o[w %in% c(NA, 'M-|Y-COBA', 'M-|W-COBA', '-|-NOBA', '-|-NOBA1', '-|-NOBA2', '-|-NOBA3'), v := FALSE]
+  o[w %in% c(NA, 'M-|Y-COBA', 'M-|W-COBA', '-|-COBA','-|-NOBA', '-|-NOBA1', '-|-NOBA2', '-|-NOBA3'), v := FALSE]
   o = o[(v)]
   
   o[recapture == 0, reason  := 'Color combo does already exist in CAPTURES! Recapture?']
