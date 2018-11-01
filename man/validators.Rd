@@ -25,7 +25,8 @@ hhmm_validator(x, reason = "invalid time")
 datetime_validator(x,
   reason = "invalid datetime_ - should be: yyyy-mm-dd hh:mm")
 
-time_order_validator(x, v, reason = "invalid time order")
+time_order_validator(x, time1, time2, time_max,
+  reason = "invalid time order or bird hold for more than max time set")
 
 interval_validator(x, v, reason = "unusually small or large measure")
 
@@ -37,21 +38,22 @@ is.duplicate_validator(x, v, reason = "duplicate entry")
 
 is.identical_validator(x, v, reason = "invalid entry")
 
-combo_validator(x, validSet, include = TRUE,
-  reason = "colour combo does not exist")
+combo_validator(x, validSet, reason)
 }
 \arguments{
 \item{x}{a data.table whose entries needs to be validated.}
 
 \item{reason}{explain why it did not pass the validation.}
 
+\item{time1}{start time to compare}
+
+\item{time2}{end time to compare}
+
+\item{time_max}{maximal time that is passing validation}
+
 \item{v}{a data.table containing the validation rules.}
 
 \item{validSet}{for combo_validator: a vector containing the possible colours}
-
-\item{include}{for combo_validator: if FALSE (default) validate is combo not in validSet else otherwise.}
-
-\item{v}{for time_order_validator: datatable with times that are before the test time}
 
 \item{v}{for interval_validator: a data.table with variable, lq, uq columns}
 
@@ -62,6 +64,8 @@ combo_validator(x, validSet, include = TRUE,
 \item{v}{for is.duplicate_validator: a data.table with variable and set (a vector of lists containing the already existing values for each variable )}
 
 \item{v}{for is.identical_validator: a data.table with variable and x (the value to test against)}
+
+\item{include}{for combo_validator: if FALSE (default) validate is combo not in validSet else otherwise.}
 }
 \value{
 a data.table with two columns: variable (the names of the columns in x) 
@@ -94,9 +98,9 @@ x = data.table(v1 = c('2017-01-21 02:04' , '2012-04-21 16:56', '2017-05-21 23:59
                v2 = c('2017-07-27 00:00' , '2017-01-21', '2015-01-09 23:59'  ) )
 datetime_validator(x)
  #----------------------------------------------------#
-x = data.table(v1 = c('10:10' , '16:30', '02:08'  ) )
-v = data.table(v2 = c('10:04' , '16:40', '01:55'  ) )
-time_order_validator(x, v)
+x = data.table(cap_time = c('10:04' , '16:40', '01:55'),
+               bleeding_time = c('10:10' , '16:30', '04:08'))
+t = time_order_validator(x, time1 = 'cap_time', time2 = 'bleeding_time', time_max = 60)
  #----------------------------------------------------#
 x = data.table(v1 = runif(5)  , v2 = runif(5) )
 v = data.table(variable = c('v1', 'v2'), lq = c(-1, 0.2), uq = c(.7, 0.5) )
@@ -124,7 +128,10 @@ x = data.table(v1 = 1:3  , v2 = c('a', 'b', 'c')  )
 v = data.table(variable = c('v1', 'v2'),  x = c(1, 'd'))
 is.identical_validator(x, v)
  #----------------------------------------------------#
-x = data.table(UL = c('M', 'M')  , LL = c('G,DB', 'G,P'), 
-UR = c('Y', 'Y'), LR = c('R', 'G') )
-combo_validator(x, validSet  = colorCombos() )
+x = data.table(UL = c('M',    'M', ''),     
+              UR = c('Y',    'Y', ''),
+              LL = c('G,DB', 'G,P', ''),
+              LR = c('R',    'G', 'NOBA'),
+              recapture = c(1, 0, 1))
+ combo_validator(x, validSet = 'M-G,DB|Y-R')              
 }

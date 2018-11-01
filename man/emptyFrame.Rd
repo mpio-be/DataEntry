@@ -5,7 +5,8 @@
 \title{emptyFrame 
 emptyFrame used by handsontable}
 \usage{
-emptyFrame(user, host, db, table, n = 10, excludeColumns = "pk", preFilled)
+emptyFrame(user, host, db, table, n = 10, excludeColumns = "pk",
+  preFilled)
 }
 \arguments{
 \item{user}{db user}

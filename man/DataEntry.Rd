@@ -4,7 +4,6 @@
 \name{DataEntry}
 \alias{DataEntry}
 \alias{DataEntry-package}
-\alias{DataEntry-package}
 \title{Data entry 'in-browser' interfaces}
 \description{
 Data entry 'in-browser' interfaces

@@ -1,5 +1,5 @@
 Package: DataEntry
-Version: 0.4.6
+Version: 0.4.7
 Author: Mihai Valcu
 Maintainer: Mihai Valcu <valcu@orn.mpg.de>
 Title: Data entry interfaces
@@ -28,8 +28,5 @@ Suggests:
     devtools   
 Remotes: 
     jrowen/rhandsontable
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Encoding: UTF-8
-
-
-

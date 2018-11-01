@@ -9,6 +9,9 @@ strp_date_or_time(x)
 \arguments{
 \item{x}{strip datetime or date}
 }
+\description{
+strp datetime or time (Mysql compatible)
+}
 \examples{
 x = c(Sys.Date() \%>\% as.character, Sys.time()\%>\% as.character )
 strp_date_or_time(x)
