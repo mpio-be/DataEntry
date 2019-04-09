@@ -24,7 +24,6 @@
 	comments = column_comment(user, host, db, pwd, tableName,excludeColumns)
 
 
-
 	inspector <- function(forv) {
 		x = copy(forv)
 
