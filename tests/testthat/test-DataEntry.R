@@ -58,9 +58,8 @@ context("Functions for validation")
     expect_equal(nrow(o), 1)
 
     # time-order
-    x = data.table(v1 = c('10:10' , '16:30', '02:08'  ) )
-    v = data.table(v2 = c('10:04' , '16:40', '01:55'  ) )
-    o = time_order_validator(x, v)
+    x = data.table(v2 = c('10:10' , '16:30', '02:08'  ), v1 = c('10:04' , '16:40', '01:55'  ) )
+    o = time_order_validator(x, 'v1', 'v2', time_max = 30)
     expect_identical( names(is.na_validator(x)), VN)
     expect_equal(nrow(o), 1)
 
@@ -100,7 +99,7 @@ context("Functions for validation")
 
     #combo_validator
     x = data.table(UL = c('M', 'M')  , LL = c('G,DB', 'G,P'), 
-    UR = c('Y', 'Y'), LR = c('R', 'G') )
+    UR = c('Y', 'Y'), LR = c('R', 'G'), recapture = 1 )
     o =  combo_validator(x, validSet  = list("M-G,DB|Y-R") )
     expect_equal(nrow(o), 1)
 

@@ -10,11 +10,12 @@
 #' inspectorSQL('select script from validators where table_name = "test_tbl"', 
 #'          x, 'mihai', 'test', '127.0.0.1')
 
-  inspectorSQL <- function(sql, x, user, db, host) {
+  inspectorSQL <- function(sql, x, user, db, host, pwd) {
     f = function() {
-      require(sdb)
-      con = dbcon(user, db = db, host = host); on.exit(dbDisconnect(con))
-      getv = dbq(con, sql)
+      
+      con =  dbConnect(RMySQL::MySQL(), host = host, user = user, password = pwd); on.exit(dbDisconnect(con))
+
+      getv = dbGetQuery(con, sql) %>% data.table
       stopifnot( !all(dim(getv) > 1 ) )
       
       o = getv[[1]]

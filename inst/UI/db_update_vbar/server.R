@@ -12,7 +12,7 @@ function(input, output,session) {
 
   output$run_save <- renderUI({
     x = Save() %>% data.table
-    # x<<- x
+     x<<- x
     
     cleaner(x)
 
@@ -20,7 +20,7 @@ function(input, output,session) {
     isolate(ignore_validators <- input$ignore_checks )
 
     # inspector
-      cc = inspector(sqlInspector, x, user, db, host)
+      cc = inspector(x)
       #cc<<- cc
 
       if(nrow(cc) > 0 & !ignore_validators) {
@@ -32,15 +32,15 @@ function(input, output,session) {
     # db update
       if(   nrow(cc) == 0 | (nrow(cc) > 0 & ignore_validators ) ) {
 
-        con = dbcon(user = user,  host = host)
-        dbq(con, paste('USE', db) )
-        
+       con =  dbConnect(RMySQL::MySQL(), host = host, user = user, password = pwd, db = db)
+
+
         update_ok = dbWriteTable(con, 'TEMP', x, append = TRUE, row.names = FALSE)
 
         if(update_ok) {
           
-          dbq(con, paste('DROP TABLE', table) )
-          dbq(con, paste('RENAME TABLE TEMP to', table) )
+          dbExecute(con, paste('DROP TABLE', tableName) )
+          dbExecute(con, paste('RENAME TABLE TEMP to', tableName) )
 
           toastr_success('Table updated successfully.')
 

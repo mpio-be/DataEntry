@@ -4,7 +4,7 @@
 \alias{inspectorSQL}
 \title{data inspector}
 \usage{
-inspectorSQL(sql, x, user, db, host)
+inspectorSQL(sql, x, user, db, host, pwd)
 }
 \arguments{
 \item{sql}{sql string returning the script stored in db}

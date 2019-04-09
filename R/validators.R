@@ -110,7 +110,7 @@ time_order_validator <- function(x, time1, time2, time_max, reason = 'invalid ti
   
   o = x[, c(time1, time2), with = FALSE]
   setnames(o, c('time1', 'time2'))
-  o[, rowid := 1:nrow(o)]
+  o[, rowid := .I]
   
   fff = function(t1, format, t2) {
     ifelse(difftime(strptime(t1, format = "%H:%M"), strptime(t2, format = "%H:%M"), units = 'mins') >= 0
@@ -256,7 +256,7 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 
 combo_validator <- function(x, validSet, reason) {
   
-  x[, rowid := 1:nrow(x) ]
+  x[, rowid := .I ]
   x[is.na(x)] = ''
   o = x[, .(w = paste0(UL, '-', LL, '|', UR, '-',LR), recapture), by = rowid]
   

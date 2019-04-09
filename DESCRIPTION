@@ -1,5 +1,5 @@
 Package: DataEntry
-Version: 0.4.7
+Version: 0.4.8
 Author: Mihai Valcu
 Maintainer: Mihai Valcu <valcu@orn.mpg.de>
 Title: Data entry interfaces
@@ -10,7 +10,8 @@ Depends:
     data.table,
     shiny,
     rhandsontable,
-    shinytoastr
+    shinytoastr,
+    RMySQL
 Imports:
     methods,
     magrittr,
@@ -26,7 +27,5 @@ Suggests:
     gtools,
     testthat,
     devtools   
-Remotes: 
-    jrowen/rhandsontable
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Encoding: UTF-8

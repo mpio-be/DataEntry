@@ -4,7 +4,7 @@
 \alias{grand_n}
 \title{table size (nrow)}
 \usage{
-grand_n(table, db, user, host)
+grand_n(table, db, user, host, pwd)
 }
 \arguments{
 \item{table}{table name}
