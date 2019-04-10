@@ -1,10 +1,28 @@
 
 
+
+#' @title       Data entry 'in-browser' interfaces
+#' @name        DataEntry
+#' @description Data-entry front-end; Mysql/MariaDB backend
+#' @docType     package
+#' @name        wadeR
+
+
 #' Data entry 'in-browser' interfaces
-#' @name DataEntry
 #' @aliases DataEntry-package DataEntry
 #' @docType package
-NULL
+.onLoad <- function(libname, pkgname){
+    dcf <- read.dcf(file=system.file('DESCRIPTION', package=pkgname) )
+    packageStartupMessage(paste('This is', pkgname, dcf[, 'Version'] ))
+
+    # see ./inst/install_testdb.sql
+    options(DataEntry.host = "127.0.0.1")
+    options(DataEntry.db   = "tests")
+    options(DataEntry.user = 'testuser')
+    options(DataEntry.pwd  = 'testuser')
+
+
+    }
 
 
 # data.table, foreach, rangeMapExport 'values'

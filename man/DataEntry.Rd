@@ -3,8 +3,12 @@
 \docType{package}
 \name{DataEntry}
 \alias{DataEntry}
+\alias{.onLoad}
 \alias{DataEntry-package}
 \title{Data entry 'in-browser' interfaces}
+\usage{
+.onLoad(libname, pkgname)
+}
 \description{
-Data entry 'in-browser' interfaces
+Data-entry front-end; Mysql/MariaDB backend
 }
