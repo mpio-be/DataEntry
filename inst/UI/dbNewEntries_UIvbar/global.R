@@ -5,6 +5,8 @@
 # ==========================================================================
 
 # Settings
+	 debug = TRUE
+	
 	sapply(c('DataEntry', 'shinyBS', 'shinyjs'),require, character.only = TRUE, quietly = TRUE)
 	tags = shiny::tags
 

@@ -1,6 +1,8 @@
-# testthat::test_examples('./man/')
+# ==========================================================================
+# Generic validators.
+# ==========================================================================
 
-#' @name     validators
+#' @name          validators
 #' @title         data validators
 #' @param x       a data.table whose entries needs to be validated.
 #' @param v       a data.table containing the validation rules.
@@ -19,11 +21,11 @@ NULL
 #' x = data.table(v1 = c(1,2, NA, NA), v2  = c(1,2, NA, NA) )
 #' is.na_validator(x)
 is.na_validator <- function(x, reason = 'mandatory') {
-    o = meltall(x, FALSE)
-    o = o[is.na(value), .(rowid, variable)]
-    o[, reason := reason]
-    o
-    }
+		o = meltall(x, FALSE)
+		o = o[is.na(value), .(rowid, variable)]
+		o[, reason := reason]
+		o
+		}
 
 #' @rdname validators
 #' @name   POSIXct_validator
@@ -41,20 +43,20 @@ is.na_validator <- function(x, reason = 'mandatory') {
 #' 
 #' 
 POSIXct_validator <- function(x, reason = 'date-time wrong, in the future or older than a week') {
-    o = meltall(x)
+		o = meltall(x)
 
-    o[, datetime_ := strp_date_or_time(value) ]
+		o[, datetime_ := strp_date_or_time(value) ]
 
-    o[, v := TRUE] # we are optimistic
-    o[ !is.na(value) & is.na(datetime_), v := FALSE]
-    o[ datetime_ > as.POSIXct(Sys.Date()+1) , v := FALSE]  # do not allow future dates
-    o[ datetime_ < Sys.time() - 3600*24*7 , v:= FALSE ] # more than a week ago
+		o[, v := TRUE] # we are optimistic
+		o[ !is.na(value) & is.na(datetime_), v := FALSE]
+		o[ datetime_ > as.POSIXct(Sys.Date()+1) , v := FALSE]  # do not allow future dates
+		o[ datetime_ < Sys.time() - 3600*24*7 , v:= FALSE ] # more than a week ago
 
-    o = o[ (!v) , .(rowid, variable)]
-    o[, reason := reason]
-    o
-    
-    }
+		o = o[ (!v) , .(rowid, variable)]
+		o[, reason := reason]
+		o
+		
+		}
 
 #' @rdname  validators
 #' @name    hhmm_validator
@@ -66,14 +68,14 @@ POSIXct_validator <- function(x, reason = 'date-time wrong, in the future or old
 #' hhmm_validator(x)
 
 hhmm_validator <- function(x, reason = 'invalid time') {
-    regexp = '^([0-1][0-9]|[2][0-3]):([0-5][0-9])$' # HH:MM
-    o = meltall(x)
-    o = o[, v := str_detect(value , regexp) , by = variable]
-    
-    o = o[ (!v) , .(rowid, variable)]
-    o[, reason := reason]
-    o
-    }
+		regexp = '^([0-1][0-9]|[2][0-3]):([0-5][0-9])$' # HH:MM
+		o = meltall(x)
+		o = o[, v := str_detect(value , regexp) , by = variable]
+		
+		o = o[ (!v) , .(rowid, variable)]
+		o[, reason := reason]
+		o
+		}
 
 #' @rdname  validators
 #' @name    datetime_validator
@@ -85,13 +87,13 @@ hhmm_validator <- function(x, reason = 'invalid time') {
 #' datetime_validator(x)
 
 datetime_validator <- function(x, reason = 'invalid datetime_ - should be: yyyy-mm-dd hh:mm') {
-  regexp = '^\\d\\d\\d\\d-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01]) ([0-1][0-9]|[2][0-3]):([0-5][0-9])$' # YYYY-MM-DD hh:mm
-  o = meltall(x)
-  o = o[, v := str_detect(value , regexp) , by = variable]
-  
-  o = o[ (!v) , .(rowid, variable)]
-  o[, reason := reason]
-  o
+	regexp = '^\\d\\d\\d\\d-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01]) ([0-1][0-9]|[2][0-3]):([0-5][0-9])$' # YYYY-MM-DD hh:mm
+	o = meltall(x)
+	o = o[, v := str_detect(value , regexp) , by = variable]
+	
+	o = o[ (!v) , .(rowid, variable)]
+	o[, reason := reason]
+	o
 }
 
 #' @rdname  validators
@@ -107,24 +109,24 @@ datetime_validator <- function(x, reason = 'invalid datetime_ - should be: yyyy-
 #' t = time_order_validator(x, time1 = 'cap_time', time2 = 'bleeding_time', time_max = 60)
 
 time_order_validator <- function(x, time1, time2, time_max, reason = 'invalid time order or bird hold for more than max time set') {
-  
-  o = x[, c(time1, time2), with = FALSE]
-  setnames(o, c('time1', 'time2'))
-  o[, rowid := .I]
-  
-  fff = function(t1, format, t2) {
-    ifelse(difftime(strptime(t1, format = "%H:%M"), strptime(t2, format = "%H:%M"), units = 'mins') >= 0
-           | difftime(strptime(t1, format = "%H:%M"), strptime(t2, format = "%H:%M"), units = 'mins') < -1 * time_max
-           , FALSE, TRUE)
-  }
-  
-  o[, v := fff(time1, format, time2), by =  .(rowid)] 
-  
-  o = o[ (!v) , .(rowid)]
-  o[, variable := time1]
-  o[, reason := reason]
-  o
-  
+	
+	o = x[, c(time1, time2), with = FALSE]
+	setnames(o, c('time1', 'time2'))
+	o[, rowid := .I]
+	
+	fff = function(t1, format, t2) {
+		ifelse(difftime(strptime(t1, format = "%H:%M"), strptime(t2, format = "%H:%M"), units = 'mins') >= 0
+					 | difftime(strptime(t1, format = "%H:%M"), strptime(t2, format = "%H:%M"), units = 'mins') < -1 * time_max
+					 , FALSE, TRUE)
+	}
+	
+	o[, v := fff(time1, format, time2), by =  .(rowid)] 
+	
+	o = o[ (!v) , .(rowid)]
+	o[, variable := time1]
+	o[, reason := reason]
+	o
+	
 }
 
 
@@ -144,15 +146,15 @@ time_order_validator <- function(x, time1, time2, time_max, reason = 'invalid ti
 
 interval_validator <- function(x, v, reason = 'unusually small or large measure') {
 
-    o = meltall(x)
-    o = merge(o, v, by = 'variable', sort = FALSE)
-    
-    o[, v := value >= lq & value <= uq ]
+		o = meltall(x)
+		o = merge(o, v, by = 'variable', sort = FALSE)
+		
+		o[, v := value >= lq & value <= uq ]
 
-    o = o[ (!v) , .(rowid, variable)]
-    o[, reason := reason]
-    o
-    }
+		o = o[ (!v) , .(rowid, variable)]
+		o[, reason := reason]
+		o
+		}
 
 #' @rdname   validators
 #' @name     nchar_validator
@@ -164,15 +166,15 @@ interval_validator <- function(x, v, reason = 'unusually small or large measure'
 #' v = data.table(variable = c('v1', 'v2'), n = c(1, 2) )
 #' nchar_validator(x, v)
 nchar_validator <- function(x, v, reason = 'incorrect number of characters') {
-    o = meltall(x)
-    o = merge(o, v, by = 'variable', sort = FALSE)
-    
-    o[, v := nchar(value) == n, by = .(rowid, variable)]
+		o = meltall(x)
+		o = merge(o, v, by = 'variable', sort = FALSE)
+		
+		o[, v := nchar(value) == n, by = .(rowid, variable)]
 
-    o = o[ (!v) , .(rowid, variable)]
-    o[, reason := reason]
-    o
-    }
+		o = o[ (!v) , .(rowid, variable)]
+		o[, reason := reason]
+		o
+		}
 
 #' @rdname    validators
 #' @name      is.element_validator 
@@ -186,14 +188,14 @@ nchar_validator <- function(x, v, reason = 'incorrect number of characters') {
 #' is.element_validator(x, v)
 
 is.element_validator <- function(x, v, reason = 'invalid entry') {
-    o = meltall(x)
-    o = merge(o, v, by = 'variable', sort = FALSE)
+		o = meltall(x)
+		o = merge(o, v, by = 'variable', sort = FALSE)
 
-    o[, v := is.element(value, unlist(set) )  , by =  .(rowid, variable) ]
-    
-    o = o[ (!v) , .(rowid, variable)]
-    o[, reason := reason]
-    o
+		o[, v := is.element(value, unlist(set) )  , by =  .(rowid, variable) ]
+		
+		o = o[ (!v) , .(rowid, variable)]
+		o[, reason := reason]
+		o
  }
 
 #' @rdname    validators
@@ -229,14 +231,14 @@ is.duplicate_validator <- function(x, v, reason = 'duplicate entry') {
 #' is.identical_validator(x, v)
 
 is.identical_validator <- function(x, v, reason = 'invalid entry') {
-    o = meltall(x)
-    o = merge(o, v, by = 'variable', sort = FALSE)
+		o = meltall(x)
+		o = merge(o, v, by = 'variable', sort = FALSE)
 
-    o[, v := (value == x)  ]
-    
-    o = o[ (!v) , .(rowid, variable)]
-    o[, reason := reason]
-    o
+		o[, v := (value == x)  ]
+		
+		o = o[ (!v) , .(rowid, variable)]
+		o[, reason := reason]
+		o
  }
 
 
@@ -255,23 +257,23 @@ is.identical_validator <- function(x, v, reason = 'invalid entry') {
 #'  combo_validator(x, validSet = 'M-G,DB|Y-R')              
 
 combo_validator <- function(x, validSet, reason) {
-  
-  x[, rowid := .I ]
-  x[is.na(x)] = ''
-  o = x[, .(w = paste0(UL, '-', LL, '|', UR, '-',LR), recapture), by = rowid]
-  
-  o[recapture == 1, v := !is.element(w, validSet ), by = rowid ]
-  o[recapture == 0, v := is.element(w, validSet ), by = rowid ]
-  
-  o[w %in% c(NA, 'M-|Y-COBA', 'M-|W-COBA', '-|-COBA','-|-NOBA', '-|-NOBA1', '-|-NOBA2', '-|-NOBA3'), v := FALSE]
-  o = o[(v)]
-  
-  o[recapture == 0, reason  := 'Color combo does already exist in CAPTURES! Recapture?']
-  o[recapture == 1, reason  := 'Color combo does not exist in CAPTURES! First capture?']
-  
-  o[, variable  := 'color combo']
-  
-  o = o[, .(rowid, variable, reason)]
+	
+	x[, rowid := .I ]
+	x[is.na(x)] = ''
+	o = x[, .(w = paste0(UL, '-', LL, '|', UR, '-',LR), recapture), by = rowid]
+	
+	o[recapture == 1, v := !is.element(w, validSet ), by = rowid ]
+	o[recapture == 0, v := is.element(w, validSet ), by = rowid ]
+	
+	o[w %in% c(NA, 'M-|Y-COBA', 'M-|W-COBA', '-|-COBA','-|-NOBA', '-|-NOBA1', '-|-NOBA2', '-|-NOBA3'), v := FALSE]
+	o = o[(v)]
+	
+	o[recapture == 0, reason  := 'Color combo does already exist in CAPTURES! Recapture?']
+	o[recapture == 1, reason  := 'Color combo does not exist in CAPTURES! First capture?']
+	
+	o[, variable  := 'color combo']
+	
+	o = o[, .(rowid, variable, reason)]
 }
 
 
