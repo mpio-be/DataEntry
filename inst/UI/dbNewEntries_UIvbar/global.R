@@ -28,17 +28,13 @@
 	comments = column_comment(user, host, db, pwd, tableName,excludeColumns)	
 
 # Define UI table  
-	H = emptyFrame(user, host, db, pwd, tableName, n = n_empty_lines, excludeColumns, 
-			preFilled = list(datetime_ = format(Sys.Date(), "%Y-%m-%d") ) )
-
- uitable =  
-	rhandsontable(H) %>%
-			hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
-			hot_rows(fixedRowsTop = 1) %>%
+	uitable = emptyFrameHot(user=user, host=host, db=db, pwd=pwd, 
+			table = tableName, n = n_empty_lines,excludeColumns = excludeColumns, 
+			preFilled = list(datetime_ = format(Sys.Date(), "%Y-%m-%d") ) ) %>%
 			hot_col(col = "author", type = "dropdown", source = authors )
-		
 
-# Define inspectors
+
+# Define inspector as an S3 function on an object of class tableName
 	inspector.data_entry <- function(x){
 		# Mandatory to enter
 		
