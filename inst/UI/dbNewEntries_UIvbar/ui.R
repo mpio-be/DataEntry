@@ -1,2 +1,0 @@
-
-ui_vnavbar()
