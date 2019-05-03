@@ -16,7 +16,9 @@ CREATE TABLE data_entry (
     measure         DOUBLE(20,10)     NULL  DEFAULT NULL COMMENT 'a measure',
     ID              INT(10)           NULL  DEFAULT NULL COMMENT 'an ID',
     comment         TEXT              NULL               COMMENT 'comment field',
-    pk              INT(10)           NULL  DEFAULT NULL
+    nov             INT(1)            NULL  DEFAULT NULL COMMENT 'no validation',  
+    pk              INT(10)           NOT NULL  AUTO_INCREMENT,
+    PRIMARY KEY (pk)
     ) ; 
 
 

@@ -28,5 +28,5 @@ TRUE a named logical vector of length 1. The name is relevant to the action.
 execute a pre-defined script
 }
 \note{
-The following actions are defined here: \strong{append}, \strong{update}.
+The following actions are defined here: __append__, __update__.
 }

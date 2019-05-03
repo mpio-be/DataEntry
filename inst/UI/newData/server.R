@@ -1,15 +1,7 @@
 
+# DataEntry::server_newData
 
-#' Title
-#'
-#' @param input 
-#' @param output 
-#' @param session 
-#'
-#' @export
-#' @note inspector, uitable, comments, describeTable, getDataSummary are defined in global.R
-#'
-server_newData <- function(input, output,session) {
+function(input, output,session) {
 
 
     observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
@@ -51,9 +43,10 @@ server_newData <- function(input, output,session) {
 
     # ignored validation
       if(nrow(cc) > 0 & !ignore_validators) {
-          toastr_error( boostrap_table(cc),
-            title = HTML('<p>Data entry errors:</p>') ,
-            timeOut = 100000, closeButton = TRUE, position = 'top-full-width')
+          toastr_error( message = HTML( glue('<p> {encourage()} <br/> Click the button </p>'  ) ) ,
+            title = HTML('<p> Data entry errors 😢 </p>') ,
+           timeOut = 10000, closeButton = TRUE, position = 'top-center')
+
        }
 
     # db update
@@ -74,14 +67,17 @@ server_newData <- function(input, output,session) {
 
 
         if(saved_set) {
+  
         toggleState(id = "saveButton")
 
-        toastr_success( paste(nrow(x), "rows saved to database.") )
-        toastr_warning('Refreshing in 3 secs ...', progressBar = TRUE, timeOut = 3000) 
-        Sys.sleep(3)
+        toastr_success(title = glue("<h2> {praise()} </h2>")  , 
+        	message = glue( "<p>{nrow(x)} rows saved to database.</p><br/>
+        			<i> Refreshing in progress ... </i>") , timeOut = 10000, 
+        	position = 'top-center', 
+        	progressBar = TRUE)
+        
 
-
-
+        Sys.sleep(10)
 
 
         shinyjs::js$refresh()

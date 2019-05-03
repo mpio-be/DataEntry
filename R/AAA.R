@@ -29,7 +29,7 @@
 # utils::globalVariables(c('i', '.', ':='))
 
 
-#' @import methods stringr shinydashboard shinytoastr shinyBS
+#' @import methods glue stringr shinydashboard shinytoastr shinyBS praise
 NULL
 
 
@@ -41,5 +41,5 @@ NULL
 NULL
 
 
-#' @importFrom magrittr %>%
+#' @importFrom magrittr %>% is_greater_than 
 NULL

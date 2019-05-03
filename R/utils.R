@@ -29,4 +29,37 @@ meltall <- function(x, na.rm = TRUE) {
 	}
 
 
+#' @export
+char2vec <- function(x) {
+		lapply(x, function(i) eval(parse(text = paste('c(',i , ')')) ) ) %>% 
+		unlist %>% 
+		unique 
+	}
 
+
+
+# adapted from https://github.com/r-lib/testthat
+#' @export
+praise <- function() {
+  x <- c(
+    praise::praise("Your data are ${adjective}!"),
+    praise::praise("${EXCLAMATION} - ${adjective} data.")
+  )
+
+  sample(x, 1)
+}
+
+
+#' @export
+encourage <- function() {
+  x <- c(
+    "Keep trying!",
+    "Don't worry, you'll get it.",
+    "No one is perfect!",
+    "No one gets it right on their first try",
+    "Frustration is a natural part of data entry",
+    "I believe in you!"
+  )
+
+  sample(x, 1)
+}

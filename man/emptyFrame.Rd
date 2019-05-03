@@ -2,14 +2,11 @@
 % Please edit documentation in R/SERVER_elements.R
 \name{emptyFrame}
 \alias{emptyFrame}
-\alias{emptyFrameHot}
 \title{emptyFrame 
 emptyFrame used by handsontable}
 \usage{
 emptyFrame(user, host, db, pwd, table, n = 10, excludeColumns = "pk",
   preFilled)
-
-emptyFrameHot(...)
 }
 \arguments{
 \item{user}{db user}

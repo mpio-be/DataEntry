@@ -47,19 +47,6 @@ emptyFrame <- function(user, host, db, pwd, table,n = 10, excludeColumns = 'pk',
 
 
 
-#' @rdname emptyFrame
-#' @name   emptyFrameHot
-#' @export
-emptyFrameHot <- function(...) {
-	emptyFrame(...) %>%
-	rhandsontable   %>%
-			hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) %>%
-			hot_rows(fixedRowsTop = 1)
-	}
-
-
-
-
 
 
 #' @export
