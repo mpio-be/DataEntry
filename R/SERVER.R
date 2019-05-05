@@ -11,52 +11,72 @@
 #'
 server_newData <- function(input, output,session) {
 
-
-    observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
-
+  # Settings
     con =  dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
     onStop(function() {dbDisconnect(con)})
 
     # Is no-validation column present in table ?
     hasnov = dbGetQuery(con, glue::glue("SHOW COLUMNS FROM {tableName} LIKE 'nov';") ) %>% 
-            nrow %>% 
-            magrittr::is_greater_than(0)
-
-
+              nrow %>% 
+              magrittr::is_greater_than(0)
 
     observeEvent(input$refresh, {
         shinyjs::js$refresh()
       })
-
+  
     Save <- eventReactive(input$saveButton, {
     o = hot_to_r(input$table) %>% data.table
+    cleaner(o)
     class(o) = c(class(o), tableName)
     o
     })
 
+
+  # VALIDATE - SAVE 
+
     output$run_save <- renderUI({
-    x = Save() 
-    cleaner(x)
-
     
-
     isolate(ignore_validators <- input$ignore_checks )
+    isolate(is_invalid <- input$invalidButton )
+  
 
-    # inspector
+    x = Save() 
+
+    # Data validation
+
+      # inspector
       cc = inspector(x)
+      assign('cc', cc , envir = .GlobalEnv)
 
 
-    assign('cc', cc , envir = .GlobalEnv)
+      # errors 
+      if(nrow(cc) > 0 && !ignore_validators) {
+          toastr_error( 
+            message = HTML('<h4> To see what\'s wrong push the 
+              <kbd class="glyphicon glyphicon-warning-sign"></kbd> then fix the data and try again.</h4> '  ) ,
+            
+            title = HTML(encourage() ) ,
+            timeOut = 10000, closeButton = TRUE, position = 'top-center')
+
+      if( is.null(is_invalid) )      
+      insertUI(
+        selector = "#saveButton",
+        where = "afterEnd",
+        ui = HTML('
+                  <a id="invalidButton" class="action-button">
+                      <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Invalid entries"> 
+                      <span class="glyphicon glyphicon-warning-sign"></span>
+                      </span>
+                  </a>
+                  
+              ')
+        )
 
 
-    # ignored validation
-      if(nrow(cc) > 0 & !ignore_validators) {
-          toastr_error( boostrap_table(cc),
-            title = HTML('<p>Data entry errors:</p>') ,
-            timeOut = 100000, closeButton = TRUE, position = 'top-full-width')
        }
 
-    # db update
+
+    # Database update
       if(   nrow(cc) == 0 | (nrow(cc) > 0 & ignore_validators ) ) {
 
         # add no-validation info to table
@@ -74,14 +94,20 @@ server_newData <- function(input, output,session) {
 
 
         if(saved_set) {
-        toggleState(id = "saveButton")
+  
+        removeUI(selector = "#saveButton", immediate = TRUE, multiple = TRUE)
 
-        toastr_success( paste(nrow(x), "rows saved to database.") )
-        toastr_warning('Refreshing in 3 secs ...', progressBar = TRUE, timeOut = 3000) 
-        Sys.sleep(3)
+        msg = if(ignore_validators) "I'm sure you ignored the validation for a good cause." else 
+              glue("   <h4> {praise()} </h4>    ")
 
+        toastr_success(title = msg  , 
+          message = glue( "<p>{nrow(x)} rows saved to database.</p><br/>
+              <i> Refreshing in progress ... </i>") , timeOut = 10000, 
+          position = 'top-center', 
+          progressBar = TRUE)
+        
 
-
+        Sys.sleep(10)
 
 
         shinyjs::js$refresh()
@@ -95,36 +121,80 @@ server_newData <- function(input, output,session) {
 
     })
 
-
   # HOT TABLE
   output$table  <- renderRHandsontable({
-      uitable
+    
+    uitable
+    
+    })
+
+  # Show INVALID data
+  observeEvent(input$invalidButton, {
+    showModal(modalDialog(
+    title = "Invalid entries",
+    
+    tableHTML(cc, rownames =  FALSE)%>% add_theme_colorize (color ='tomato3', id_column = TRUE),
+    
+    easyClose = TRUE, footer = NULL, size = 'l'
+    ))
     })
 
 
-  # MODALS
-  # column definitions
-  output$column_comments <- renderTable({
-      comments
-  })
+  # Show column DEFINITIONS
+  observeEvent(input$helpButton, {
+    showModal(modalDialog(
+    title = "Columns definition",
+    
+    tableHTML(comments, rownames =  FALSE) %>% add_theme ('rshiny-blue'),
 
-  # DATA summary
-  getDataSummary <- eventReactive(input$tableInfoButton, {
-    describeTable()
-   })
-  output$data_summary <- renderTable({
-    getDataSummary()
-    })
-
-  # CHEATSHEET
-  output$cheatsheet_show <- renderUI({
-      includeMarkdown(system.file('cheatsheet.md', package = "DataEntry"))
+    
+    easyClose = TRUE, footer = NULL, size = 'l'
+    ))
     })
 
 
+  # Show data SUMMARY
+  observeEvent(input$tableInfoButton, {
+    showModal(modalDialog(
+    title =  "Data summary",
+    
+    tableHTML(describeTable(), rownames =  FALSE)%>% add_theme ('rshiny-blue'),
+
+    
+    easyClose = TRUE,footer = NULL, size = 'l'
+    ))
+    })
+
+  # Show CHEATSHEET
+  observeEvent(input$cheatsheetButton, {
+    showModal(modalDialog(
+    title =  "Data entry shortcuts",
+    
+    includeMarkdown(system.file('cheatsheet.md', package = "DataEntry")),
+    
+    easyClose = TRUE,footer = NULL, size = 'l'
+    ))
+    })
+
+
+  # Show INVALID data
+
+    ShowInvalid <- eventReactive(input$tableInfoButton, {
+    print(cc)
+    cc
+    })
+
+    observe( ShowInvalid() )
+
+    output$data_invalid <- renderTable({
+      ShowInvalid()
+    })
 
 
 
+
+
+  observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
 
 
  }

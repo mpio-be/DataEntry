@@ -56,9 +56,15 @@ encourage <- function() {
     "Keep trying!",
     "Don't worry, you'll get it.",
     "No one is perfect!",
-    "No one gets it right on their first try",
-    "Frustration is a natural part of data entry",
-    "I believe in you!"
+    "Frustration is a natural part of data entry.",
+    "Hang in there and try again.",
+    "Don't give up.",
+    "Keep pushing.",
+    "Keep fighting!",
+    "Stay strong.",
+    "Never give up.",
+    "Never say 'die'.",
+    "Come on! You can do it!."
   )
 
   sample(x, 1)
