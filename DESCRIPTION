@@ -10,7 +10,6 @@ Depends:
     data.table,
     shiny,
     rhandsontable,
-    shinytoastr,
     RMySQL
 Imports:
     methods,
@@ -20,7 +19,6 @@ Imports:
     knitr,
     praise,
     shinyjs,
-    rhandsontable,
     shinydashboard,
     shinytoastr,
     tableHTML

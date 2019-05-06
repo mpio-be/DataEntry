@@ -51,21 +51,9 @@ combo_validator(x, validSet, reason)
 
 \item{time_max}{maximal time that is passing validation}
 
-\item{v}{a data.table containing the validation rules.}
+\item{v}{a data.table containing the validation rules. See notes.}
 
 \item{validSet}{for combo_validator: a vector containing the possible colours}
-
-\item{v}{for interval_validator: a data.table with variable, lq, uq columns}
-
-\item{v}{for nchar_validator: a data.table with variable and n (number of characters)}
-
-\item{v}{for is.element_validator: a data.table with variable and set (a vector of lists containing the valid elements for each variable )}
-
-\item{v}{for is.duplicate_validator: a data.table with variable and set (a vector of lists containing the already existing values for each variable )}
-
-\item{v}{for is.identical_validator: a data.table with variable and x (the value to test against)}
-
-\item{include}{for combo_validator: if FALSE (default) validate is combo not in validSet else otherwise.}
 }
 \value{
 a data.table with two columns: variable (the names of the columns in x) 
@@ -73,6 +61,17 @@ a data.table with two columns: variable (the names of the columns in x)
 }
 \description{
 all validators (except is.na_validator) ignore NA entries.
+}
+\note{
+`v` for interval_validator: a data.table with variable, lq, uq columns
+
+`v`  for nchar_validator: a data.table with variable and n (number of characters)
+
+`v`   for is.element_validator: a data.table with variable and set (a vector of lists containing the valid elements for each variable )
+
+`v`  for is.duplicate_validator: a data.table with variable and set (a vector of lists containing the already existing values for each variable )
+
+`v`   for is.identical_validator: a data.table with variable and x (the value to test against)
 }
 \examples{
 #----------------------------------------------------#

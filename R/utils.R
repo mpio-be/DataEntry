@@ -19,7 +19,10 @@ strp_date_or_time <- function(x) {
 
 
 
-## undocumented functions
+#' @name meltall
+#' @title melt all columns in a data.table
+#' @param x  a data.table
+#' @param na.rm  TRUE by default
 #' @export
 meltall <- function(x, na.rm = TRUE) {
 	x[, rowid := .I]
@@ -29,6 +32,9 @@ meltall <- function(x, na.rm = TRUE) {
 	}
 
 
+#' @name char2vec
+#' @title convert a list of strings to a vector
+#' @param x list
 #' @export
 char2vec <- function(x) {
 		lapply(x, function(i) eval(parse(text = paste('c(',i , ')')) ) ) %>% 
@@ -37,8 +43,9 @@ char2vec <- function(x) {
 	}
 
 
-
-# adapted from https://github.com/r-lib/testthat
+#' @name praise
+#' @title praises
+#' @note see praise package
 #' @export
 praise <- function() {
   x <- c(
@@ -50,6 +57,9 @@ praise <- function() {
 }
 
 
+#' @name encourage
+#' @title encourages
+#' @note adapted from https://github.com/r-lib/testthat
 #' @export
 encourage <- function() {
   x <- c(

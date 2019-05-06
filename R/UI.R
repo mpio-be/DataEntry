@@ -1,4 +1,6 @@
-
+#' @name ui_vnavbar
+#' @title shiny ui with a vertical navbar and a rHandsontable
+#' @note see praise package
 #' @export
 ui_vnavbar <- function() {
   

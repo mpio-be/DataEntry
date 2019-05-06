@@ -1,6 +1,8 @@
-
-#' data.table to html (boostrap style)
-#' @param x  a data.table
+#' @name boostrap_table
+#' @title convert a data.frame to a boostrap table
+#' @note  a wrapper around knitr::kable
+#' @param x      a data.table
+#' @param class  `div` class
 #' @export
 #' @examples
 #' boostrap_table( data.table::data.table(x = 1, y = 'a') )
@@ -39,6 +41,9 @@ useNavbar <- function() {
 # http://stackoverflow.com/questions/5266522/on-keypress-event-how-do-i-change-a-to-a
 # http://keycode.info/
 
+#' @name js_insertMySQLTimeStamp
+#' @title translate forward slash to a Mysql timestamp
+#' @note used inside shiny apps
 #' @export
 js_insertMySQLTimeStamp <- function() {
   HTML("
@@ -61,7 +66,11 @@ js_insertMySQLTimeStamp <- function() {
 
 }
 
-
+#' @name jquery_change_by_id
+#' @title find and replace given `div` id.
+#' @param divid   div id
+#' @param newtext new text entry
+#' @note used inside shiny apps
 #' @export
 jquery_change_by_id <- function(divid, newtext) {
   

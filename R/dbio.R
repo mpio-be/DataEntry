@@ -1,9 +1,4 @@
 
-
-
-
-
-
 #' @name  executeDB
 #' @title execute a pre-defined script
 #' @param action   		a name of for a db operation 
@@ -47,23 +42,19 @@ executeDB <- function(action, tableName, x, host, user, db, pwd) {
 
 
 
-
-
-
-
-
-
-#' table size (nrow)
-#' @param table table name
-#' @param user db user
-#' @param host host
+#' grand_n
+#' N rows in a db table
+#' @param user             db user 
+#' @param host             db host 
+#' @param db               db name 
+#' @param pwd              pwd
+#' @param table            db table 
 #' @export
-grand_n <- function(table, db, user, host, pwd) {
+grand_n <- function(user, host, db , pwd, table) {
 
 	con =  dbConnect(RMySQL::MySQL(), host = host, user = user, password = pwd); on.exit(dbDisconnect(con))
 
 
-	dbGetQuery(con, paste0('select count(*) n from ', db, '.' , table) )$n
+    dbGetQuery(con, paste0('select count(*) n from ', db, '.' , table) )$n
 
 }
-

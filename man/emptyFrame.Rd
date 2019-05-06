@@ -15,6 +15,8 @@ emptyFrame(user, host, db, pwd, table, n = 10, excludeColumns = "pk",
 
 \item{db}{db name}
 
+\item{pwd}{pwd}
+
 \item{table}{db table}
 
 \item{n}{n empty lines}
@@ -30,7 +32,8 @@ emptyFrame used by handsontable
 \examples{
 \dontrun{
 emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS')
-emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS', preFilled = list(datetime_ = as.character(Sys.Date())) )
+emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS', 
+			preFilled = list(datetime_ = as.character(Sys.Date())) )
 }
 
 }

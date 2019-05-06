@@ -1,10 +1,10 @@
 
 
-#' Title
+#' Shiny server function
 #'
-#' @param input 
-#' @param output 
-#' @param session 
+#' @param input     Shiny server
+#' @param output    Shiny server
+#' @param session   Shiny server
 #'
 #' @export
 #' @note inspector, uitable, comments, describeTable, getDataSummary are defined in global.R
@@ -46,7 +46,7 @@ server_newData <- function(input, output,session) {
 
       # inspector
       cc = inspector(x)
-      assign('cc', cc , envir = .GlobalEnv)
+      # assign('cc', cc , envir = .GlobalEnv)
 
 
       # errors 
@@ -88,7 +88,7 @@ server_newData <- function(input, output,session) {
 
             }
 
-        assign('x', x , envir = .GlobalEnv)
+        # assign('x', x , envir = .GlobalEnv)
 
         saved_set = dbWriteTable(con, tableName, x, append = TRUE, row.names = FALSE)
 
@@ -194,7 +194,7 @@ server_newData <- function(input, output,session) {
 
 
 
-  observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
+  # observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
 
 
  }

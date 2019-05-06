@@ -2,19 +2,19 @@
 % Please edit documentation in R/SERVER.R
 \name{server_newData}
 \alias{server_newData}
-\title{Title}
+\title{Shiny server function}
 \usage{
 server_newData(input, output, session)
 }
 \arguments{
-\item{input}{}
+\item{input}{Shiny server}
 
-\item{output}{}
+\item{output}{Shiny server}
 
-\item{session}{}
+\item{session}{Shiny server}
 }
 \description{
-Title
+Shiny server function
 }
 \note{
 inspector, uitable, comments, describeTable, getDataSummary are defined in global.R

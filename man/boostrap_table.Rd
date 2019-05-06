@@ -2,15 +2,20 @@
 % Please edit documentation in R/UI_elements.R
 \name{boostrap_table}
 \alias{boostrap_table}
-\title{data.table to html (boostrap style)}
+\title{convert a data.frame to a boostrap table}
 \usage{
 boostrap_table(x, class = "responsive")
 }
 \arguments{
 \item{x}{a data.table}
+
+\item{class}{`div` class}
 }
 \description{
-data.table to html (boostrap style)
+convert a data.frame to a boostrap table
+}
+\note{
+a wrapper around knitr::kable
 }
 \examples{
 boostrap_table( data.table::data.table(x = 1, y = 'a') )

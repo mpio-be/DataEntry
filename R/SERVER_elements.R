@@ -5,6 +5,7 @@
 #' @param user             db user 
 #' @param host             db host 
 #' @param db               db name 
+#' @param pwd              pwd
 #' @param table            db table 
 #' @param n                n empty lines 
 #' @param excludeColumns   default 'pk'
@@ -12,7 +13,8 @@
 #' @export
 #' @examples \dontrun{
 #' emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS')
-#' emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS', preFilled = list(datetime_ = as.character(Sys.Date())) )
+#' emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS', 
+#' 			preFilled = list(datetime_ = as.character(Sys.Date())) )
 #' }
 #' 
 emptyFrame <- function(user, host, db, pwd, table,n = 10, excludeColumns = 'pk', preFilled) {
@@ -46,9 +48,14 @@ emptyFrame <- function(user, host, db, pwd, table,n = 10, excludeColumns = 'pk',
 	}
 
 
-
-
-
+#' column_comment 
+#' db table comments
+#' @param user             db user 
+#' @param host             db host 
+#' @param db               db name 
+#' @param pwd              pwd
+#' @param table            db table 
+#' @param excludeColumns   default 'pk'
 #' @export
 column_comment <- function(user, host, db, pwd, table, excludeColumns = 'pk') {
 		
