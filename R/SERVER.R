@@ -97,7 +97,7 @@ server_newData <- function(input, output,session) {
   
         removeUI(selector = "#saveButton", immediate = TRUE, multiple = TRUE)
 
-        msg = if(ignore_validators) "I'm sure you ignored the validation for a good cause." else 
+        msg = if(ignore_validators) "I'm sure you ignored the validation for a good reason." else 
               glue("   <h4> {praise()} </h4>    ")
 
         toastr_success(title = msg  , 
