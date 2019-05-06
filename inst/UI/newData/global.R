@@ -14,7 +14,6 @@
 	user    = getOption('DataEntry.user')
 	pwd     = getOption('DataEntry.pwd' )
 
-	debug = FALSE
 	tableName       = 'data_entry'
 	excludeColumns  = c('pk', 'nov')
 	n_empty_lines   = 3
