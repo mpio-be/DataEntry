@@ -133,7 +133,8 @@ server_newData <- function(input, output,session) {
     showModal(modalDialog(
     title = "Invalid entries",
     
-    tableHTML(cc, rownames =  FALSE)%>% add_theme_colorize (color ='tomato3', id_column = TRUE),
+    tableHTML(Save() %>% inspector, rownames =  FALSE) %>% 
+    add_theme_colorize (color ='tomato', id_column = TRUE),
     
     easyClose = TRUE, footer = NULL, size = 'l'
     ))
@@ -177,18 +178,6 @@ server_newData <- function(input, output,session) {
     })
 
 
-  # Show INVALID data
-
-    ShowInvalid <- eventReactive(input$tableInfoButton, {
-    print(cc)
-    cc
-    })
-
-    observe( ShowInvalid() )
-
-    output$data_invalid <- renderTable({
-      ShowInvalid()
-    })
 
 
 
@@ -199,4 +188,4 @@ server_newData <- function(input, output,session) {
 
  }
 
-
+ 

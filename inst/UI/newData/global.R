@@ -6,7 +6,7 @@
 
 # Settings
 	
-	sapply(c('DataEntry', 'shinyjs', 'glue', 'tableHTML'),require, character.only = TRUE, quietly = TRUE)
+	sapply(c('DataEntry', 'shinyjs', 'glue', 'tableHTML', 'shinytoastr'),require, character.only = TRUE, quietly = TRUE)
 	tags = shiny::tags
 
 	host    = getOption('DataEntry.host')
