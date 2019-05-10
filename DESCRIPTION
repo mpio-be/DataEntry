@@ -21,7 +21,8 @@ Imports:
     shinyjs,
     shinydashboard,
     shinytoastr,
-    tableHTML
+    tableHTML,
+    DataEntry.validation 
 Suggests:
     devtools,
     gtools,
