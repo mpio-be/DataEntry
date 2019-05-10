@@ -6,7 +6,8 @@
 
 # Settings
 	
-	sapply(c('DataEntry', 'shinyjs', 'glue', 'tableHTML', 'shinytoastr'),require, character.only = TRUE, quietly = TRUE)
+	sapply(c('DataEntry', 'DataEntry.validation', 'shinyjs', 
+			'glue', 'tableHTML', 'shinytoastr'),require, character.only = TRUE, quietly = TRUE)
 	tags = shiny::tags
 
 	host    = getOption('DataEntry.host')
@@ -36,21 +37,25 @@
 
 # Define inspectors
 	inspector.data_entry <- function(x) {
-		v1  = is.na_validator(x[, .(author, datetime_, ID)])
-		#v2  = is.na_validator(x[recapture == 0, .(sex, measure)], "Mandatory at first capture")
-		#v3  = POSIXct_validator(x[, .(datetime_)] )
-		#v4  = hhmm_validator(x[, .(released_time)] )
-		#v5  = is.element_validator(x[ , .(sex)], v = data.table(variable = "sex", set = list(c("M", "F"))  ))
-		#v6  = interval_validator( x[, .(measure)],  v = data.table(variable = "tarsus", lq = 10, uq = 20 ),   "Measurement out of typical range" )
+	   
+	   list( 
+	   	
+	    x[, .(author, datetime_, ID)] 		%>% is.na_validator,
+		x[recapture == 0, .(sex, measure)]  %>% is.na_validator("Mandatory at first capture"),
+		x[, .(datetime_)]                   %>% POSIXct_validator ,
+		x[, .(released_time)]               %>% hhmm_validator, 
+		x[ , .(sex)] 						%>% is.element_validator(v = data.table(variable = "sex", 
+														set = list(c("M", "F"))  )) ,
+		x[, .(measure)] 					%>% interval_validator( v = data.table(variable = "measure", lq = 10, uq = 20 ),   
+												"Measurement out of typical range" )
 
-		#o = list(v1, v2, v3, v4, v5, v6) %>% rbindlist
-		o = list(v1) %>% rbindlist
-		o[, .(rowid = paste(rowid, collapse = ",")), by = .(variable, reason)]
+		)
+
+
 
 		}
 
 
-# boostrap_table(cc)
 
 
 

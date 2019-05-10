@@ -11,6 +11,8 @@
 #'
 server_newData <- function(input, output,session) {
 
+
+
   # Settings
     con =  dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
     onStop(function() {dbDisconnect(con)})
@@ -41,12 +43,11 @@ server_newData <- function(input, output,session) {
   
 
     x = Save() 
-
+    
     # Data validation
 
-      # inspector
-      cc = inspector(x)
-      # assign('cc', cc , envir = .GlobalEnv)
+    cc = inspector(x) %>% evalidators
+    # assign('cc', cc , envir = .GlobalEnv)
 
 
       # errors 
@@ -87,8 +88,6 @@ server_newData <- function(input, output,session) {
 
 
             }
-
-        # assign('x', x , envir = .GlobalEnv)
 
         saved_set = dbWriteTable(con, tableName, x, append = TRUE, row.names = FALSE)
 
@@ -133,7 +132,7 @@ server_newData <- function(input, output,session) {
     showModal(modalDialog(
     title = "Invalid entries",
     
-    tableHTML(Save() %>% inspector, rownames =  FALSE) %>% 
+    tableHTML(Save() %>% inspector %>% evalidators, rownames =  FALSE) %>% 
     add_theme_colorize (color ='tomato', id_column = TRUE),
     
     easyClose = TRUE, footer = NULL, size = 'l'

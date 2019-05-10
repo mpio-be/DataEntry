@@ -25,6 +25,8 @@ Imports:
 Suggests:
     devtools,
     gtools,
-    testthat  
+    testthat 
+Remotes: 
+    mpio-be/DataEntry.validation 
 RoxygenNote: 6.1.1
 Encoding: UTF-8
