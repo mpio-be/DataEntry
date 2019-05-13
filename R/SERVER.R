@@ -50,7 +50,7 @@ server_newData <- function(input, output,session) {
     
     # Data validation
 
-    cc = inspector(x) %>% DataEntry.validation::evalidators
+    cc = inspector(x) %>% evalidators
     # assign('cc', cc , envir = .GlobalEnv)
 
 
