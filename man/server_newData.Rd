@@ -17,5 +17,6 @@ server_newData(input, output, session)
 Shiny server function
 }
 \note{
-inspector, uitable, comments, describeTable, getDataSummary are defined in global.R
+package, uitable, comments, describeTable, getDataSummary are defined in global.R
+      inspectors are loaded with  DataEntry.validation::inspector_loader()
 }

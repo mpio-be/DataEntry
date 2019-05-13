@@ -7,7 +7,8 @@
 #' @param session   Shiny server
 #'
 #' @export
-#' @note inspector, uitable, comments, describeTable, getDataSummary are defined in global.R
+#' @note package, uitable, comments, describeTable, getDataSummary are defined in global.R
+#'       inspectors are loaded with  DataEntry.validation::inspector_loader()
 #'
 server_newData <- function(input, output,session) {
 
@@ -27,11 +28,14 @@ server_newData <- function(input, output,session) {
       })
   
     Save <- eventReactive(input$saveButton, {
-    o = hot_to_r(input$table) %>% data.table
-    cleaner(o)
-    class(o) = c(class(o), tableName)
-    o
-    })
+      o = hot_to_r(input$table) %>% data.table
+      cleaner(o)
+      class(o) = c(class(o), tableName)
+      
+      DataEntry.validation::inspector_loader(package = package)
+
+      o
+      })
 
 
   # VALIDATE - SAVE 
@@ -46,7 +50,7 @@ server_newData <- function(input, output,session) {
     
     # Data validation
 
-    cc = inspector(x) %>% evalidators
+    cc = inspector(x) %>% DataEntry.validation::evalidators
     # assign('cc', cc , envir = .GlobalEnv)
 
 
