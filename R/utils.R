@@ -3,14 +3,16 @@
 #' @param x  a data.table
 #' @export
 cleaner <- function(x) {
+
   for(j in seq_along(x) ) { 
     data.table::set(x, i=which(x[[j]] ==  'NA'), j=j, value=NA) } 
+  
+  for(j in seq_along(x) ) { 
+    data.table::set(x, i=which(x[[j]] ==  ''), j=j, value=NA) } 
+  
   # o = x[rowSums( as.matrix( is.na(x) ))  != ncol(x) ]
   # return(o)
   }
-
-
-
 
 
 
