@@ -1,2 +1,2 @@
 
-ui_vnavbar()
+vnavbarPage(tableName = tableName)

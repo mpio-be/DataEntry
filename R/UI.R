@@ -4,12 +4,13 @@
 #' @export
 #' @examples
 #' if (interactive()) {
-#' 
+#' tableName = 'TABLE X'
 #' shinyApp(
 #' 	ui = ui_vnavbar(), 
 #' 	server = function(input, output) { 
 #' 		output$table <- renderRHandsontable( 
 #' 			rhandsontable(iris)
+#' 			)
 #' 	} )
 #' 
 #' 
@@ -51,7 +52,18 @@ ui_vnavbar <- function() {
 #' @examples
 #' if (interactive()) {
 #' 
+#' shinyApp(
+#' 	ui = vnavbarPage(), 
+#' 	server = function(input, output) { 
+#' 		output$table <- renderRHandsontable( 
+#' 			rhandsontable(matrix(as.integer(NA), nrow = 30, ncol = 20) %>% data.table) )
+#' 	} )
+#' 
+#' 
+#' }
 vnavbarPage <- function (tableName = 'Table Name') {
+
+  require(shinyWidgets)  
 
   bootstrapPage(theme = NULL,
 
@@ -60,6 +72,12 @@ vnavbarPage <- function (tableName = 'Table Name') {
         <div class="container">
             <ul class="nav navbar-nav">'), 
 
+    .vnavbar_saveButton(), 
+    .vnavbar_ignoreChecks(), 
+    .vnavbar_tableInfoButton(), 
+    .vnavbar_helpButton(),
+    .vnavbar_cheatsheetButton(),
+
 
 
 
@@ -67,9 +85,6 @@ vnavbarPage <- function (tableName = 'Table Name') {
             </ul>
            </div>
         </div>')),
-
-
-
 
 
 	# table
@@ -93,3 +108,5 @@ vnavbarPage <- function (tableName = 'Table Name') {
 
 
 }
+
+

@@ -33,6 +33,87 @@ useNavbar <- function() {
 }
 
 
+.vnavbar_saveButton <- function(title = 'Save') {
+  glue(
+  '<li>
+      <a id="saveButton" class="action-button ">
+          <span class="small-nav" data-toggle="tooltip" data-placement="right" title="{title}"> 
+          <span class="glyphicon glyphicon-save"></span>
+          </span>
+      </a>
+  </li>') %>% HTML
+  }
+
+
+.vnavbar_ignoreChecks <- function(title = 'Bypass data validation!') {
+  glue(
+  '
+  <li>
+      <a>
+    <span class="small-nav" data-toggle="tooltip" data-placement="right" title="{title}"> 
+    <form role="form">
+     <input id="ignore_checks" class="form-check-input" type="checkbox" >
+    </form>
+  </span>
+      </a>
+  </li>
+
+  ') %>% HTML
+  }
+
+
+
+
+.vnavbar_tableInfoButton <- function(title = 'Table summary') {
+  glue(
+  '
+  <li>
+    <a id="tableInfoButton" class="action-button">
+        <span class="small-nav" data-toggle="tooltip" data-placement="right" title="{title}"> 
+        <span class="glyphicon glyphicon-eye-open"></span>
+        </span>
+    </a>
+  </li>
+
+  ') %>% HTML
+  }
+
+
+
+.vnavbar_helpButton <- function(title = 'Data entry help') {
+  glue(
+  '
+  <li>
+      <a id="helpButton" class="action-button">
+          <span class="small-nav" data-toggle="tooltip" data-placement="right" title="{title}"> 
+          <span class="glyphicon glyphicon-info-sign"></span>
+          </span>
+      </a>
+  </li>
+
+  ') %>% HTML
+  }
+
+
+.vnavbar_cheatsheetButton <- function(title = 'Cheatsheet') {
+  glue(
+  '
+  <li>
+      <a id="cheatsheetButton" class="action-button">
+          <span class="small-nav" data-toggle="tooltip" data-placement="right" title="{title}"> 
+          <span class="glyphicon glyphicon-question-sign"></span>
+          </span>
+      </a>
+  </li>
+
+  ') %>% HTML
+  }
+
+
+
+
+
+
 
 # ==========================================================================
 # UI js

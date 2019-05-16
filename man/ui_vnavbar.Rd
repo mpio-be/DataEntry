@@ -12,3 +12,18 @@ shiny ui with a vertical navbar and a rHandsontable
 \note{
 see praise package
 }
+\examples{
+if (interactive()) {
+tableName = 'TABLE X'
+shinyApp(
+	ui = ui_vnavbar(), 
+	server = function(input, output) { 
+		output$table <- renderRHandsontable( 
+			rhandsontable(iris)
+			)
+	} )
+
+
+}
+
+}

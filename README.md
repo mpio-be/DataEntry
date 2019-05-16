@@ -18,7 +18,7 @@ Given that `test` DB exists (see `system.file('UI', '.testdb.R', package = 'Data
 this UI can be run with: 
 
 ``` R
-ui = system.file('UI', 'db_new_vbar', package = 'DataEntry')
+ui = system.file('UI', 'newData', package = 'DataEntry')
 shiny::runApp(ui, launch.browser = TRUE)
 ```
 
