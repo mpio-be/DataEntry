@@ -51,7 +51,7 @@ ui_vnavbar <- function() {
 #' @export
 #' @examples
 #' if (interactive()) {
-#' 
+#' require(DataEntry)
 #' shinyApp(
 #' 	ui = vnavbarPage(), 
 #' 	server = function(input, output) { 
@@ -63,7 +63,6 @@ ui_vnavbar <- function() {
 #' }
 vnavbarPage <- function (tableName = 'Table Name') {
 
-  require(shinyWidgets)  
 
   bootstrapPage(theme = NULL,
 
@@ -110,3 +109,65 @@ vnavbarPage <- function (tableName = 'Table Name') {
 }
 
 
+#' @name dropDownNavPage
+#' @title shiny ui based on shinyWidgets
+#' @export
+#' @examples
+#' if (interactive()) {
+#' 
+#' shinyApp(
+#'  ui = dropDownNavPage(), 
+#'  server = function(input, output) { 
+#'      output$table <- renderRHandsontable( 
+#'          rhandsontable(matrix(as.integer(NA), nrow = 30, ncol = 20) %>% data.table) )
+#'  } )
+#' 
+#' 
+#' }
+#' 
+
+dropDownNavPage <- function (tableName = 'Table Name') {
+
+  # http://shinyapps.dreamrs.fr/shinyWidgets/  
+  require(shinyWidgets)  # TODO: move to description
+
+  bootstrapPage(theme = NULL,
+   
+   # TABLE 
+
+      rHandsontableOutput("table", width = "100%"),
+   
+   # MENU 
+      HTML('<div style="position:absolute;top:0;z-index: 1000 !important;">') , 
+
+      dropdownButton(
+        circle = FALSE, status = "danger",
+        icon = icon("kiwi-bird"), size = 'sm',margin = "20px", width = "300px",
+        tooltip = tooltipOptions(title = " Set tooltip !"),
+
+        tags$h4(tableName),
+
+        selectInput(inputId = 'xcol',
+                    label = 'X Variable',
+                    choices = names(iris))
+
+
+      ),
+
+      HTML('</div>'),
+    
+   # SUPPORT 
+      uiOutput("run_save"),
+
+      useToastr(),
+      shinyjs::useShinyjs(),
+      shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(true); }"),
+
+      js_insertMySQLTimeStamp()
+
+  
+   )
+
+
+
+}
