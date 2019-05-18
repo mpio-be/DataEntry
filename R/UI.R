@@ -114,12 +114,13 @@ vnavbarPage <- function (tableName = 'Table Name') {
 #' @export
 #' @examples
 #' if (interactive()) {
-#' 
+#' require(DataEntry)
 #' shinyApp(
 #'  ui = dropDownNavPage(), 
 #'  server = function(input, output) { 
 #'      output$table <- renderRHandsontable( 
-#'          rhandsontable(matrix(as.integer(NA), nrow = 30, ncol = 20) %>% data.table) )
+#'          rhandsontable(matrix(as.integer(NA), 
+#' nrow = 30, ncol = 20) %>% data.table) )
 #'  } )
 #' 
 #' 
@@ -140,8 +141,13 @@ dropDownNavPage <- function (tableName = 'Table Name') {
    # MENU 
       HTML('<div style="position:absolute;top:0;z-index: 1000 !important;">') , 
 
-      dropdownButton(
-        circle = FALSE, status = "danger",
+      tags$head(
+        tags$style(HTML('#menu{background-color:#f45f42;padding: 5px 13px;font-size: 10px;}'))
+      ),
+
+
+      dropdownButton(inputId = "menu",
+        circle = FALSE, status = "danger",right = FALSE,
         icon = icon("kiwi-bird"), size = 'sm',margin = "20px", width = "300px",
         tooltip = tooltipOptions(title = " Set tooltip !"),
 
@@ -153,6 +159,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 
 
       ),
+
 
       HTML('</div>'),
     
