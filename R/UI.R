@@ -146,16 +146,68 @@ dropDownNavPage <- function (tableName = 'Table Name') {
       ),
 
 
-      dropdownButton(inputId = "menu",
+      dropdown(inputId = "menu",
+
         circle = FALSE, status = "danger",right = FALSE,
         icon = icon("kiwi-bird"), size = 'sm',margin = "20px", width = "300px",
         tooltip = tooltipOptions(title = " Set tooltip !"),
 
         tags$h4(tableName),
 
-        selectInput(inputId = 'xcol',
-                    label = 'X Variable',
-                    choices = names(iris))
+        hr(), 
+
+		actionBttn(
+		   inputId = "saveButton",
+		   label = "Save", style = "material-flat", 
+		   color = "danger", 
+		   block = TRUE, 
+		   icon = icon("save")
+		), 
+
+		hr() , 
+
+		h4( materialSwitch(
+		   inline   = TRUE,  
+		   inputId  = "ignore_checks",
+		   label    = "Ignore validation",
+		   right    = TRUE, 
+		   value    = FALSE, 
+		   status   = "danger"
+		) ) , 
+
+		hr() ,
+
+		actionBttn(
+		   inputId = "helpButton",
+		   label   = "Data entry help", 
+		   style   = "minimal",
+		   color   = "primary", 
+		   block   = TRUE,
+		   icon    = icon("lightbulb")
+		), 
+
+		br() ,
+
+		actionBttn(
+		   inputId = "cheatsheetButton",
+		   label   = "Data entry cheatsheet", 
+		   style   = "minimal",
+		   color   = "primary", 
+		   block   = TRUE,
+		   icon    = icon("flag-checkered")
+		),
+		br(),
+		actionBttn(
+		   inputId = "tableInfoButton",
+		   label   = "Table summary", 
+		   style   = "minimal",
+		   color   = "success", 
+		   block   = TRUE,
+		   icon    = icon("info-circle")
+		)
+
+
+
 
 
       ),
