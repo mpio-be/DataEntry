@@ -250,7 +250,9 @@ server_newData_dropDownNavPage <- function(input, output,session) {
       # errors 
       if(nrow(cc) > 0 && !ignore_validators) {
           toastr_error( 
-            message = HTML('<h4> To see what\'s wrong push the <kb>Data Entry Issues </kb> then fix the data and try again.</h4> '  ) ,
+            message = HTML('<h4> To see what\'s wrong push the 
+                      <kb> Data Entry Issues </kb> then fix the data 
+                      and try again.</h4> '  ) ,
             
             title = HTML(encourage() ) ,
             timeOut = 10000, closeButton = TRUE, position = 'top-center')
@@ -261,7 +263,7 @@ server_newData_dropDownNavPage <- function(input, output,session) {
         where    = "afterEnd",
         ui       =    
           list(
-          hr() ,
+          br() ,
           actionBttn(
           inputId = "invalidButton",
           label   = "Data entry issues",
@@ -295,7 +297,10 @@ server_newData_dropDownNavPage <- function(input, output,session) {
 
         if(saved_set) {
   
-        removeUI(selector = "#saveButton", immediate = TRUE, multiple = TRUE)
+        shinyjs::disable("saveButton")
+        shinyjs::runjs('$("#saveButton").css("background-color","grey");')
+
+
 
         msg = if(ignore_validators) "I'm sure you ignored the validation for a good reason." else 
               glue("   <h4> {praise()} </h4>    ")
@@ -359,7 +364,7 @@ server_newData_dropDownNavPage <- function(input, output,session) {
     showModal(modalDialog(
     title =  "Data summary",
     
-    tableHTML(describeTable(), rownames =  FALSE)%>% add_theme ('rshiny-blue'),
+    tableHTML(describeTable(), rownames =  FALSE) %>% add_theme ('rshiny-blue'),
 
     
     easyClose = TRUE,footer = NULL, size = 'l'

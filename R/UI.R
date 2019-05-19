@@ -150,7 +150,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 
         circle = FALSE, status = "danger",right = FALSE,
         icon = icon("kiwi-bird"), size = 'sm',margin = "20px", width = "300px",
-        tooltip = tooltipOptions(title = " Set tooltip !"),
+        tooltip = tooltipOptions(title = tableName ),
 
         tags$h4(tableName),
 
@@ -158,10 +158,10 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 
 		actionBttn(
 		   inputId = "saveButton",
-		   label = "Save", style = "material-flat", 
-		   color = "danger", 
-		   block = TRUE, 
-		   icon = icon("save")
+		   label   = "Save", style = "material-flat", 
+		   color   = "danger", 
+		   block   = TRUE, 
+		   icon    = icon("save")
 		), 
 
 		hr() , 
