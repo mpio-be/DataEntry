@@ -11,7 +11,7 @@ shiny ui with a vertical navbar and a rHandsontable
 }
 \examples{
 if (interactive()) {
-
+require(DataEntry)
 shinyApp(
 	ui = vnavbarPage(), 
 	server = function(input, output) { 

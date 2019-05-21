@@ -250,8 +250,7 @@ server_newData_dropDownNavPage <- function(input, output,session) {
       # errors 
       if(nrow(cc) > 0 && !ignore_validators) {
           toastr_error( 
-            message = HTML('<h4> To see what\'s wrong push the 
-                      <kb> Data Entry Issues </kb> then fix the data 
+            message = HTML('<h4> To see what\'s wrong push the <kbd> Data Entry Issues </kbd> button then correct the wrong entries 
                       and try again.</h4> '  ) ,
             
             title = HTML(encourage() ) ,

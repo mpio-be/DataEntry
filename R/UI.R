@@ -142,15 +142,14 @@ dropDownNavPage <- function (tableName = 'Table Name') {
       HTML('<div style="position:absolute;top:0;z-index: 1000 !important;">') , 
 
       tags$head(
-        tags$style(HTML('#menu{background-color:#f45f42;padding: 5px 13px;font-size: 10px;}'))
+        tags$style(HTML('#menu{padding: 5px 13px;font-size: 11px;}'))
       ),
-
-
+ 
       dropdown(inputId = "menu",
 
         circle = FALSE, status = "danger",right = FALSE,
-        icon = icon("kiwi-bird"), size = 'sm',margin = "20px", width = "300px",
-        tooltip = tooltipOptions(title = tableName ),
+        icon = icon("feather"), size = 'sm', margin = "1px", width = "300px",
+        tooltip = NULL,
 
         tags$h4(tableName),
 
@@ -179,22 +178,22 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 
 		actionBttn(
 		   inputId = "helpButton",
-		   label   = "Data entry help", 
+		   label   = "Columns definition", 
 		   style   = "minimal",
 		   color   = "primary", 
 		   block   = TRUE,
-		   icon    = icon("lightbulb")
+		   icon    = icon("expand")
 		), 
 
 		br() ,
 
 		actionBttn(
 		   inputId = "cheatsheetButton",
-		   label   = "Data entry cheatsheet", 
+		   label   = "Keyboard shortcuts", 
 		   style   = "minimal",
 		   color   = "primary", 
 		   block   = TRUE,
-		   icon    = icon("flag-checkered")
+		   icon    = icon("expand")
 		),
 		br(),
 		actionBttn(
@@ -203,7 +202,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		   style   = "minimal",
 		   color   = "success", 
 		   block   = TRUE,
-		   icon    = icon("info-circle")
+		   icon    = icon("expand")
 		)
 
 
