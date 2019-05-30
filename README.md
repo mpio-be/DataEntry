@@ -26,7 +26,9 @@ shiny::runApp(ui, launch.browser = TRUE)
 Installation
 ------------
 ``` R
+
 install.packages("devtools")
 devtools::install_github("mpio-be/DataEntry")
+
 ```
 
