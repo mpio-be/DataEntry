@@ -139,15 +139,26 @@ dropDownNavPage <- function (tableName = 'Table Name') {
       rHandsontableOutput("table", width = "100%"),
    
    # MENU 
+
+
       HTML('<div style="position:absolute;top:0;z-index: 1000 !important;">') , 
 
-      tags$head(
-        tags$style(HTML('#menu{padding: 5px 13px;font-size: 11px;}'))
-      ),
+     # tags$head(
+     #   tags$style(HTML('#menu{padding: 5px 13px;font-size: 11px;}'))
+     # ),
  
+      inlineCSS("#menu { 
+        background: #003152; 
+        border-color: #003152; 
+        padding: 5px 13px;
+        font-size: 11px;
+        border: none;
+        }"),   
+
+
       dropdown(inputId = "menu",
 
-        circle = FALSE, status = "danger",right = FALSE,
+        circle = FALSE,right = FALSE,status = "danger",
         icon = icon("feather"), size = 'sm', margin = "1px", width = "300px",
         tooltip = NULL,
 
@@ -158,10 +169,23 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		actionBttn(
 		   inputId = "saveButton",
 		   label   = "Save", style = "material-flat", 
-		   color   = "danger", 
 		   block   = TRUE, 
 		   icon    = icon("save")
 		), 
+
+        inlineCSS("#saveButton { 
+            background: #345678; 
+            color: #c2ccd6; 
+
+            }"), 
+        
+
+        # invalidButton is defined in sever
+        inlineCSS("#invalidButton { 
+            background: #484388; 
+            color: #dad9e7; 
+
+            }"), 
 
 		hr() , 
 
@@ -180,10 +204,10 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		   inputId = "helpButton",
 		   label   = "Columns definition", 
 		   style   = "minimal",
-		   color   = "primary", 
 		   block   = TRUE,
 		   icon    = icon("expand")
 		), 
+        inlineCSS("#helpButton { color: #25596d; }"), 
 
 		br() ,
 
@@ -191,19 +215,20 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		   inputId = "cheatsheetButton",
 		   label   = "Keyboard shortcuts", 
 		   style   = "minimal",
-		   color   = "primary", 
 		   block   = TRUE,
 		   icon    = icon("expand")
 		),
+        inlineCSS("#cheatsheetButton { color: #25596d; }"), 
+
 		br(),
 		actionBttn(
 		   inputId = "tableInfoButton",
 		   label   = "Table summary", 
 		   style   = "minimal",
-		   color   = "success", 
 		   block   = TRUE,
 		   icon    = icon("expand")
-		)
+		),
+         inlineCSS("#tableInfoButton { color: #425866; }")
 
 
 
