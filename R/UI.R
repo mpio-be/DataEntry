@@ -130,7 +130,6 @@ vnavbarPage <- function (tableName = 'Table Name') {
 dropDownNavPage <- function (tableName = 'Table Name') {
 
   # http://shinyapps.dreamrs.fr/shinyWidgets/  
-  require(shinyWidgets)  # TODO: move to description
 
   bootstrapPage(theme = NULL,
    
@@ -155,6 +154,10 @@ dropDownNavPage <- function (tableName = 'Table Name') {
         border: none;
         }"),   
 
+      inlineCSS("#menu:hover { 
+        background: #2890D6!important; 
+        }"),   
+
 
       dropdown(inputId = "menu",
 
@@ -162,7 +165,20 @@ dropDownNavPage <- function (tableName = 'Table Name') {
         icon = icon("feather"), size = 'sm', margin = "1px", width = "300px",
         tooltip = NULL,
 
-        tags$h4(tableName),
+        #btags$h4(tableName)  
+
+        HTML(glue('<p id = "TABLE_NAME" style =" 
+                color:#345678;
+                font-size: 2em;
+                text-align: center;
+                font-family: Copperplate, Copperplate Gothic Light, fantasy; 
+                "> 
+              {tableName}
+            </p>
+
+            ')) ,
+
+       
 
         hr(), 
 
@@ -176,6 +192,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
         inlineCSS("#saveButton { 
             background: #345678; 
             color: #c2ccd6; 
+            font-weight: bold; 
 
             }"), 
         
@@ -189,14 +206,25 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 
 		hr() , 
 
-		h4( materialSwitch(
-		   inline   = TRUE,  
-		   inputId  = "ignore_checks",
-		   label    = "Ignore validation",
-		   right    = TRUE, 
-		   value    = FALSE, 
-		   status   = "danger"
-		) ) , 
+
+
+        switchInput(
+            inputId      = "ignore_checks",
+            label      = "VALIDATION", 
+            value      = FALSE,
+            inline        = TRUE,
+            size      = 'large',
+            width      = 'auto', 
+            offStatus      = 'success',
+            onStatus      = 'danger', 
+            onLabel      = paste('OFF', icon('skull') )  ,
+            offLabel      = paste('ON', icon('thumbs-up') )
+
+        ),
+
+
+
+
 
 		hr() ,
 
@@ -205,7 +233,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		   label   = "Columns definition", 
 		   style   = "minimal",
 		   block   = TRUE,
-		   icon    = icon("expand")
+		   icon    = icon("binoculars")
 		), 
         inlineCSS("#helpButton { color: #25596d; }"), 
 
@@ -216,7 +244,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		   label   = "Keyboard shortcuts", 
 		   style   = "minimal",
 		   block   = TRUE,
-		   icon    = icon("expand")
+		   icon    = icon("binoculars")
 		),
         inlineCSS("#cheatsheetButton { color: #25596d; }"), 
 
@@ -226,7 +254,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		   label   = "Table summary", 
 		   style   = "minimal",
 		   block   = TRUE,
-		   icon    = icon("expand")
+		   icon    = icon("info-circle")
 		),
          inlineCSS("#tableInfoButton { color: #425866; }")
 

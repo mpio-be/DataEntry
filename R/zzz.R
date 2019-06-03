@@ -31,7 +31,7 @@ utils::globalVariables(c('.', ':=', 'Column', 'comments', 'datetime_', 'db', 'ho
 
 
 
-#' @import methods  RMySQL data.table rhandsontable shiny glue stringr shinydashboard shinytoastr tableHTML praise  DataEntry.validation 
+#' @import methods  RMySQL data.table rhandsontable shiny glue stringr shinydashboard shinytoastr shinyWidgets tableHTML praise  DataEntry.validation 
 NULL
 
 
