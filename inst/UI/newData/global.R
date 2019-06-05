@@ -6,7 +6,7 @@
 
 # Settings
 	
-	sapply(c('DataEntry', 'DataEntry.validation', 'shinyjs', 
+	sapply(c('DataEntry', 'DataEntry.validation', 'shinyjs', 'shinyWidgets', 
 			'glue', 'tableHTML', 'shinytoastr'),require, character.only = TRUE, quietly = TRUE)
 	tags = shiny::tags
 
