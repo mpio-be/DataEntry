@@ -110,7 +110,7 @@ server_newData <- function(input, output,session) {
           progressBar = TRUE)
         
 
-        Sys.sleep(10)
+        Sys.sleep(5)
 
 
         shinyjs::js$refresh()
@@ -216,7 +216,7 @@ server_newData_dropDownNavPage <- function(input, output,session) {
               nrow %>% 
               magrittr::is_greater_than(0)
 
-    observeEvent(input$refresh, {
+    observeEvent(input$refresh, { # defined below
         shinyjs::js$refresh()
       })
   
@@ -305,16 +305,40 @@ server_newData_dropDownNavPage <- function(input, output,session) {
               glue("   <h4> {praise()} </h4>    ")
 
         toastr_success(title = msg  , 
-          message = glue( "<p>{nrow(x)} rows saved to database.</p><br/>
-              <i> Refreshing in progress ... </i>") , timeOut = 10000, 
-          position = 'top-center', 
-          progressBar = TRUE)
-        
-
-        Sys.sleep(10)
+          message = glue("<p>{nrow(x)} rows saved to database.</p>") , timeOut = 10000, 
+          position = 'top-center'
+          )
+       
 
 
-        shinyjs::js$refresh()
+      insertUI(
+        selector = "#saveButton",
+        where    = "afterEnd",
+        ui       =    
+          list(
+          br() ,
+          actionBttn(
+          inputId = "refresh",
+          label   = "Start new",
+          style   = "material-flat", 
+          color   = "success", 
+          block   = TRUE,
+          icon    = icon("kiwi-bird")
+          )
+          )
+
+        )
+
+
+        removeUI("#invalidButton") 
+        removeUI("#helpButton") 
+        removeUI("#cheatsheetButton") 
+        removeUI("#tableInfoButton") 
+
+
+
+
+
 
         }
 

@@ -274,7 +274,25 @@ dropDownNavPage <- function (tableName = 'Table Name') {
       shinyjs::useShinyjs(),
       shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(true); }"),
 
-      js_insertMySQLTimeStamp()
+      js_insertMySQLTimeStamp(),
+
+
+ 
+       HTML('
+       <script>
+         window.onbeforeunload = function() {
+          return "Are you sure you want to exit the page?";
+        }
+
+       </script>
+          ')
+
+
+       
+
+
+
+
 
   
    )
