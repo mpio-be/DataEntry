@@ -50,3 +50,27 @@ jquery_change_by_id <- function(divid, newtext) {
   HTML(x)
 
 }
+
+
+#' @name js_before_unload
+#' @title prevent page exit
+#' @param msg   msg
+#' @note used inside shiny apps
+#' @export
+js_before_unload <- function(msg = "Are you sure you want to exit the page?") {
+  
+     HTML(
+
+      paste0('
+      <script>
+       window.onbeforeunload = function() {
+        return '  , shQuote(msg)  , ';
+      }
+
+      </script>
+        ') 
+
+      )
+
+
+}
