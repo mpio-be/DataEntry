@@ -14,9 +14,6 @@ cleaner <- function(x) {
   # return(o)
   }
 
-
-
-
 #' @name char2vec
 #' @title convert a list of strings to a vector
 #' @param x list

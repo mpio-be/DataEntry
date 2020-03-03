@@ -13,13 +13,12 @@
 server_newData_dropDownNavPage <- function(input, output,session) {
 
 	# Settings
-		con =  dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
-		onStop(function() {dbDisconnect(con)})
-
 		# Is no-validation column present in table ?
+		con =  dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
 		hasnov = dbGetQuery(con, glue::glue("SHOW COLUMNS FROM {tableName} LIKE 'nov';") ) %>% 
 							nrow %>% 
 							magrittr::is_greater_than(0)
+		dbDisconnect(con)							
 
 		observeEvent(input$refresh, { # defined below
 				shinyjs::js$refresh()
@@ -95,8 +94,9 @@ server_newData_dropDownNavPage <- function(input, output,session) {
 
 						}
 
+				con =  dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)		
 				saved_set = dbWriteTable(con, tableName, x, append = TRUE, row.names = FALSE)
-
+				dbDisconnect(con)
 
 				if(saved_set) {
 	

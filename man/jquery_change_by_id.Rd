@@ -12,10 +12,6 @@ jquery_change_by_id(divid, newtext)
 \item{divid}{div id}
 
 \item{newtext}{new text entry}
-
-\item{divid}{div id}
-
-\item{newtext}{new text entry}
 }
 \description{
 find and replace given `div` id.
