@@ -170,7 +170,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		
 		shinyjs::useShinyjs(),
 		
-		shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(true); }"),
+		shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(true); }", functions = c() ),
 
 		js_insertMySQLTimeStamp(),
 
