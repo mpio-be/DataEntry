@@ -58,7 +58,6 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 							color:#345678;
 							font-size: 2em;
 							text-align: center;
-							font-family: Copperplate, Copperplate Gothic Light, fantasy; 
 							"> 
 						{tableName}
 					</p>
@@ -170,7 +169,7 @@ dropDownNavPage <- function (tableName = 'Table Name') {
 		
 		shinyjs::useShinyjs(),
 		
-		shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(true); }", functions = c() ),
+		shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(true); }", functions = "refresh"),
 
 		js_insertMySQLTimeStamp(),
 
