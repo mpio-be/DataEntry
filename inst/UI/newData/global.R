@@ -18,7 +18,7 @@
 	package         = 'DataEntry'
 	tableName       = 'data_entry'
 	excludeColumns  = c('pk', 'nov')
-	n_empty_lines   = 3
+	n_empty_lines   = 20
 	authors         = c('AI', 'CS', 'GS')
 
 	describeTable <- function() {
@@ -35,11 +35,3 @@
 		hot_rows(fixedRowsTop = 1) %>%
 		hot_col(col = "author", type = "dropdown", source = authors )
 	
-
-
-
-
-
-
-
-

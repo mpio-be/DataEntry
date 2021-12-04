@@ -27,9 +27,9 @@ server_newData_dropDownNavPage <- function(input, output,session) {
 		Save <- eventReactive(input$saveButton, {
 			o = hot_to_r(input$table) %>% data.table
 			cleaner(o)
-			class(o) = c(class(o), tableName)
+   class(o) = c(class(o), tableName) # inspector() uses S3
 			
-			DataEntry.validation::inspector_loader(package = package)
+			DataEntry.validation::inspector_loader(path = "inspector.R")
 
 			o
 			})

@@ -27,8 +27,7 @@ Installation
 ------------
 ``` R
 
-install.packages("devtools")
-devtools::install_github("mpio-be/DataEntry")
+install.packages("remotes")
+remotes::install_github("mpio-be/DataEntry")
 
 ```
-
