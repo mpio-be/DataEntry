@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/mpio-be/DataEntry.svg?branch=master)](https://travis-ci.org/mpio-be/DataEntry)
-
 DataEntry: Data Entry interfaces.
 ------------
 
