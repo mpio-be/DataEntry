@@ -21,7 +21,7 @@ server_newData_dropDownNavPage <- function(input, output,session) {
 		dbDisconnect(con)							
 
 		observeEvent(input$refresh, { # defined below
-				shinyjs::js$refresh()
+				shinyjs::js$js_refresh()
 			})
 	
 		Save <- eventReactive(input$saveButton, {
