@@ -43,3 +43,35 @@ context("UI elements and helpers")
     })
 
 
+context("emptyFrame")
+
+    test_that("all arguments work on emptyFrame", {
+
+
+     expect_s3_class(
+         emptyFrame(user = "testuser", pwd = "testuser", host = "127.0.0.1",
+             db = "tests", table = "data_entry"
+         ),
+         "data.table"
+     )
+     
+     expect_s3_class(
+         emptyFrame(user = "testuser", pwd = "testuser", host = "127.0.0.1",
+             db = "tests", table = "data_entry",
+             preFilled = list(datetime_ = as.character(Sys.Date()))
+         ),
+         "data.table"
+     )
+     
+     expect_s3_class(
+         emptyFrame(user = "testuser", pwd = "testuser", host = "127.0.0.1",
+             db = "tests", table = "data_entry",
+             colorder = c("ID", "sex", "nest")
+         ),
+         "data.table"
+     )
+     
+
+
+
+    })

@@ -10,14 +10,17 @@
 #' @param n                n empty lines 
 #' @param excludeColumns   default 'pk'
 #' @param preFilled        a named list eg. list(datetime_ = as.character(Sys.Date())) 
+#' @param colorder         column order. see data.table::setcolorder
 #' @export
 #' @examples \dontrun{
-#' emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS')
-#' emptyFrame(user = 'bt', host = '127.0.0.1', db = 'FIELD_BTatWESTERHOLZ', table = 'ADULTS', 
-#' 			preFilled = list(datetime_ = as.character(Sys.Date())) )
+#' emptyFrame(user = 'testuser',pwd='testuser',host = '127.0.0.1', db = 'tests', table = 'data_entry')
+#' emptyFrame(user = 'testuser',pwd='testuser',host = '127.0.0.1', db = 'tests', table = 'data_entry', 
+#' 						preFilled = list(datetime_ = as.character(Sys.Date())) )
+#' emptyFrame(user = 'testuser',pwd='testuser',host = '127.0.0.1', db = 'tests', table = 'data_entry', 
+#' 						colorder = c("ID", "sex", "nest"))
 #' }
 #' 
-emptyFrame <- function(user, host, db, pwd, table,n = 10, excludeColumns = 'pk', preFilled) {
+emptyFrame <- function(user, host, db, pwd, table,n = 10, excludeColumns = 'pk', preFilled, colorder) {
 
 	con =  dbConnect(RMySQL::MySQL(), host = host, user = user, password = pwd); on.exit(dbDisconnect(con))
 
@@ -25,7 +28,10 @@ emptyFrame <- function(user, host, db, pwd, table,n = 10, excludeColumns = 'pk',
 	F = dbGetQuery(con, paste0('SELECT * from ', db, '.', table, ' where FALSE') ) %>% data.table
 
 	if(!missing(excludeColumns))
-	F = F[, setdiff(names(F), excludeColumns), with = FALSE]
+		F = F[, setdiff(names(F), excludeColumns), with = FALSE]
+
+	if(!missing(colorder))
+ 		setcolorder(F, colorder)
 
 
 	F = rbind(F, data.table(tempcol = rep(NA, n)), fill = TRUE)[, tempcol := NULL]
@@ -68,4 +74,3 @@ column_comment <- function(user, host, db, pwd, table, excludeColumns = 'pk') {
 
 		x[!Column %in% excludeColumns]
  }
-
