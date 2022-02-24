@@ -12,7 +12,7 @@ CREATE TABLE data_entry (
     released_time   VARCHAR(5)        NULL  DEFAULT NULL COMMENT 'released time',
     nest            VARCHAR(5)        NULL  DEFAULT NULL COMMENT 'nest',
     recapture       INT(1)            NULL  DEFAULT NULL COMMENT 'recapture',
-    sex             VARCHAR(1)        NULL  DEFAULT NULL COMMENT 'sex',
+    sex             VARCHAR(1)        NULL  DEFAULT NULL COMMENT 'Observed sex.<br>Enter <code>M</code> for male or <code>F</code> for female.',
     measure         DOUBLE(20,10)     NULL  DEFAULT NULL COMMENT 'a measure',
     ID              INT(10)           NULL  DEFAULT NULL COMMENT 'an ID',
     comment         TEXT              NULL               COMMENT '<h1>hcomment field</h1>. This is somewhat a lengthy comment which is used to test the tooltip function on handsontable columns.  field. <hr> This is somewhat a lengthy comment which is used to test the tooltip function on handsontable columns.',
