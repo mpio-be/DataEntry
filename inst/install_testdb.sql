@@ -15,15 +15,8 @@ CREATE TABLE data_entry (
     sex             VARCHAR(1)        NULL  DEFAULT NULL COMMENT 'sex',
     measure         DOUBLE(20,10)     NULL  DEFAULT NULL COMMENT 'a measure',
     ID              INT(10)           NULL  DEFAULT NULL COMMENT 'an ID',
-    comment         TEXT              NULL               COMMENT 'comment field',
+    comment         TEXT              NULL               COMMENT '<h1>hcomment field</h1>. This is somewhat a lengthy comment which is used to test the tooltip function on handsontable columns.  field. <hr> This is somewhat a lengthy comment which is used to test the tooltip function on handsontable columns.',
     nov             INT(1)            NULL  DEFAULT NULL COMMENT 'no validation',  
     pk              INT(10)           NOT NULL  AUTO_INCREMENT,
     PRIMARY KEY (pk)
     ) ; 
-
-
-
-
-
-
-

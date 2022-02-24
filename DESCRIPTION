@@ -1,5 +1,5 @@
 Package: DataEntry
-Version: 2022.0.1
+Version: 2022.0.2
 Author: Mihai Valcu
 Maintainer: Mihai Valcu <valcu@orn.mpg.de>
 Title: Data entry interfaces
@@ -29,6 +29,7 @@ Suggests:
     gtools,
     testthat 
 Remotes: 
-    mpio-be/DataEntry.validation 
-RoxygenNote: 7.0.2
+    mpio-be/DataEntry.validation
+Roxygen: list(markdown = TRUE)    
+RoxygenNote: 7.1.2
 Encoding: UTF-8

@@ -9,6 +9,6 @@ praise()
 \description{
 praises
 }
-\note{
-see praise package
+\seealso{
+\code{\link[praise:praise]{praise::praise()}}
 }

@@ -17,7 +17,7 @@ shinyApp(
  server = function(input, output) { 
      output$table <- renderRHandsontable( 
          rhandsontable(matrix(as.integer(NA), 
-nrow = 30, ncol = 20) \%>\% data.table) )
+nrow = 30, ncol = 20) |> data.table() ) )
  } )
 
 

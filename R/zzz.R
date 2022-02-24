@@ -5,7 +5,6 @@
 #' @name        DataEntry
 #' @description Data-entry front-end; Mysql/MariaDB backend. Flexible support for front-end data validation.
 #' @docType     package
-#' @name        DataEntry
 NULL
 
 
@@ -40,8 +39,4 @@ NULL
 
 
 #' @importFrom grDevices colorRampPalette
-NULL
-
-
-#' @importFrom magrittr %>% is_greater_than 
 NULL

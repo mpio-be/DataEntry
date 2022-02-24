@@ -3,7 +3,8 @@
 \docType{package}
 \name{DataEntry}
 \alias{DataEntry}
-\title{Data entry 'in-browser' interfaces}
+\title{\preformatted{  Data entry 'in-browser' interfaces
+}}
 \description{
 Data-entry front-end; Mysql/MariaDB backend. Flexible support for front-end data validation.
 }

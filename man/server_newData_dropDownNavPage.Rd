@@ -17,6 +17,6 @@ server_newData_dropDownNavPage(input, output, session)
 Shiny server function
 }
 \note{
-package, uitable, comments, describeTable, getDataSummary are defined in global.R
-      inspectors are loaded with  DataEntry.validation::inspector_loader()
+package, uitable, comments, describeTable, getDataSummary are hardwired and should be defined in global.R
+inspectors are loaded with  \code{\link[DataEntry.validation:inspector_loader]{DataEntry.validation::inspector_loader()}}
 }
