@@ -194,7 +194,6 @@ server_newData_dropDownNavPage <- function(input, output,session) {
       title = "Invalid entries:",
       
       tableHTML(Save() |> inspector() |> evalidators(), rownames = FALSE, collapse = "separate_shiny") |>
-      add_css_table(css = list("font-size", "1.2vw")) |>
       add_theme ('rshiny-blue'),
       
       easyClose = TRUE, 
