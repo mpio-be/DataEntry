@@ -2,9 +2,10 @@
 % Please edit documentation in R/zzz.R
 \docType{package}
 \name{DataEntry}
+\alias{DataEntry-package}
 \alias{DataEntry}
-\title{\preformatted{  Data entry 'in-browser' interfaces
-}}
+\title{\if{html}{\out{<div class="sourceCode">}}\preformatted{  Data entry 'in-browser' interfaces
+}\if{html}{\out{</div>}}}
 \description{
 Data-entry front-end; Mysql/MariaDB backend. Flexible support for front-end data validation.
 }
