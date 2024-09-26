@@ -115,10 +115,8 @@ server_newData_dropDownNavPage <- function(input, output,session) {
        
         # assign('x', x, .GlobalEnv)
 
-      # author & msg
-      au = x[!is.na(author), author][1]
-      if(is.na(au) | au == "") au = "anon."
-      msgau = glue("<br> Hi {au} ! <br> You saved {nrow(x)} rows to the DB. 
+      # feedback msg
+      msgau = glue("You saved {nrow(x)} rows to the DB. 
         <br>")
 
 
