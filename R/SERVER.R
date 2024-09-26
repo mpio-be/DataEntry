@@ -52,12 +52,13 @@ server_newData_dropDownNavPage <- function(input, output,session) {
 
     # errors 
     if(nrow(cc) > 0 && !ignore_validators) {
-        toastr_error( 
-          message = HTML('<h4> To see what\'s wrong push the <kbd> Data Entry Issues </kbd> button then correct the wrong entries 
-                    and try again.</h4> '  ) ,
-          
-          title = HTML(encourage() ) ,
-          timeOut = 10000, closeButton = TRUE, position = 'top-center')
+        toastr_error(
+          message = HTML("<strong>To identify issues, click the <kbd>Data Entry Issues</kbd> button, correct the entries, and try again.</strong>"),
+          title = HTML(glue("<h3>{encourage()}</h3>")),
+          timeOut = 10000,
+          closeButton = TRUE, 
+          position = "top-center"
+        )
 
     if( is.null(is_invalid) )      
     insertUI(
@@ -105,7 +106,7 @@ server_newData_dropDownNavPage <- function(input, output,session) {
 
 
 
-        msg = if(ignore_validators) "I'm sure you ignored the validation for a good reason." else 
+        msg = if(ignore_validators) "I bet you brushed off that validation for a good reason!" else 
               glue("   <h4> {praise()} </h4>    ")
 
          toastr_success(title = ""  , 
