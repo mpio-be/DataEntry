@@ -131,16 +131,15 @@ praise <- function() {
 #' @export
 encourage <- function() {
   x <- c(
-    "Keep trying!",
-    "Don't worry, you'll get it.",
-    "No one is perfect!",
-    "Frustration is a natural part of data entry.",
-    "Hang in there and try again.",
-    "Don't give up!",
-    "Keep pushing!",
-    "Keep fighting!",
-    "Stay strong!",
-    "Come on! You can do it!."
+    "Mistakes happen dude just roll with it!", 
+    "Data entry's a journey mate — enjoy the ride!", 
+    "Every screw-up's a shot at leveling up dude; don't sweat it!"
+    "Take a breather mate you'll crush it next time!", 
+    "Just keep clicking dude; you'll find your groove!", 
+    "Data entry's tricky mate!", 
+    "It's all part of the process dude; stay chill!", 
+    "Just a bump in the road mate; keep cruising!", 
+    "Sometimes you gotta get your ass kicked to come back swinging like a boss dude!"
   )
 
   sample(x, 1)
