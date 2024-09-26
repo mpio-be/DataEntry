@@ -133,7 +133,7 @@ encourage <- function() {
   x <- c(
     "Mistakes happen dude just roll with it!", 
     "Data entry's a journey mate — enjoy the ride!", 
-    "Every screw-up's a shot at leveling up dude; don't sweat it!"
+    "Every screw-up's a shot at leveling up dude; don't sweat it!",
     "Take a breather mate you'll crush it next time!", 
     "Just keep clicking dude; you'll find your groove!", 
     "Data entry's tricky mate!", 
