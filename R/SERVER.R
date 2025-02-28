@@ -246,6 +246,7 @@ server_newData_dropDownNavPage <- function(input, output,session) {
 
   # observe( on.exit( assign('input', reactiveValuesToList(input) , envir = .GlobalEnv)) )
 
+  session$allowReconnect(TRUE)
 
  }
 
