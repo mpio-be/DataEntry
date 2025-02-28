@@ -16,7 +16,3 @@ server_editDB_inPlace(input, output, session)
 \description{
 Shiny server function
 }
-\note{
-package, uitable, comments, describeTable, getDataSummary are hardwired and should be defined in global.R
-inspectors are loaded with  \code{\link[DataEntry.validation:inspector_loader]{DataEntry.validation::inspector_loader()}}
-}

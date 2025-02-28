@@ -6,9 +6,7 @@
 #' @param session   Shiny server
 #'
 #' @export
-#' @note package, uitable, comments, describeTable, getDataSummary are hardwired and should be defined in global.R
-#'       inspectors are loaded with  [DataEntry.validation::inspector_loader()]
-#'
+
 
 server_editDB_inPlace <- function(input, output, session) {
   
