@@ -20,4 +20,4 @@
     data.frame(x = 'function applied on the db table', y = 'returning meaningful summaries')
     }
 
-  comments = column_comment(user, host, db, pwd, tableName,excludeColumns)	
+  comments = column_comment(user, host, db, pwd, tableName)	

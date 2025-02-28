@@ -15,9 +15,14 @@ server_editDB_inPlace <- function(input, output, session) {
 
   getDBtable <- function() {
     con  = dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
-    data = dbReadTable(con, tableName)
+    dat = dbReadTable(con, tableName)
     dbDisconnect(con)
-    data
+
+    empty_rows = as.data.frame(matrix(NA, ncol = ncol(dat), nrow = 10))
+    names(empty_rows) = names(dat)
+    dat = rbind(dat, empty_rows)
+
+    dat
   }
   
 
@@ -33,9 +38,10 @@ server_editDB_inPlace <- function(input, output, session) {
   observeEvent(input$saveButton, {
 
     editedData = hot_to_r(input$table)
+    editedData = editedData[!apply(editedData, 1, function(x) all(is.na(x) | x == "")), ]
     
     
-    save_backup(editedData, tableName)
+    bk_path = save_backup(editedData, tableName)
 
     con <- dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
     tableSaved = dbWriteTable(con, tableName, editedData, overwrite = TRUE, row.names = FALSE)
@@ -44,13 +50,17 @@ server_editDB_inPlace <- function(input, output, session) {
 
     rv_data(editedData)
     
-    if(tableSaved)
+    if (tableSaved) {
+      rv_data(getDBtable())
+
       toastr_success(
         title = "",
-        message = paste("Table saved successfully. Backup stored as", backup_filename),
+        message = paste("Table saved successfully. Backup stored as", basename(bk_path)),
         timeOut = 5000,
         position = "top-center"
       )
+    }
+    
   })
   
 
