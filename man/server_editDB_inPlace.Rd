@@ -16,3 +16,6 @@ server_editDB_inPlace(input, output, session)
 \description{
 Shiny server function
 }
+\note{
+user,host,db,pwd, uitable, comments, describeTable, getDataSummary,backupdir are hardwired and should be defined in global.R
+}

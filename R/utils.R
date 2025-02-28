@@ -153,11 +153,11 @@ encourage <- function() {
 #'
 #' @param x A data.frame or data.table containing the data to be backed up.
 #' @param name The name associated to the file name
-#' @param backup_dir The directory where backups are stored. Defaults to `getOption("DataEntry.backupdir", ".")`.
+#' @param backup_dir The directory where backups are stored. 
 #'
 #' @return A character string with the full path to the backup CSV file.
 #' @export
-save_backup <- function(x,  name, backup_dir = getOption("DataEntry.backupdir", ".")) {
+save_backup <- function(x,  name, backup_dir ) {
   
   db = getOption("DataEntry.db")
   

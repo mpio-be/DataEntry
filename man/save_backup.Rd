@@ -4,14 +4,14 @@
 \alias{save_backup}
 \title{Save Backup of Data to CSV}
 \usage{
-save_backup(x, name, backup_dir = getOption("DataEntry.backupdir", "."))
+save_backup(x, name, backup_dir)
 }
 \arguments{
 \item{x}{A data.frame or data.table containing the data to be backed up.}
 
 \item{name}{The name associated to the file name}
 
-\item{backup_dir}{The directory where backups are stored. Defaults to \code{getOption("DataEntry.backupdir", ".")}.}
+\item{backup_dir}{The directory where backups are stored.}
 }
 \value{
 A character string with the full path to the backup CSV file.

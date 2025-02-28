@@ -7,7 +7,7 @@
 #' @param session   Shiny server
 #'
 #' @export
-#' @note package, uitable, comments, describeTable, getDataSummary are hardwired and should be defined in global.R
+#' @note user,host,db,pwd, uitable, comments, describeTable, getDataSummary are hardwired and should be defined in global.R
 #'       inspectors are loaded with  [DataEntry.validation::inspector_loader()]
 #'
 server_newData_dropDownNavPage <- function(input, output,session) {

@@ -6,7 +6,7 @@
 #' @param session   Shiny server
 #'
 #' @export
-
+#' @note user,host,db,pwd, uitable, comments, describeTable, getDataSummary,backupdir are hardwired and should be defined in global.R
 
 server_editDB_inPlace <- function(input, output, session) {
   
@@ -39,7 +39,7 @@ server_editDB_inPlace <- function(input, output, session) {
     editedData = editedData[!apply(editedData, 1, function(x) all(is.na(x) | x == "")), ]
     
     
-    bk_path = save_backup(editedData, tableName)
+    bk_path = save_backup(editedData, tableName, backup_dir = backupdir)
 
     con <- dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
     tableSaved = dbWriteTable(con, tableName, editedData, overwrite = TRUE, row.names = FALSE)
@@ -53,7 +53,7 @@ server_editDB_inPlace <- function(input, output, session) {
 
       toastr_success(
         title = "",
-        message = paste("Table saved successfully. Backup stored as", basename(bk_path)),
+        message = paste("Table saved successfully. Backup stored as", shQuote(bk_path)),
         timeOut = 5000,
         position = "top-center"
       )

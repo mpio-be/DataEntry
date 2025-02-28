@@ -15,6 +15,7 @@
   user    = getOption('DataEntry.user')
   pwd     = getOption('DataEntry.pwd' )
   tableName  = 'data_entry'
+  backupdir = tempdir()
 
   describeTable <- function() {
     data.frame(x = 'function applied on the db table', y = 'returning meaningful summaries')
