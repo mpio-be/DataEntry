@@ -144,3 +144,30 @@ encourage <- function() {
 
   sample(x, 1)
 }
+
+
+#' Save Backup of Data to CSV
+#'
+#' Creates a timestamped CSV backup of the provided data and saves it in a subdirectory
+#' named after the database (as defined by `getOption("DataEntry.db")`) within the backup directory.
+#'
+#' @param x A data.frame or data.table containing the data to be backed up.
+#' @param name The name associated to the file name
+#' @param backup_dir The directory where backups are stored. Defaults to `getOption("DataEntry.backupdir", ".")`.
+#'
+#' @return A character string with the full path to the backup CSV file.
+#' @export
+save_backup <- function(x,  name, backup_dir = getOption("DataEntry.backupdir", ".")) {
+  
+  db = getOption("DataEntry.db")
+  
+  sub_dir = fs::path(backup_dir, db)
+  
+  fs::dir_create(sub_dir, recurse = TRUE)
+  
+  backup_filename = fs::path(sub_dir, glue::glue("backup_{db}_{name}_{format(Sys.time(), '%Y%m%d_%H%M%S')}.csv"))
+  
+  fwrite(x, file = backup_filename)
+  
+  backup_filename
+}

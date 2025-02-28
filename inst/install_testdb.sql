@@ -1,9 +1,11 @@
 
 CREATE DATABASE IF NOT EXISTS tests;
 USE tests;
-CREATE USER IF NOT EXISTS 'testuser'@'localhost' IDENTIFIED BY 'testuser';
-GRANT ALL ON `tests`.* TO 'testuser'@'localhost';
+CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'testuser';
+GRANT ALTER, CREATE, CREATE VIEW, DELETE, DROP, INDEX, INSERT, SELECT, SHOW VIEW, TRIGGER, UPDATE
+ON tests.* TO 'testuser'@'localhost';
 FLUSH PRIVILEGES;
+
 
 DROP TABLE IF EXISTS data_entry; 
 CREATE TABLE data_entry (
