@@ -5,16 +5,10 @@
 \title{translate forward slash to a Mysql timestamp}
 \usage{
 js_insertMySQLTimeStamp()
-
-js_insertMySQLTimeStamp()
 }
 \description{
 translate forward slash to a Mysql timestamp
-
-translate forward slash to a Mysql timestamp
 }
 \note{
-used inside shiny apps
-
 used inside shiny apps
 }

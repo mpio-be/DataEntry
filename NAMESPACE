@@ -3,6 +3,7 @@
 export(char2vec)
 export(cleaner)
 export(column_comment)
+export(ddmenu)
 export(dropDownNavPage)
 export(dropDownNavPage_edit)
 export(emptyFrame)

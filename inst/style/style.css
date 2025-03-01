@@ -1,0 +1,49 @@
+
+
+/* Dropdown Menu Styles */
+#menu {
+  background:   #c94101;
+  padding: 5px 13px;
+  font-size: 11px;
+  border: none;
+}
+
+#menu:hover {
+  background: #d62101 !important;
+}
+
+/* Button Styles */
+#saveButton {
+  background: #345678;
+  color: #c2ccd6;
+  font-weight: bold;
+}
+
+#invalidButton {
+  background: #484388;
+  color: #dad9e7;
+}
+
+#refresh {
+  background: #6366ff;
+  color: #dad9e7;
+}
+
+#helpButton {
+  color: #25596d;
+}
+
+#cheatsheetButton {
+  color: #25596d;
+}
+
+#tableInfoButton {
+  color: #425866;
+}
+
+/* Table Title Styles */
+#TABLE_NAME {
+  color: #345678;
+  font-size: 2em;
+  text-align: center;
+}

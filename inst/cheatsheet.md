@@ -1,18 +1,18 @@
 
 
 Misc
-* <kbd>/</kbd>         – Enter the datetime as yyyy-mm-dd hh:mm:ss
+* <kbd>//</kbd>         – Enter the datetime as `yyyy-mm-dd hh:mm`
 
 
 Navigation
-* <kbd>Tab</kbd>         – move to the cell on the right side of the current active cell
+* <kbd>Tab</kbd>   – move to the cell on the right side of the current active cell
 * <kbd>Home </kbd> – move to the first cell in a row
-* <kbd>End</kbd> – move to the last cell in a row
+* <kbd>End</kbd>   – move to the last cell in a row
 * <kbd>Ctrl</kbd> + <kbd>Home</kbd> – move to the first cell in a column
 * <kbd>Ctrl</kbd> + <kbd>End</kbd> – move to the last cell in a column
 
 Selection
-* <kbd>Ctrl</kbd> + <kbd>A</kbd> – select all
+* <kbd>Ctrl </kbd> + <kbd>A</kbd> – select all
 * <kbd>Shift</kbd> + <kbd>Arrow Up &uarr;</kbd> – extend selection of the cell above
 * <kbd>Shift</kbd> + <kbd>Arrow Down &darr;</kbd> – extend selection of the cell underneath
 * <kbd>Shift</kbd> + <kbd>Arrow Right &rarr;</kbd> – extend selection of the cell on the right

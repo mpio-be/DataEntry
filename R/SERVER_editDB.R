@@ -13,7 +13,7 @@ server_editDB_inPlace <- function(input, output, session) {
 
   getDBtable <- function() {
     con  = dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
-    dat = dbReadTable(con, tableName)
+    dat = dbReadTable(con, tableName) |> setDT()
     dbDisconnect(con)
 
     empty_rows = as.data.frame(matrix(NA, ncol = ncol(dat), nrow = 10))
@@ -29,7 +29,11 @@ server_editDB_inPlace <- function(input, output, session) {
 
   output$table <- renderRHandsontable({
     req(rv_data())
-    rhandsontable(rv_data(), rowHeaders = TRUE)
+    
+    rhandsontable(rv_data(), rowHeaders = TRUE) |>
+      hot_cols(columnSorting = FALSE, manualColumnResize = TRUE) |>
+      hot_rows(fixedRowsTop = 1)
+  
   })
   
 
@@ -42,7 +46,14 @@ server_editDB_inPlace <- function(input, output, session) {
     bk_path = save_backup(editedData, tableName, backup_dir = backupdir)
 
     con <- dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
-    tableSaved = dbWriteTable(con, tableName, editedData, overwrite = TRUE, row.names = FALSE)
+    
+    dbBegin(con)
+    
+    dbExecute(con, paste("DELETE FROM", tableName))
+    tableSaved = dbWriteTable(con, tableName, editedData, append = TRUE, row.names = FALSE)
+
+    if(tableSaved) dbCommit(con) else   dbRollback(con)
+    
     dbDisconnect(con)
     
 
@@ -64,7 +75,7 @@ server_editDB_inPlace <- function(input, output, session) {
 
   observeEvent(input$helpButton, {
     showModal(modalDialog(
-      tableHTML(comments, rownames = FALSE, collapse = "separate_shiny") |>
+      tableHTML(comments, rownames = FALSE, collapse = "separate_shiny", escape = FALSE) |>
         add_css_table(css = list("font-size", "1.2vw")) |>  
         add_theme('rshiny-blue'),
       title = "Columns definition:",

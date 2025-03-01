@@ -17,7 +17,7 @@ server_newData_dropDownNavPage <- function(input, output,session) {
     con =  dbConnect(RMySQL::MySQL(), host = host, user = user, db = db, password = pwd)
     hasnov = dbGetQuery(con, glue::glue("SHOW COLUMNS FROM {tableName} LIKE 'nov';") ) |> 
               nrow() > 0
-               
+
     dbDisconnect(con)							
 
     observeEvent(input$refresh, { # defined below
@@ -219,16 +219,19 @@ server_newData_dropDownNavPage <- function(input, output,session) {
   # Show data SUMMARY
     observeEvent(input$tableInfoButton, {
 
-      showModal(modalDialog(
-      tableHTML(describeTable(), rownames = FALSE, collapse = "separate_shiny") |>
-      add_css_table(css = list("font-size", "1.2vw")) |>  
-      add_theme ('rshiny-blue'),
-      
-      title =  "Data summary:",
-      easyClose = TRUE,
-      footer = NULL, 
-      size = 'l'
-      ))
+      x = describeTable()
+
+      showModal(
+        modalDialog(
+        tableHTML(x, rownames = FALSE, collapse = "separate_shiny", escape = FALSE) |>
+          add_css_table(css = list("font-size", "1.2vw")) |>  
+          add_theme ('rshiny-blue'),
+        
+        title =  "Data summary:",
+        easyClose = TRUE,
+        footer = NULL, 
+        size = 'l'
+        ))
       
       })
 
