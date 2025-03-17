@@ -131,15 +131,12 @@ praise <- function() {
 #' @export
 encourage <- function() {
   x <- c(
-    "Mistakes happen dude just roll with it!", 
-    "Data entry's a journey mate — enjoy the ride!", 
-    "Every screw-up's a shot at leveling up dude; don't sweat it!",
-    "Take a breather mate you'll crush it next time!", 
-    "Just keep clicking dude; you'll find your groove!", 
-    "Data entry's tricky mate!", 
-    "It's all part of the process dude; stay chill!", 
-    "Just a bump in the road mate; keep cruising!", 
-    "Sometimes you gotta get your ass kicked to come back swinging like a boss dude!"
+  "Keep calm; data entry errors won't end the world.",
+  "Remain calm; data entry loves testing patience.",
+  "Keep your cool; data entry chaos is temporary.",
+  "Remain calm; data entry stress is optional.",
+  "Keep your cool; data entry drama won't last.",
+  "Stay cool; data entry hiccups are normal."
   )
 
   sample(x, 1)
