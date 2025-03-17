@@ -1,7 +1,7 @@
 Package: DataEntry
-Version: 2025.0.1
+Version: 2025.0.2
 Author: Mihai Valcu
-Maintainer: Mihai Valcu <valcu@orn.mpg.de>
+Maintainer: Mihai Valcu <Mihai.Valcu@bi.mpg.de>
 Title: Data entry interfaces
 Description: Database entry interfaces based on rhandsontable.
 License: GPL (>= 2)
