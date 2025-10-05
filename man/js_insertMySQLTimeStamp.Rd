@@ -2,13 +2,13 @@
 % Please edit documentation in R/js.R
 \name{js_insertMySQLTimeStamp}
 \alias{js_insertMySQLTimeStamp}
-\title{translate forward slash to a Mysql timestamp}
+\title{translate two forward slashes to a Mysql timestamp}
 \usage{
 js_insertMySQLTimeStamp()
 }
 \description{
-translate forward slash to a Mysql timestamp
+translate two forward slashes to a Mysql timestamp
 }
 \note{
-used inside shiny apps
+used inside shiny apps. See http://keycode.info/
 }

@@ -16,7 +16,7 @@ and one column containing the description of the fields.}
 add tooltips to a handsontable
 }
 \note{
-used inside shiny apps. Adapted from https://gist.github.com/timelyportfolio/b8001318ce3e25b6920a0f20e9db374e
+used within rhandsontable: e.g. rhandsontable(afterGetColHeader = js_hot_tippy_header(comments, "description"))
 }
 \seealso{
 \code{\link[=column_comment]{column_comment()}}

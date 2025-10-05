@@ -131,12 +131,7 @@ praise <- function() {
 #' @export
 encourage <- function() {
   x <- c(
-  "Keep calm; data entry errors won't end the world.",
-  "Remain calm; data entry loves testing patience.",
-  "Keep your cool; data entry chaos is temporary.",
-  "Remain calm; data entry stress is optional.",
-  "Keep your cool; data entry drama won't last.",
-  "Stay cool; data entry hiccups are normal."
+  "Potential data entry errors."
   )
 
   sample(x, 1)
